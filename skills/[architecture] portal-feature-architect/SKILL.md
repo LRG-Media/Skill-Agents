@@ -1,5 +1,5 @@
 ---
-name: portal-feature-architect
+name: architecture--portal-feature-architect
 description: 'Concevoir et implémenter des fonctionnalités PortalWebApp en respectant l architecture multi-portail, les feature flags, les routes, les permissions, le roleType, la structure frontend par feature et la protection backend. À utiliser pour toute demande de nouvelle feature ou de modification structurante.'
 argument-hint: 'Décris la fonctionnalité demandée, les portails cibles et le comportement UI/API attendu.'
 user-invocable: true

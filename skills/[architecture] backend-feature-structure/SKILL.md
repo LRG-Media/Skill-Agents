@@ -1,5 +1,5 @@
 ---
-name: backend-feature-structure
+name: architecture--backend-feature-structure
 description: 'Standardiser la structure interne des features backend (dossiers, fichiers, exports, nomenclature) dans server/features. A utiliser pour creation, refactorisation ou audit de feature backend.'
 argument-hint: 'Donne le domaine/feature cible, son etat actuel, et si tu veux un audit seul ou un plan de refactorisation.'
 user-invocable: true

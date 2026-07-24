@@ -1,5 +1,5 @@
 ---
-name: changelog-updater
+name: git-github--changelog-updater
 description: 'Mettre à jour automatiquement le fichier CHANGELOG.md après chaque session de travail impliquant des modifications de code (ajout, suppression, refactorisation, fix). À invoquer systématiquement en fin de session ou après un lot de changements significatifs.'
 argument-hint: 'Résume les changements effectués dans la session en cours (types + descriptions).'
 user-invocable: true
@@ -25,9 +25,9 @@ Mettre à jour `CHANGELOG.md` à la racine du projet après chaque session de tr
 
 ## Règles
 
-1. **Format** : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/) + [Semantic Versioning](https://semver.org/lang/fr/)
-2. **Un seul fichier** : `CHANGELOG.md` à la racine du projet (`c:\Projects\ClientPortalLRG\CHANGELOG.md`)
-3. **Versions** : Si les changements sont importants (nouvelle feature, breaking change) → bump de version. Si petits fixes → ajouter à la version en cours.
+1. **Format** : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/) sans Semantic Versioning
+2. **Un seul fichier** : `CHANGELOG.md` à la racine du projet (`c:\Projects\PortalWebApp\CHANGELOG.md`)
+3. **Sections par date** : Regrouper tous les changements d'une même journée sous une seule entrée `## YYYY-MM-DD`. Si une entrée pour la date du jour existe déjà, ajouter les changements en dessous.
 4. **Sections** : Utiliser uniquement `Added`, `Changed`, `Deprecated`, `Removed`, `Fixed`, `Security`
 5. **Date** : Utiliser la date du jour au format `YYYY-MM-DD`
 6. **Langue** : Français
@@ -47,7 +47,7 @@ Le skill fonctionne **uniquement à partir du contexte de conversation déjà di
 ## Structure de la section à ajouter
 
 ```markdown
-## [X.Y.Z] - YYYY-MM-DD
+## YYYY-MM-DD
 
 ### Added
 - **Description** du ajout — contexte
@@ -67,19 +67,17 @@ Le skill fonctionne **uniquement à partir du contexte de conversation déjà di
 ## Workflow
 
 1. **Vérifier le contexte** — Identifier les changements déjà documentés dans la conversation (fichiers modifiés, routes ajoutées/supprimées, etc.). Ne relire aucun fichier sauf CHANGELOG.md.
-2. **Lire `CHANGELOG.md`** (une seule fois) — pour connaître la version en cours et la structure existante
-3. **Déterminer le bump de version** :
-   - **Major** (X.0.0) : breaking changes
-   - **Minor** (x.Y.0) : nouvelles features
-   - **Patch** (x.y.Z) : corrections de bugs, petits ajustements
-4. **Construire la section** à partir du contexte de conversation (pas de relecture)
-5. **Insérer** la nouvelle section au-dessus de la section précédente (sous le `---` séparateur)
-6. **Mettre à jour** le lien de comparaison si présent
+2. **Lire `CHANGELOG.md`** (une seule fois) — pour connaître la dernière date et la structure existante
+3. **Vérifier si une entrée pour la date du jour existe déjà** :
+   - Si oui → **Fusionner** les changements dans les sections `### Added`, `### Changed`, `### Fixed` etc. **déjà existantes** pour cette date. **Ne JAMAIS créer de doublons de sections** (ex: deux `### Added` sous la même date).
+   - Si non → créer une nouvelle entrée `## YYYY-MM-DD` au-dessus de la plus récente
+4. **Construire les sections** à partir du contexte de conversation (pas de relecture)
+5. **Insérer** les nouveaux items sous les sections existantes correspondantes (ou créer une nouvelle section si elle n'existe pas encore pour cette date)
 
 ## Exemple de résultat attendu
 
 ```markdown
-## [1.2.0] - 2026-07-02
+## 2026-07-13
 
 ### Added
 - **Nouvelle route `/reports`** pour les rapports d'inspections

@@ -1,5 +1,5 @@
 ---
-name: route-permission-sync
+name: architecture--route-permission-sync
 description: 'Synchroniser toute nouvelle route React avec routesAccessConfig, AutoProtectedRoute, permissions et navigation Sidebar/Settings. Utiliser ce skill quand on ajoute, modifie ou déplace une page afin d éviter les routes invisibles, non protégées ou incohérentes.'
 argument-hint: 'Décris la route cible, la page à créer/modifier, sa visibilité UI et les permissions attendues.'
 user-invocable: true

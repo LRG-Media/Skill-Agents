@@ -1,5 +1,5 @@
 ---
-name: frontend-feature-structure
+name: architecture--frontend-feature-structure
 description: 'Standardiser la structure interne des features frontend React (pages, hooks, services, composants, config) dans client/src/features. À utiliser uniquement pour les features client, leurs routes/pages et leur structure locale.'
 argument-hint: 'Donne la feature cible, son état actuel, et si tu veux un audit seul ou un plan de refactorisation.'
 user-invocable: true

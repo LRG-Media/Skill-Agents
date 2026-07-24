@@ -1,1 +1,0 @@
-Resume moi court ce que nous avons discuter dans les dernier ajouts que nous n'avons pas implémenter ne code pas dis moi dans le chat

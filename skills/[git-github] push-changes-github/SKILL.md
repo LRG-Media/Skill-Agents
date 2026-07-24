@@ -1,5 +1,5 @@
 ---
-name: push-changes-github
+name: git-github--push-changes-github
 description: 'Pousser les changements de code sur GitHub avec messages de commit structurés et gestion de branche.'
 argument-hint: 'Message de commit au format type: description (ex: feat: add search feature).'
 user-invocable: true
