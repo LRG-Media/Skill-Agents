@@ -1,0 +1,264 @@
+{
+  "version": 3,
+  "creationDate": 1787876168527,
+  "customTitle": "Session settings",
+  "initialLocation": "panel",
+  "responderUsername": "GitHub Copilot",
+  "sessionId": "0b29b426-17b5-4d2a-9d9a-e0a379c617d9",
+  "hasPendingEdits": false,
+  "requests": [
+    {
+      "requestId": "request_58a19f62-59b9-4a4e-9010-a407c1c18378",
+      "timestamp": 1787876172595,
+      "agent": {
+        "extensionId": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "extensionVersion": "0.63.0",
+        "publisherDisplayName": "GitHub",
+        "extensionPublisherId": "GitHub",
+        "extensionDisplayName": "GitHub Copilot",
+        "id": "github.copilot.editsAgent",
+        "description": "Edit files in your workspace in agent mode",
+        "when": "config.chat.agent.enabled",
+        "metadata": {
+          "themeIcon": {
+            "id": "tools"
+          },
+          "hasFollowups": false,
+          "supportIssueReporting": false
+        },
+        "name": "agent",
+        "fullName": "GitHub Copilot",
+        "isDefault": true,
+        "locations": [
+          "panel"
+        ],
+        "modes": [
+          "agent"
+        ],
+        "slashCommands": [
+          {
+            "name": "compact",
+            "description": "Free up context by compacting the conversation history. Optionally include extra instructions for compaction."
+          },
+          {
+            "name": "explain",
+            "description": "Explain how the code in your active editor works"
+          },
+          {
+            "name": "tests",
+            "description": "Generate unit tests for the selected code",
+            "disambiguation": [
+              {
+                "category": "create_tests",
+                "description": "The user wants to generate unit tests.",
+                "examples": [
+                  "Generate tests for my selection using pytest."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "fix",
+            "description": "Propose a fix for the problems in the selected code",
+            "sampleRequest": "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+          },
+          {
+            "name": "new",
+            "description": "Scaffold code for a new file or project in a workspace",
+            "sampleRequest": "Create a RESTful API server using typescript",
+            "isSticky": true,
+            "disambiguation": [
+              {
+                "category": "create_new_workspace_or_extension",
+                "description": "The user wants to create a complete Visual Studio Code workspace from scratch, such as a new application or a Visual Studio Code extension. Use this category only if the question relates to generating or creating new workspaces in Visual Studio Code. Do not use this category for updating existing code or generating sample code snippets",
+                "examples": [
+                  "Scaffold a Node server.",
+                  "Create a sample project which uses the fileSystemProvider API.",
+                  "react application"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "newNotebook",
+            "description": "Create a new Jupyter Notebook",
+            "sampleRequest": "How do I create a notebook to load data from a csv file?",
+            "disambiguation": [
+              {
+                "category": "create_jupyter_notebook",
+                "description": "The user wants to create a new Jupyter notebook in Visual Studio Code.",
+                "examples": [
+                  "Create a notebook to analyze this CSV file."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "setupTests",
+            "description": "Set up tests in your project (Experimental)",
+            "sampleRequest": "add playwright tests to my project",
+            "when": "config.github.copilot.chat.setupTests.enabled",
+            "disambiguation": [
+              {
+                "category": "set_up_tests",
+                "description": "The user wants to configure project test setup, framework, or test runner. The user does not want to fix their existing tests.",
+                "examples": [
+                  "Set up tests for this project."
+                ]
+              }
+            ]
+          }
+        ],
+        "disambiguation": []
+      },
+      "modelId": "mimo/mimo-v2.5",
+      "hiddenFromTranscript": false,
+      "responseId": "response_fde5f086-b797-447e-9ee7-37a6e8741e2d",
+      "responseTimestamp": 1787876172595,
+      "result": {
+        "timings": {
+          "totalElapsed": 2428
+        },
+        "metadata": {
+          "toolCallRounds": [],
+          "modelMessageId": "4c1b8426-79f4-45d2-801a-8b601a3b9d4e",
+          "responseId": "1df47ea6-1f84-49a8-891b-39473c96ba27",
+          "sessionId": "0b29b426-17b5-4d2a-9d9a-e0a379c617d9",
+          "agentId": "github.copilot.editsAgent"
+        },
+        "details": "MiMo V2.5"
+      },
+      "followups": [],
+      "modelState": {
+        "value": 2,
+        "completedAt": 1787876174953
+      },
+      "contentReferences": [
+        {
+          "kind": "reference",
+          "reference": {
+            "$mid": 1,
+            "fsPath": "c:\\Projects\\PortalWebApp\\.github\\copilot-instructions.md",
+            "_sep": 1,
+            "external": "file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "path": "/c:/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "scheme": "file"
+          }
+        }
+      ],
+      "codeCitations": [],
+      "timeSpentWaiting": 1787876172595,
+      "elapsedMs": 2358,
+      "modeInfo": {
+        "kind": "agent",
+        "isBuiltin": true,
+        "telemetryModeId": "agent",
+        "telemetryModeName": "agent",
+        "permissionLevel": "default"
+      },
+      "response": [],
+      "message": {
+        "text": "etts de session",
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 15
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 16
+            },
+            "text": "etts de session",
+            "kind": "text"
+          }
+        ]
+      },
+      "variableData": {
+        "variables": [
+          {
+            "value": "Repository name: PortalWebApp\nOwner: LRG-Media\nCurrent branch: main\nDefault branch: main",
+            "name": "LRG-Media/PortalWebApp",
+            "modelDescription": "Information about the current repository. You can use this information when you need to calculate diffs or compare changes with the default branch",
+            "id": "LRG-Media/PortalWebApp",
+            "kind": "workspace"
+          },
+          {
+            "id": "vscode.instructions.file.root__file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "name": "prompt:copilot-instructions.md",
+            "value": {
+              "$mid": 1,
+              "external": "file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+              "path": "/c:/Projects/PortalWebApp/.github/copilot-instructions.md",
+              "scheme": "file"
+            },
+            "kind": "promptFile",
+            "modelDescription": "Prompt instructions file",
+            "isRoot": true,
+            "automaticallyAdded": true
+          }
+        ]
+      }
+    }
+  ],
+  "pendingRequests": [],
+  "inputState": {
+    "attachments": [],
+    "mode": {
+      "id": "agent",
+      "kind": "agent"
+    },
+    "selectedModel": {
+      "identifier": "mimo/mimo-v2.5",
+      "metadata": {
+        "extension": {
+          "value": "sdmapvstool.xiaomimimo-for-copilot",
+          "_lower": "sdmapvstool.xiaomimimo-for-copilot"
+        },
+        "id": "mimo-v2.5",
+        "vendor": "mimo",
+        "name": "MiMo V2.5",
+        "family": "mimo",
+        "detail": "Fast model with vision support",
+        "version": "v2.5",
+        "inputCost": "¥1",
+        "outputCost": "¥2",
+        "cacheCost": "¥0.02",
+        "priceCategory": "low",
+        "maxInputTokens": 917504,
+        "maxOutputTokens": 131072,
+        "isDefaultForLocation": {},
+        "isUserSelectable": true,
+        "capabilities": {
+          "vision": true,
+          "toolCalling": true,
+          "agentMode": true
+        },
+        "isBYOK": true
+      }
+    },
+    "inputText": "",
+    "selections": [
+      {
+        "startLineNumber": 1,
+        "startColumn": 1,
+        "endLineNumber": 1,
+        "endColumn": 1,
+        "selectionStartLineNumber": 1,
+        "selectionStartColumn": 1,
+        "positionLineNumber": 1,
+        "positionColumn": 1
+      }
+    ],
+    "permissionLevel": "default",
+    "contrib": {
+      "chatDynamicVariableModel": []
+    }
+  },
+  "archived": true
+}

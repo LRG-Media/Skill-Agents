@@ -1,0 +1,610 @@
+// ============================================================
+// Script Deluge Zoho Books — Ecriture comptable bimensuelle
+// Calcul des salaires et cotisations sociales
+// Paie bimensuelle (24 periodes/an)
+// Debut emploi : 17 aout 2026
+// Premiere paie : 27 aout 2026 (partielle — 9 jours)
+// ============================================================
+
+    // ==========================================
+    // 1. PARAMETRES DE L'ORGANISATION
+    // ==========================================
+    org_id = organization.get("organization_id");
+
+    // ==========================================
+    // 1B. DATES CLÉS
+    // ==========================================
+    date_debut_emploi = "2026-08-17";      // Lundi 17 août 2026
+    date_premiere_paie = "2026-08-27";     // Jeudi 27 août 2026
+    jours_premiere_paie = 9;                // 9 jours ouvrables
+
+    // ==========================================
+    // 2. PARAMÈTRES DE PAIE (à ajuster annuellement)
+    // ==========================================
+    // Salaire brut annuel : calcule pour net ≈ 1 000 $/2 semaines
+    // Formule inverse : brut nettoyé = net / (1 - taux_rrq - rqap - ae)
+    // Pour 1 000 $ net, il faut ≈ 26 000 $ brut (net = 1 000,24 $)
+    salaire_annuel_brut = 26000.00;
+
+    // Nombre de périodes de paie par an (bimensuel = 24)
+    nombre_periodes_annee = 24;
+
+    // Salaire brut par période
+    salaire_brut_periode = salaire_annuel_brut / nombre_periodes_annee;
+
+    // ==========================================
+    // 3. TAUX DE COTISATIONS 2025-2026
+    // ==========================================
+    // --- RRQ (Régime de rentes du Québec) ---
+    taux_rrq_employe = 6.40 / 100;       // 6,40 %
+    taux_rrq_employeur = 6.40 / 100;     // 6,40 %
+    deduction_rrq_base = 3500.00;         // Exemption de base annuelle
+    plafond_rrq = 71300.00;               // Maximum assurable
+
+    // --- RQAP (Régime québécois d'assurance parentale) ---
+    // Régime de base
+    taux_rqap_employe = 0.494 / 100;     // 0,494 %
+    taux_rqap_employeur = 0.692 / 100;   // 0,692 %
+    plafond_rqap = 86000.00;
+
+    // --- AE (Assurance-emploi) — Québec ---
+    taux_ae_employe = 1.64 / 100;        // 1,64 %
+    taux_ae_employeur_ratio = 1.4;       // Patron = 1,4 × employé
+    taux_ae_employeur = taux_ae_employe * taux_ae_employeur_ratio; // 2,296 %
+    plafond_ae = 65700.00;
+
+    // --- FSS (Fonds des services de santé) ---
+    taux_fss_employeur = 1.50 / 100;     // 1,50 % (pas de part employé)
+
+    // --- CNESST ---
+    taux_cnesst_employeur = 0.75 / 100;  // ~0,75 % (marketing/services)
+
+    // --- CNT (Normes du travail) ---
+    taux_cnt_employeur = 0.052 / 100;    // 0,052 %
+
+    // ==========================================
+    // 4. CALCUL DES RETENUES (PART EMPLOYÉ)
+    // ==========================================
+    // Calcul du salaire assurable RRQ (avec exemption)
+    salaire_assisable_rrq_annee = (salaire_annuel_brut - deduction_rrq_base);
+    if (salaire_assisable_rrq_annee < 0) {
+        salaire_assisable_rrq_annee = 0;
+    }
+    if (salaire_assisable_rrq_annee > plafond_rrq) {
+        salaire_assisable_rrq_annee = plafond_rrq;
+    }
+
+    // Revenu annuel projeté (pour retenue à la source)
+    revenu_annuel_projete = salaire_annuel_brut;
+
+    // --- Retenues employé ---
+    cotisation_rrq_employe_annuel = salaire_assisable_rrq_annee * taux_rrq_employe;
+
+    // RQAP employé (min entre revenu et plafond)
+    base_rqap_employe = revenu_annuel_projete;
+    if (base_rqap_employe > plafond_rqap) {
+        base_rqap_employe = plafond_rqap;
+    }
+    cotisation_rqap_employe_annuel = base_rqap_employe * taux_rqap_employe;
+
+    // AE employé (min entre revenu et plafond)
+    base_ae_employe = revenu_annuel_projete;
+    if (base_ae_employe > plafond_ae) {
+        base_ae_employe = plafond_ae;
+    }
+    cotisation_ae_employe_annuel = base_ae_employe * taux_ae_employe;
+
+    // Impôt fédéral retenu (estimation)
+    // Tranche 14,5 % : jusqu'à ~57 375 $ (2025 — source: TurboTax CRA)
+    taux_impot_federal = 14.5 / 100;
+    bpa_federal = 16129.00; // Basic Personal Amount 2025
+    impot_federal_avant_credit = (revenu_annuel_projete - bpa_federal) * taux_impot_federal;
+    if (impot_federal_avant_credit < 0) {
+        impot_federal_avant_credit = 0;
+    }
+    // Crédit personnel de base : 16 129 $ × 14,5 % = 2 339 $
+    credit_base_federal = bpa_federal * taux_impot_federal;
+    impot_federal_annuel = impot_federal_avant_credit - credit_base_federal;
+    if (impot_federal_annuel < 0) {
+        impot_federal_annuel = 0;
+    }
+
+    // Impôt provincial retenu (estimation)
+    // Tranche 14 % : jusqu'à ~54 345 $ (2025 — source: Revenu Québec)
+    bpa_provincial = 18952.00; // Montant personnel de base QC 2025
+    impot_provincial_avant_credit = (revenu_annuel_projete - bpa_provincial) * 0.14;
+    if (impot_provincial_avant_credit < 0) {
+        impot_provincial_avant_credit = 0;
+    }
+    // Crédit personnel de base QC : 18 952 $ × 14 % = 2 653 $
+    credit_base_provincial = bpa_provincial * 0.14;
+    impot_provincial_annuel = impot_provincial_avant_credit - credit_base_provincial;
+    if (impot_provincial_annuel < 0) {
+        impot_provincial_annuel = 0;
+    }
+
+    // --- Total retenues annuelles ---
+    total_retenues_annuelles = cotisation_rrq_employe_annuel +
+                               cotisation_rqap_employe_annuel +
+                               cotisation_ae_employe_annuel +
+                               impot_federal_annuel +
+                               impot_provincial_annuel;
+
+    // --- Net payé annuel ---
+    net_annuel = salaire_annuel_brut - total_retenues_annuelles;
+
+    // --- Net par période ---
+    net_periode = net_annuel / nombre_periodes_annee;
+
+    // ==========================================
+    // 5. CALCUL DES CHARGES PATRONALES
+    // ==========================================
+    cotisation_rrq_employeur_annuel = salaire_assisable_rrq_annee * taux_rrq_employeur;
+
+    // RQAP employeur (min entre revenu et plafond)
+    base_rqap_employeur = revenu_annuel_projete;
+    if (base_rqap_employeur > plafond_rqap) {
+        base_rqap_employeur = plafond_rqap;
+    }
+    cotisation_rqap_employeur_annuel = base_rqap_employeur * taux_rqap_employeur;
+
+    // AE employeur (min entre revenu et plafond)
+    base_ae_employeur = revenu_annuel_projete;
+    if (base_ae_employeur > plafond_ae) {
+        base_ae_employeur = plafond_ae;
+    }
+    cotisation_ae_employeur_annuel = base_ae_employeur * taux_ae_employeur;
+    cotisation_fss_employeur_annuel = revenu_annuel_projete * taux_fss_employeur;
+    cotisation_cnesst_employeur_annuel = revenu_annuel_projete * taux_cnesst_employeur;
+    cotisation_cnt_employeur_annuel = revenu_annuel_projete * taux_cnt_employeur;
+
+    total_charges_patronales_annuelles = cotisation_rrq_employeur_annuel +
+                                         cotisation_rqap_employeur_annuel +
+                                         cotisation_ae_employeur_annuel +
+                                         cotisation_fss_employeur_annuel +
+                                         cotisation_cnesst_employeur_annuel +
+                                         cotisation_cnt_employeur_annuel;
+
+    cout_total_annuel = salaire_annuel_brut + total_charges_patronales_annuelles;
+
+    // ==========================================
+    // 6. MONTANTS PAR PÉRIODE (bimensuelle)
+    // ==========================================
+    // Retenues employé
+    rrq_employe_periode = cotisation_rrq_employe_annuel / nombre_periodes_annee;
+    rqap_employe_periode = cotisation_rqap_employe_annuel / nombre_periodes_annee;
+    ae_employe_periode = cotisation_ae_employe_annuel / nombre_periodes_annee;
+    das_federal_periode = impot_federal_annuel / nombre_periodes_annee;
+    das_provincial_periode = impot_provincial_annuel / nombre_periodes_annee;
+
+    // Charges patronales
+    rrq_employeur_periode = cotisation_rrq_employeur_annuel / nombre_periodes_annee;
+    rqap_employeur_periode = cotisation_rqap_employeur_annuel / nombre_periodes_annee;
+    ae_employeur_periode = cotisation_ae_employeur_annuel / nombre_periodes_annee;
+    fss_employeur_periode = cotisation_fss_employeur_annuel / nombre_periodes_annee;
+    cnesst_employeur_periode = cotisation_cnesst_employeur_annuel / nombre_periodes_annee;
+    cnt_employeur_periode = cotisation_cnt_employeur_annuel / nombre_periodes_annee;
+
+    // ==========================================
+    // 7. LOG DU RÉSUMÉ
+    // ==========================================
+    info "==========================================";
+    info "   RÉSUMÉ DE PAIE BIMENSUELLE";
+    info "==========================================";
+    info "Salaire brut annuel   : " + salaire_annuel_brut + " $";
+    info "Salaire brut/période  : " + salaire_brut_periode + " $";
+    info "Net annuel            : " + net_annuel + " $";
+    info "Net par période       : " + net_periode + " $";
+    info "------------------------------------------";
+    info "RETENUES EMPLOYÉ (par période) :";
+    info "  RRQ employé         : " + rrq_employe_periode + " $";
+    info "  RQAP employé        : " + rqap_employe_periode + " $";
+    info "  AE employé          : " + ae_employe_periode + " $";
+    info "  DAS fédéral         : " + das_federal_periode + " $";
+    info "  DAS provincial      : " + das_provincial_periode + " $";
+    info "------------------------------------------";
+    info "CHARGES PATRONALES (par période) :";
+    info "  RRQ employeur       : " + rrq_employeur_periode + " $";
+    info "  RQAP employeur      : " + rqap_employeur_periode + " $";
+    info "  AE employeur        : " + ae_employeur_periode + " $";
+    info "  FSS employeur       : " + fss_employeur_periode + " $";
+    info "  CNESST employeur    : " + cnesst_employeur_periode + " $";
+    info "  CNT employeur       : " + cnt_employeur_periode + " $";
+    info "------------------------------------------";
+    info "Coût total annuel     : " + cout_total_annuel + " $";
+    info "Coût total/période    : " + (cout_total_annuel / nombre_periodes_annee) + " $";
+    info "==========================================";
+
+    // ==========================================
+    // 8. CALCUL AUTOMATIQUE DE LA PÉRIODE
+    // ==========================================
+    // Date du jour pour l'écriture
+    date_paie = zoho.currentdate;
+    date_paie_str = date_paie.toString("yyyy-MM-dd");
+
+    // Première date de paie = 27 août 2026
+    premiere_date_paie = "2026-08-27";
+
+    // Calcul du numéro de paie (chaque 14 jours à partir du 27 août 2026)
+    // Convertir les dates en timestamps
+    premiere_date = premiere_date_paie.toDate();
+    date_actuelle = date_paie_str.toDate();
+
+    // Différence en jours via timestamps (millisecondes)
+    ts_premier = premiere_date.toTime();
+    ts_actuel = date_actuelle.toTime();
+    difference_ms = ts_actuel - ts_premier;
+    difference_jours = difference_ms / (1000 * 60 * 60 * 24);
+
+    // Numéro de paie (0 = première paie partielle)
+    // Si date avant le 27 août, on utilise 0
+    numero_periode = 0;
+    if (difference_jours > 0)
+    {
+        numero_periode = difference_jours / 14;
+    }
+
+    // Déterminer si première paie partielle
+    premiere_paie_detectee = false;
+    jours_effectifs = 14;
+    if (date_paie_str == premiere_date_paie)
+    {
+        premiere_paie_detectee = true;
+        jours_effectifs = 9;
+        info "PREMIERE PAIE PARTIELLE detectee - " + jours_effectifs + " jours au lieu de 14";
+    }
+
+    // Calcul de la période couverte
+    if (premiere_paie_detectee)
+    {
+        periode_debut = date_debut_emploi;
+        periode_fin = date_paie_str;
+    }
+    else
+    {
+        // Période = 14 jours précédant la date de paie
+        periode_fin = date_paie_str;
+        // Calcul via addDay (négatif = reculer)
+        periode_debut = date_actuelle.addDay(-14).toString("yyyy-MM-dd");
+    }
+
+    // Arrondir le numéro de paie
+    numero_periode_arrondi = numero_periode;
+    if (numero_periode < 0)
+    {
+        numero_periode_arrondi = 0;
+    }
+    // Numéro de paie formaté
+    date_sans_tirets = date_paie_str.replaceAll("-", "");
+    numero_paie = "PAIE-" + date_sans_tirets + "-" + numero_periode_arrondi.toString();
+
+    info "Date de paie : " + date_paie_str;
+    info "Numero de paie : " + numero_paie;
+    info "Periode : " + periode_debut + " au " + periode_fin;
+    info "Jours travailles : " + jours_effectifs;
+
+    // Construction des lignes de journal
+    journal_lines = List();
+
+    // Salaire brut de la période (avec ajustement première paie)
+    facteur_premiere_paie = 1;
+    if (premiere_paie_detectee)
+    {
+        facteur_premiere_paie = jours_effectifs / 14;
+    }
+    salaire_brut_reel = salaire_brut_periode * facteur_premiere_paie;
+
+    // --- Ligne 1 : Salaire brut (Débit) ---
+    ligne1 = Map();
+    ligne1.put("account_id", "5097330000000000445");
+    ligne1.put("amount", ((salaire_brut_reel * 100).toLong()) / 100);
+    ligne1.put("debit_or_credit", "debit");
+    ligne1.put("description", "Salaire brut bimensuel");
+    journal_lines.add(ligne1);
+
+    // --- Ligne 2 : Cotisations patronales RRQ (Débit) ---
+    ligne2 = Map();
+    ligne2.put("account_id", "5097330000009503002");
+    ligne2.put("amount", ((rrq_employeur_periode * 100).toLong()) / 100);
+    ligne2.put("debit_or_credit", "debit");
+    ligne2.put("description", "Cotisation patronale RRQ");
+    journal_lines.add(ligne2);
+
+    // --- Ligne 3 : Cotisations patronales RQAP (Débit) ---
+    ligne3 = Map();
+    ligne3.put("account_id", "5097330000009504002");
+    ligne3.put("amount", ((rqap_employeur_periode * 100).toLong()) / 100);
+    ligne3.put("debit_or_credit", "debit");
+    ligne3.put("description", "Cotisation patronale RQAP");
+    journal_lines.add(ligne3);
+
+    // --- Ligne 4 : Cotisations patronales AE (Débit) ---
+    ligne4 = Map();
+    ligne4.put("account_id", "5097330000009505002");
+    ligne4.put("amount", ((ae_employeur_periode * 100).toLong()) / 100);
+    ligne4.put("debit_or_credit", "debit");
+    ligne4.put("description", "Cotisation patronale AE");
+    journal_lines.add(ligne4);
+
+    // --- Ligne 5 : Cotisations patronales FSS (Débit) ---
+    ligne5 = Map();
+    ligne5.put("account_id", "5097330000009482003");
+    ligne5.put("amount", ((fss_employeur_periode * 100).toLong()) / 100);
+    ligne5.put("debit_or_credit", "debit");
+    ligne5.put("description", "Cotisation patronale FSS");
+    journal_lines.add(ligne5);
+
+    // --- Ligne 6 : Cotisations patronales CNESST (Débit) ---
+    ligne6 = Map();
+    ligne6.put("account_id", "5097330000009506002");
+    ligne6.put("amount", ((cnesst_employeur_periode * 100).toLong()) / 100);
+    ligne6.put("debit_or_credit", "debit");
+    ligne6.put("description", "Cotisation patronale CNESST");
+    journal_lines.add(ligne6);
+
+    // --- Ligne 7 : Cotisations patronales CNT (Débit) ---
+    ligne7 = Map();
+    ligne7.put("account_id", "5097330000009507002");
+    ligne7.put("amount", ((cnt_employeur_periode * 100).toLong()) / 100);
+    ligne7.put("debit_or_credit", "debit");
+    ligne7.put("description", "Cotisation patronale CNT");
+    journal_lines.add(ligne7);
+
+    // --- Ligne 8 : DAS fédéral à payer (Crédit) ---
+    if (((das_federal_periode * 100).toLong()) > 0)
+    {
+        ligne8 = Map();
+        ligne8.put("account_id", "5097330000009496002");
+        ligne8.put("amount", ((das_federal_periode * 100).toLong()) / 100);
+        ligne8.put("debit_or_credit", "credit");
+        ligne8.put("description", "Retenue DAS federal");
+        journal_lines.add(ligne8);
+    }
+
+    // --- Ligne 9 : DAS provincial à payer (Crédit) ---
+    if (((das_provincial_periode * 100).toLong()) > 0)
+    {
+        ligne9 = Map();
+        ligne9.put("account_id", "5097330000009497002");
+        ligne9.put("amount", ((das_provincial_periode * 100).toLong()) / 100);
+        ligne9.put("debit_or_credit", "credit");
+        ligne9.put("description", "Retenue DAS provincial");
+        journal_lines.add(ligne9);
+    }
+
+    // --- Ligne 10 : Cotisations employé RRQ à payer (Crédit) ---
+    ligne10 = Map();
+    ligne10.put("account_id", "5097330000009498002");
+    ligne10.put("amount", ((rrq_employe_periode * 100).toLong()) / 100);
+    ligne10.put("debit_or_credit", "credit");
+    ligne10.put("description", "Cotisation employe RRQ");
+    journal_lines.add(ligne10);
+
+    // --- Ligne 11 : Cotisations employé RQAP à payer (Crédit) ---
+    ligne11 = Map();
+    ligne11.put("account_id", "5097330000009499002");
+    ligne11.put("amount", ((rqap_employe_periode * 100).toLong()) / 100);
+    ligne11.put("debit_or_credit", "credit");
+    ligne11.put("description", "Cotisation employe RQAP");
+    journal_lines.add(ligne11);
+
+    // --- Ligne 12 : Cotisations employé AE à payer (Crédit) ---
+    ligne12 = Map();
+    ligne12.put("account_id", "5097330000009500002");
+    ligne12.put("amount", ((ae_employe_periode * 100).toLong()) / 100);
+    ligne12.put("debit_or_credit", "credit");
+    ligne12.put("description", "Cotisation employe AE");
+    journal_lines.add(ligne12);
+
+    // --- Ligne 13 : Cotisations patronales RRQ à payer (Crédit) ---
+    ligne13 = Map();
+    ligne13.put("account_id", "5097330000009524002");
+    ligne13.put("amount", ((rrq_employeur_periode * 100).toLong()) / 100);
+    ligne13.put("debit_or_credit", "credit");
+    ligne13.put("description", "Cotisation patronale RRQ a payer");
+    journal_lines.add(ligne13);
+
+    // --- Ligne 14 : Cotisations patronales RQAP à payer (Crédit) ---
+    ligne14 = Map();
+    ligne14.put("account_id", "5097330000009497009");
+    ligne14.put("amount", ((rqap_employeur_periode * 100).toLong()) / 100);
+    ligne14.put("debit_or_credit", "credit");
+    ligne14.put("description", "Cotisation patronale RQAP a payer");
+    journal_lines.add(ligne14);
+
+    // --- Ligne 15 : Cotisations patronales AE à payer (Crédit) ---
+    ligne15 = Map();
+    ligne15.put("account_id", "5097330000009484006");
+    ligne15.put("amount", ((ae_employeur_periode * 100).toLong()) / 100);
+    ligne15.put("debit_or_credit", "credit");
+    ligne15.put("description", "Cotisation patronale AE a payer");
+    journal_lines.add(ligne15);
+
+    // --- Ligne 16 : Cotisations patronales FSS à payer (Crédit) ---
+    ligne16 = Map();
+    ligne16.put("account_id", "5097330000009524006");
+    ligne16.put("amount", ((fss_employeur_periode * 100).toLong()) / 100);
+    ligne16.put("debit_or_credit", "credit");
+    ligne16.put("description", "Cotisation patronale FSS a payer");
+    journal_lines.add(ligne16);
+
+    // --- Ligne 17 : Cotisations patronales CNESST à payer (Crédit) ---
+    ligne17 = Map();
+    ligne17.put("account_id", "5097330000009501002");
+    ligne17.put("amount", ((cnesst_employeur_periode * 100).toLong()) / 100);
+    ligne17.put("debit_or_credit", "credit");
+    ligne17.put("description", "Cotisation patronale CNESST a payer");
+    journal_lines.add(ligne17);
+
+    // --- Ligne 18 : Cotisations patronales CNT à payer (Crédit) ---
+    ligne18 = Map();
+    ligne18.put("account_id", "5097330000009502002");
+    ligne18.put("amount", ((cnt_employeur_periode * 100).toLong()) / 100);
+    ligne18.put("debit_or_credit", "credit");
+    ligne18.put("description", "Cotisation patronale CNT a payer");
+    journal_lines.add(ligne18);
+
+    // --- Ligne 19 : Salaires à payer (Crédit — montant équilibrant) ---
+    // Le net = total_debits - somme_des_autres_credits (pour forcer l'équilibre)
+    net_reel = net_periode * facteur_premiere_paie;
+    autres_credits = ((rrq_employe_periode * 100).toLong()) / 100
+                   + ((rqap_employe_periode * 100).toLong()) / 100
+                   + ((ae_employe_periode * 100).toLong()) / 100
+                   + ((rrq_employeur_periode * 100).toLong()) / 100
+                   + ((rqap_employeur_periode * 100).toLong()) / 100
+                   + ((ae_employeur_periode * 100).toLong()) / 100
+                   + ((fss_employeur_periode * 100).toLong()) / 100
+                   + ((cnesst_employeur_periode * 100).toLong()) / 100
+                   + ((cnt_employeur_periode * 100).toLong()) / 100;
+    // DAS crédits (si > 0)
+    das_credit_total = 0;
+    if (((das_federal_periode * 100).toLong()) > 0)
+    {
+        das_credit_total = das_credit_total + ((das_federal_periode * 100).toLong()) / 100;
+    }
+    if (((das_provincial_periode * 100).toLong()) > 0)
+    {
+        das_credit_total = das_credit_total + ((das_provincial_periode * 100).toLong()) / 100;
+    }
+    autres_credits = autres_credits + das_credit_total;
+    // Total débits arrondis
+    total_debits_calc = ((salaire_brut_reel * 100).toLong()) / 100
+                      + ((rrq_employeur_periode * 100).toLong()) / 100
+                      + ((rqap_employeur_periode * 100).toLong()) / 100
+                      + ((ae_employeur_periode * 100).toLong()) / 100
+                      + ((fss_employeur_periode * 100).toLong()) / 100
+                      + ((cnesst_employeur_periode * 100).toLong()) / 100
+                      + ((cnt_employeur_periode * 100).toLong()) / 100;
+    ligne19_solde = total_debits_calc - autres_credits;
+    ligne19 = Map();
+    ligne19.put("account_id", "5097330000009502012");
+    ligne19.put("amount", ligne19_solde);
+    ligne19.put("debit_or_credit", "credit");
+    ligne19.put("description", "Salaires a payer - net");
+    journal_lines.add(ligne19);
+
+    // ==========================================
+    // 9. ENVOI À ZOHO BOOKS API
+    // ==========================================
+    journal_entry = Map();
+    journal_entry.put("journal_date", date_paie_str);
+    journal_entry.put("notes", "Ecriture de paie bimensuelle - " + date_paie_str);
+    journal_entry.put("journal_type", "both");
+    journal_entry.put("line_items", journal_lines);
+
+    // Appel API Zoho Books
+    response = invokeurl
+    [
+        url: "https://www.zohoapis.com/books/v3/journals?organization_id=" + org_id
+        type: POST
+        parameters: journal_entry.toString()
+        connection: "zoho_books"
+    ]
+    ;
+
+    info "------------------------------------------";
+    info "REPONSE API : " + response;
+    info "==========================================";
+
+    // Extraire le journal_entry_id de la réponse
+    journal_entry_id = "";
+    if (response != null)
+    {
+        resp_map = response.toMap();
+        if (resp_map.get("journal") != null)
+        {
+            journal_entry_id = resp_map.get("journal").get("journal_id").toString();
+        }
+    }
+    info "Journal Entry ID : " + journal_entry_id;
+
+    // ==========================================
+    // 11. ENREGISTREMENT DANS LE MODULE PAIE
+    // ==========================================
+    // Calcul des totaux
+    total_retenues_periode = rrq_employe_periode + rqap_employe_periode + ae_employe_periode + das_federal_periode + das_provincial_periode;
+    total_charges_periode = rrq_employeur_periode + rqap_employeur_periode + ae_employeur_periode + fss_employeur_periode + cnesst_employeur_periode + cnt_employeur_periode;
+
+    // Construire l'enregistrement du module Paie
+    paie_record = Map();
+    paie_record.put("cf_num_ro_paie", numero_paie);
+    paie_record.put("cf_date_de_paie", date_paie_str);
+    paie_record.put("cf_periode_debut", periode_debut);
+    paie_record.put("cf_periode_fin", periode_fin);
+    paie_record.put("cf_jours_travailles", jours_effectifs);
+    paie_record.put("cf_nom_employe", "Marie-Therese Moreau");
+    paie_record.put("cf_salaire_brut", salaire_brut_reel);
+    paie_record.put("cf_salaire_annuel", salaire_annuel_brut);
+    paie_record.put("cf_rrq_employe", rrq_employe_periode * facteur_premiere_paie);
+    paie_record.put("cf_rqap_employe", rqap_employe_periode * facteur_premiere_paie);
+    paie_record.put("cf_ae_employe", ae_employe_periode * facteur_premiere_paie);
+    paie_record.put("cf_das_federal", das_federal_periode * facteur_premiere_paie);
+    paie_record.put("cf_das_provincial", das_provincial_periode * facteur_premiere_paie);
+    paie_record.put("cf_total_retenues", total_retenues_periode * facteur_premiere_paie);
+    paie_record.put("cf_rrq_employeur", rrq_employeur_periode * facteur_premiere_paie);
+    paie_record.put("cf_rqap_employeur", rqap_employeur_periode * facteur_premiere_paie);
+    paie_record.put("cf_ae_employeur", ae_employeur_periode * facteur_premiere_paie);
+    paie_record.put("cf_fss_employeur", fss_employeur_periode * facteur_premiere_paie);
+    paie_record.put("cf_cnesst", cnesst_employeur_periode * facteur_premiere_paie);
+    paie_record.put("cf_cnt", cnt_employeur_periode * facteur_premiere_paie);
+    paie_record.put("cf_total_charges", total_charges_periode * facteur_premiere_paie);
+    paie_record.put("cf_net_a_payer", net_reel);
+    paie_record.put("cf_journal_entry_id", journal_entry_id);
+    paie_record.put("cf_statut", "Valide");
+    paie_record.put("cf_notes", "Paie bimensuelle - " + date_paie_str);
+
+    // Appel API pour créer l'enregistrement dans le module Paie
+    info "------------------------------------------";
+    info "CRÉATION ENREGISTREMENT MODULE PAIE";
+    info "------------------------------------------";
+
+    paie_response = invokeurl
+    [
+        url: "https://www.zohoapis.com/books/v3/cm_paie?organization_id=" + org_id
+        type: POST
+        parameters: paie_record.toString()
+        connection: "zoho_books"
+    ]
+    ;
+
+    info "REPONSE MODULE PAIE : " + paie_response;
+    info "==========================================";
+
+    // ==========================================
+    // 12. VÉRIFICATION DE L'ÉQUILIBRE
+    // ==========================================
+    total_debit = 0;
+    total_credit = 0;
+    for each line in journal_lines
+    {
+        if (line.get("debit_or_credit") == "debit")
+        {
+            total_debit = total_debit + line.get("amount");
+        }
+        else
+        {
+            total_credit = total_credit + line.get("amount");
+        }
+    }
+
+    info "VÉRIFICATION ÉQUILIBRE :";
+    info "  Total débits  : " + total_debit + " $";
+    info "  Total crédits : " + total_credit + " $";
+
+    if (total_debit < 0.01)
+    {
+        info "  L'ecriture est equilibree !";
+    }
+    else if ((total_debit - total_credit) < 0.01)
+    {
+        info "  L'ecriture est equilibree !";
+    }
+    else
+    {
+        info "  ALERTE : L'ecriture n'est PAS equilibree !";
+        info "  Ecart : " + (total_debit - total_credit) + " $";
+    }
+
+    info "==========================================";
+    info "   FIN DU TRAITEMENT";
+    info "==========================================";

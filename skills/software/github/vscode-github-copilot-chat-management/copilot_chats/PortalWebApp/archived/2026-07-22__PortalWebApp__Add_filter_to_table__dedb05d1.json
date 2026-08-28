@@ -1,0 +1,2223 @@
+{
+  "version": 3,
+  "creationDate": 1784745240067,
+  "initialLocation": "panel",
+  "responderUsername": "GitHub Copilot",
+  "sessionId": "dedb05d1-52a3-41be-97cc-ca6b59146d53",
+  "hasPendingEdits": false,
+  "requests": [
+    {
+      "requestId": "request_993e6fdc-8fcc-4983-a5ce-d1b29adf2311",
+      "timestamp": 1784745241855,
+      "agent": {
+        "extensionId": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "extensionVersion": "0.57.0",
+        "publisherDisplayName": "GitHub",
+        "extensionPublisherId": "GitHub",
+        "extensionDisplayName": "GitHub Copilot",
+        "id": "github.copilot.editsAgent",
+        "description": "Edit files in your workspace in agent mode",
+        "when": "config.chat.agent.enabled",
+        "metadata": {
+          "themeIcon": {
+            "id": "tools"
+          },
+          "hasFollowups": false,
+          "supportIssueReporting": false
+        },
+        "name": "agent",
+        "fullName": "GitHub Copilot",
+        "isDefault": true,
+        "locations": [
+          "panel"
+        ],
+        "modes": [
+          "agent"
+        ],
+        "slashCommands": [
+          {
+            "name": "compact",
+            "description": "Free up context by compacting the conversation history. Optionally include extra instructions for compaction."
+          },
+          {
+            "name": "explain",
+            "description": "Explain how the code in your active editor works"
+          },
+          {
+            "name": "tests",
+            "description": "Generate unit tests for the selected code",
+            "disambiguation": [
+              {
+                "category": "create_tests",
+                "description": "The user wants to generate unit tests.",
+                "examples": [
+                  "Generate tests for my selection using pytest."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "fix",
+            "description": "Propose a fix for the problems in the selected code",
+            "sampleRequest": "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+          },
+          {
+            "name": "new",
+            "description": "Scaffold code for a new file or project in a workspace",
+            "sampleRequest": "Create a RESTful API server using typescript",
+            "isSticky": true,
+            "disambiguation": [
+              {
+                "category": "create_new_workspace_or_extension",
+                "description": "The user wants to create a complete Visual Studio Code workspace from scratch, such as a new application or a Visual Studio Code extension. Use this category only if the question relates to generating or creating new workspaces in Visual Studio Code. Do not use this category for updating existing code or generating sample code snippets",
+                "examples": [
+                  "Scaffold a Node server.",
+                  "Create a sample project which uses the fileSystemProvider API.",
+                  "react application"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "newNotebook",
+            "description": "Create a new Jupyter Notebook",
+            "sampleRequest": "How do I create a notebook to load data from a csv file?",
+            "disambiguation": [
+              {
+                "category": "create_jupyter_notebook",
+                "description": "The user wants to create a new Jupyter notebook in Visual Studio Code.",
+                "examples": [
+                  "Create a notebook to analyze this CSV file."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "setupTests",
+            "description": "Set up tests in your project (Experimental)",
+            "sampleRequest": "add playwright tests to my project",
+            "when": "config.github.copilot.chat.setupTests.enabled",
+            "disambiguation": [
+              {
+                "category": "set_up_tests",
+                "description": "The user wants to configure project test setup, framework, or test runner. The user does not want to fix their existing tests.",
+                "examples": [
+                  "Set up tests for this project."
+                ]
+              }
+            ]
+          }
+        ],
+        "disambiguation": []
+      },
+      "modelId": "customendpoint/MiMo/mimo-v2.5",
+      "responseId": "response_57d80dcc-dddf-4426-996c-a1a3424e1f7a",
+      "modelState": {
+        "value": 0
+      },
+      "contentReferences": [
+        {
+          "kind": "reference",
+          "reference": {
+            "$mid": 1,
+            "fsPath": "c:\\Projects\\PortalWebApp\\.github\\copilot-instructions.md",
+            "_sep": 1,
+            "external": "file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "path": "/c:/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "scheme": "file"
+          }
+        }
+      ],
+      "codeCitations": [],
+      "timeSpentWaiting": 1784745241855,
+      "modeInfo": {
+        "kind": "agent",
+        "isBuiltin": true,
+        "telemetryModeId": "agent",
+        "telemetryModeName": "agent",
+        "permissionLevel": "default"
+      },
+      "response": [],
+      "message": {
+        "text": "J'aimrais que tu regared ici <div class=\"border-b border-border px-3 md:px-4 py-2\"><div class=\"min-h-10 flex items-center justify-between gap-3\"><div class=\"flex items-center gap-3 flex-1\"><div class=\"relative \"><button class=\"inline-flex items-center justify-center gap-2 font-medium cursor-pointer relative border transition-all duration-200 rounded-sm font-normal h-8 px-3 text-sm bg-text-main/4 text-text-main/75 border-text-main/6 hover:bg-text-main/6 hover:border-text-main/10 \" type=\"button\"><svg viewBox=\"0 0 15 15\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" class=\"w-3.5 h-3.5 flex-shrink-0\"><path d=\"M14.5 14.5L9.83333 9.83333M11.3889 5.94444C11.3889 6.65942 11.2481 7.36739 10.9745 8.02794C10.7008 8.68849 10.2998 9.28868 9.79425 9.79425C9.28868 10.2998 8.68849 10.7008 8.02794 10.9745C7.36739 11.2481 6.65942 11.3889 5.94444 11.3889C5.22947 11.3889 4.5215 11.2481 3.86095 10.9745C3.2004 10.7008 2.6002 10.2998 2.09464 9.79425C1.58908 9.28868 1.18804 8.68849 0.914434 8.02794C0.640825 7.36739 0.5 6.65942 0.5 5.94444C0.5 4.50049 1.07361 3.11567 2.09464 2.09464C3.11567 1.07361 4.50049 0.5 5.94444 0.5C7.3884 0.5 8.77322 1.07361 9.79425 2.09464C10.8153 3.11567 11.3889 4.50049 11.3889 5.94444Z\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg><span class=\"flex-1 hidden md:block\">Rechercher</span></button></div><div class=\"relative \"><button class=\"inline-flex items-center justify-center gap-2 font-medium cursor-pointer relative border transition-all duration-200 rounded-sm font-normal h-8 px-3 text-sm bg-text-main/4 text-text-main/75 border-text-main/6 hover:bg-text-main/6 hover:border-text-main/10 \" type=\"button\"><span class=\"flex-shrink-0\"><svg viewBox=\"0 0 15 15\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" class=\"w-3.5 h-3.5\"><path d=\"M12.3145 0.00976562C13.2986 0.109804 14.0664 0.941607 14.0664 1.95215V12.1152C14.0661 13.1928 13.1928 14.0661 12.1152 14.0664H1.95215C0.941607 14.0664 0.109804 13.2986 0.00976562 12.3145L0 12.1152V1.95215C0 0.87417 0.87417 0 1.95215 0H12.1152L12.3145 0.00976562ZM1 9.71094V12.1152L1.00488 12.2119C1.05359 12.6919 1.45928 13.0664 1.95215 13.0664H6.5332V9.71094H1ZM7.5332 9.71094V13.0664H12.1152C12.6405 13.0661 13.0661 12.6405 13.0664 12.1152V9.71094H7.5332ZM1 8.71094H6.5332V5.35547H1V8.71094ZM7.5332 8.71094H13.0664V5.35547H7.5332V8.71094ZM1.95215 1C1.42646 1 1 1.42646 1 1.95215V4.35547H6.5332V1H1.95215ZM7.5332 4.35547H13.0664V1.95215C13.0664 1.45928 12.6919 1.05359 12.2119 1.00488L12.1152 1H7.5332V4.35547Z\" fill=\"currentColor\"></path></svg></span><span>Table</span><svg class=\"w-3.5 h-3.5 transition-transform flex-shrink-0 \" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M19 9l-7 7-7-7\"></path></svg></button></div><div class=\"relative\"><button class=\"inline-flex items-center justify-center gap-2 font-medium cursor-pointer relative border transition-all duration-200 rounded-sm font-normal h-8 px-3 text-sm bg-text-main/4 text-text-main/75 border-text-main/6 hover:bg-text-main/6 hover:border-text-main/10 \" type=\"button\"><span>Filtres</span><svg class=\"w-3.5 h-3.5 transition-transform flex-shrink-0 \" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M19 9l-7 7-7-7\"></path></svg></button></div></div><div class=\"flex items-center gap-4\"><div class=\"text-xs text-muted\"><span class=\"font-semibold text-text-main\">100</span> / <span class=\"font-semibold text-text-main\">332</span> résultats</div></div></div></div> dans la page http://localhost:5173/inspections\r\n\r\n\r\nje ne veux r'ajouter une filtre dis moi comemtn l'ajoutre poiur lui svp anlayse et dis moi ? ",
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 3727
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 4,
+              "endColumn": 94
+            },
+            "text": "J'aimrais que tu regared ici <div class=\"border-b border-border px-3 md:px-4 py-2\"><div class=\"min-h-10 flex items-center justify-between gap-3\"><div class=\"flex items-center gap-3 flex-1\"><div class=\"relative \"><button class=\"inline-flex items-center justify-center gap-2 font-medium cursor-pointer relative border transition-all duration-200 rounded-sm font-normal h-8 px-3 text-sm bg-text-main/4 text-text-main/75 border-text-main/6 hover:bg-text-main/6 hover:border-text-main/10 \" type=\"button\"><svg viewBox=\"0 0 15 15\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" class=\"w-3.5 h-3.5 flex-shrink-0\"><path d=\"M14.5 14.5L9.83333 9.83333M11.3889 5.94444C11.3889 6.65942 11.2481 7.36739 10.9745 8.02794C10.7008 8.68849 10.2998 9.28868 9.79425 9.79425C9.28868 10.2998 8.68849 10.7008 8.02794 10.9745C7.36739 11.2481 6.65942 11.3889 5.94444 11.3889C5.22947 11.3889 4.5215 11.2481 3.86095 10.9745C3.2004 10.7008 2.6002 10.2998 2.09464 9.79425C1.58908 9.28868 1.18804 8.68849 0.914434 8.02794C0.640825 7.36739 0.5 6.65942 0.5 5.94444C0.5 4.50049 1.07361 3.11567 2.09464 2.09464C3.11567 1.07361 4.50049 0.5 5.94444 0.5C7.3884 0.5 8.77322 1.07361 9.79425 2.09464C10.8153 3.11567 11.3889 4.50049 11.3889 5.94444Z\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg><span class=\"flex-1 hidden md:block\">Rechercher</span></button></div><div class=\"relative \"><button class=\"inline-flex items-center justify-center gap-2 font-medium cursor-pointer relative border transition-all duration-200 rounded-sm font-normal h-8 px-3 text-sm bg-text-main/4 text-text-main/75 border-text-main/6 hover:bg-text-main/6 hover:border-text-main/10 \" type=\"button\"><span class=\"flex-shrink-0\"><svg viewBox=\"0 0 15 15\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" class=\"w-3.5 h-3.5\"><path d=\"M12.3145 0.00976562C13.2986 0.109804 14.0664 0.941607 14.0664 1.95215V12.1152C14.0661 13.1928 13.1928 14.0661 12.1152 14.0664H1.95215C0.941607 14.0664 0.109804 13.2986 0.00976562 12.3145L0 12.1152V1.95215C0 0.87417 0.87417 0 1.95215 0H12.1152L12.3145 0.00976562ZM1 9.71094V12.1152L1.00488 12.2119C1.05359 12.6919 1.45928 13.0664 1.95215 13.0664H6.5332V9.71094H1ZM7.5332 9.71094V13.0664H12.1152C12.6405 13.0661 13.0661 12.6405 13.0664 12.1152V9.71094H7.5332ZM1 8.71094H6.5332V5.35547H1V8.71094ZM7.5332 8.71094H13.0664V5.35547H7.5332V8.71094ZM1.95215 1C1.42646 1 1 1.42646 1 1.95215V4.35547H6.5332V1H1.95215ZM7.5332 4.35547H13.0664V1.95215C13.0664 1.45928 12.6919 1.05359 12.2119 1.00488L12.1152 1H7.5332V4.35547Z\" fill=\"currentColor\"></path></svg></span><span>Table</span><svg class=\"w-3.5 h-3.5 transition-transform flex-shrink-0 \" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M19 9l-7 7-7-7\"></path></svg></button></div><div class=\"relative\"><button class=\"inline-flex items-center justify-center gap-2 font-medium cursor-pointer relative border transition-all duration-200 rounded-sm font-normal h-8 px-3 text-sm bg-text-main/4 text-text-main/75 border-text-main/6 hover:bg-text-main/6 hover:border-text-main/10 \" type=\"button\"><span>Filtres</span><svg class=\"w-3.5 h-3.5 transition-transform flex-shrink-0 \" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M19 9l-7 7-7-7\"></path></svg></button></div></div><div class=\"flex items-center gap-4\"><div class=\"text-xs text-muted\"><span class=\"font-semibold text-text-main\">100</span> / <span class=\"font-semibold text-text-main\">332</span> résultats</div></div></div></div> dans la page http://localhost:5173/inspections\r\n\r\n\r\nje ne veux r'ajouter une filtre dis moi comemtn l'ajoutre poiur lui svp anlayse et dis moi ? ",
+            "kind": "text"
+          }
+        ]
+      },
+      "variableData": {
+        "variables": [
+          {
+            "value": "Repository name: PortalWebApp\nOwner: LRG-Media\nCurrent branch: main\nDefault branch: main",
+            "name": "LRG-Media/PortalWebApp",
+            "modelDescription": "Information about the current repository. You can use this information when you need to calculate diffs or compare changes with the default branch",
+            "id": "LRG-Media/PortalWebApp",
+            "kind": "workspace"
+          },
+          {
+            "id": "vscode.instructions.file.root__file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "name": "prompt:copilot-instructions.md",
+            "value": {
+              "$mid": 1,
+              "external": "file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+              "path": "/c:/Projects/PortalWebApp/.github/copilot-instructions.md",
+              "scheme": "file"
+            },
+            "kind": "promptFile",
+            "modelDescription": "Prompt instructions file",
+            "isRoot": true,
+            "automaticallyAdded": true
+          }
+        ]
+      }
+    },
+    {
+      "requestId": "request_04e3ff60-bee0-4ac8-bada-fef79b87cc6b",
+      "timestamp": 1784745521665,
+      "agent": {
+        "extensionId": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "extensionVersion": "0.57.0",
+        "publisherDisplayName": "GitHub",
+        "extensionPublisherId": "GitHub",
+        "extensionDisplayName": "GitHub Copilot",
+        "id": "github.copilot.editsAgent",
+        "description": "Edit files in your workspace in agent mode",
+        "when": "config.chat.agent.enabled",
+        "metadata": {
+          "themeIcon": {
+            "id": "tools"
+          },
+          "hasFollowups": false,
+          "supportIssueReporting": false
+        },
+        "name": "agent",
+        "fullName": "GitHub Copilot",
+        "isDefault": true,
+        "locations": [
+          "panel"
+        ],
+        "modes": [
+          "agent"
+        ],
+        "slashCommands": [
+          {
+            "name": "compact",
+            "description": "Free up context by compacting the conversation history. Optionally include extra instructions for compaction."
+          },
+          {
+            "name": "explain",
+            "description": "Explain how the code in your active editor works"
+          },
+          {
+            "name": "tests",
+            "description": "Generate unit tests for the selected code",
+            "disambiguation": [
+              {
+                "category": "create_tests",
+                "description": "The user wants to generate unit tests.",
+                "examples": [
+                  "Generate tests for my selection using pytest."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "fix",
+            "description": "Propose a fix for the problems in the selected code",
+            "sampleRequest": "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+          },
+          {
+            "name": "new",
+            "description": "Scaffold code for a new file or project in a workspace",
+            "sampleRequest": "Create a RESTful API server using typescript",
+            "isSticky": true,
+            "disambiguation": [
+              {
+                "category": "create_new_workspace_or_extension",
+                "description": "The user wants to create a complete Visual Studio Code workspace from scratch, such as a new application or a Visual Studio Code extension. Use this category only if the question relates to generating or creating new workspaces in Visual Studio Code. Do not use this category for updating existing code or generating sample code snippets",
+                "examples": [
+                  "Scaffold a Node server.",
+                  "Create a sample project which uses the fileSystemProvider API.",
+                  "react application"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "newNotebook",
+            "description": "Create a new Jupyter Notebook",
+            "sampleRequest": "How do I create a notebook to load data from a csv file?",
+            "disambiguation": [
+              {
+                "category": "create_jupyter_notebook",
+                "description": "The user wants to create a new Jupyter notebook in Visual Studio Code.",
+                "examples": [
+                  "Create a notebook to analyze this CSV file."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "setupTests",
+            "description": "Set up tests in your project (Experimental)",
+            "sampleRequest": "add playwright tests to my project",
+            "when": "config.github.copilot.chat.setupTests.enabled",
+            "disambiguation": [
+              {
+                "category": "set_up_tests",
+                "description": "The user wants to configure project test setup, framework, or test runner. The user does not want to fix their existing tests.",
+                "examples": [
+                  "Set up tests for this project."
+                ]
+              }
+            ]
+          }
+        ],
+        "disambiguation": []
+      },
+      "modelId": "customendpoint/MiMo/mimo-v2.5",
+      "responseId": "response_ee10a2ec-1168-4bdf-b181-1476e18d66c8",
+      "modelState": {
+        "value": 0
+      },
+      "contentReferences": [
+        {
+          "kind": "reference",
+          "reference": {
+            "$mid": 1,
+            "fsPath": "c:\\Projects\\PortalWebApp\\.github\\copilot-instructions.md",
+            "_sep": 1,
+            "external": "file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "path": "/c:/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "scheme": "file"
+          }
+        }
+      ],
+      "codeCitations": [],
+      "timeSpentWaiting": 1784745521665,
+      "modeInfo": {
+        "kind": "agent",
+        "isBuiltin": true,
+        "telemetryModeId": "agent",
+        "telemetryModeName": "agent",
+        "permissionLevel": "default"
+      },
+      "response": [],
+      "message": {
+        "text": "J'aimerais avoir un nouveau nouveau filtre par inspector tu comepdns regarde dnas inspectiondeail.jsx comemtn il focntionne avec ceci dan details page et tout avec le dropdpwne et les options je veux ajoutre ce filetre svp tu coemdns analyse etd is moi ? ",
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 255
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 256
+            },
+            "text": "J'aimerais avoir un nouveau nouveau filtre par inspector tu comepdns regarde dnas inspectiondeail.jsx comemtn il focntionne avec ceci dan details page et tout avec le dropdpwne et les options je veux ajoutre ce filetre svp tu coemdns analyse etd is moi ? ",
+            "kind": "text"
+          }
+        ]
+      },
+      "variableData": {
+        "variables": [
+          {
+            "value": "Repository name: PortalWebApp\nOwner: LRG-Media\nCurrent branch: main\nDefault branch: main",
+            "name": "LRG-Media/PortalWebApp",
+            "modelDescription": "Information about the current repository. You can use this information when you need to calculate diffs or compare changes with the default branch",
+            "id": "LRG-Media/PortalWebApp",
+            "kind": "workspace"
+          },
+          {
+            "id": "vscode.instructions.file.root__file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "name": "prompt:copilot-instructions.md",
+            "value": {
+              "$mid": 1,
+              "external": "file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+              "path": "/c:/Projects/PortalWebApp/.github/copilot-instructions.md",
+              "scheme": "file"
+            },
+            "kind": "promptFile",
+            "modelDescription": "Prompt instructions file",
+            "isRoot": true,
+            "automaticallyAdded": true
+          }
+        ]
+      }
+    },
+    {
+      "requestId": "request_04e3ff60-bee0-4ac8-bada-fef79b87cc6b",
+      "timestamp": 1784745521665,
+      "agent": {
+        "extensionId": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "extensionVersion": "0.57.0",
+        "publisherDisplayName": "GitHub",
+        "extensionPublisherId": "GitHub",
+        "extensionDisplayName": "GitHub Copilot",
+        "id": "github.copilot.editsAgent",
+        "description": "Edit files in your workspace in agent mode",
+        "when": "config.chat.agent.enabled",
+        "metadata": {
+          "themeIcon": {
+            "id": "tools"
+          },
+          "hasFollowups": false,
+          "supportIssueReporting": false
+        },
+        "name": "agent",
+        "fullName": "GitHub Copilot",
+        "isDefault": true,
+        "locations": [
+          "panel"
+        ],
+        "modes": [
+          "agent"
+        ],
+        "slashCommands": [
+          {
+            "name": "compact",
+            "description": "Free up context by compacting the conversation history. Optionally include extra instructions for compaction."
+          },
+          {
+            "name": "explain",
+            "description": "Explain how the code in your active editor works"
+          },
+          {
+            "name": "tests",
+            "description": "Generate unit tests for the selected code",
+            "disambiguation": [
+              {
+                "category": "create_tests",
+                "description": "The user wants to generate unit tests.",
+                "examples": [
+                  "Generate tests for my selection using pytest."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "fix",
+            "description": "Propose a fix for the problems in the selected code",
+            "sampleRequest": "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+          },
+          {
+            "name": "new",
+            "description": "Scaffold code for a new file or project in a workspace",
+            "sampleRequest": "Create a RESTful API server using typescript",
+            "isSticky": true,
+            "disambiguation": [
+              {
+                "category": "create_new_workspace_or_extension",
+                "description": "The user wants to create a complete Visual Studio Code workspace from scratch, such as a new application or a Visual Studio Code extension. Use this category only if the question relates to generating or creating new workspaces in Visual Studio Code. Do not use this category for updating existing code or generating sample code snippets",
+                "examples": [
+                  "Scaffold a Node server.",
+                  "Create a sample project which uses the fileSystemProvider API.",
+                  "react application"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "newNotebook",
+            "description": "Create a new Jupyter Notebook",
+            "sampleRequest": "How do I create a notebook to load data from a csv file?",
+            "disambiguation": [
+              {
+                "category": "create_jupyter_notebook",
+                "description": "The user wants to create a new Jupyter notebook in Visual Studio Code.",
+                "examples": [
+                  "Create a notebook to analyze this CSV file."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "setupTests",
+            "description": "Set up tests in your project (Experimental)",
+            "sampleRequest": "add playwright tests to my project",
+            "when": "config.github.copilot.chat.setupTests.enabled",
+            "disambiguation": [
+              {
+                "category": "set_up_tests",
+                "description": "The user wants to configure project test setup, framework, or test runner. The user does not want to fix their existing tests.",
+                "examples": [
+                  "Set up tests for this project."
+                ]
+              }
+            ]
+          }
+        ],
+        "disambiguation": []
+      },
+      "modelId": "customendpoint/MiMo/mimo-v2.5",
+      "responseId": "response_ee10a2ec-1168-4bdf-b181-1476e18d66c8",
+      "modelState": {
+        "value": 0
+      },
+      "contentReferences": [
+        {
+          "kind": "reference",
+          "reference": {
+            "$mid": 1,
+            "fsPath": "c:\\Projects\\PortalWebApp\\.github\\copilot-instructions.md",
+            "_sep": 1,
+            "external": "file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "path": "/c:/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "scheme": "file"
+          }
+        }
+      ],
+      "codeCitations": [],
+      "timeSpentWaiting": 1784745521665,
+      "modeInfo": {
+        "kind": "agent",
+        "isBuiltin": true,
+        "telemetryModeId": "agent",
+        "telemetryModeName": "agent",
+        "permissionLevel": "default"
+      },
+      "response": [],
+      "message": {
+        "text": "J'aimerais avoir un nouveau nouveau filtre par inspector tu comepdns regarde dnas inspectiondeail.jsx comemtn il focntionne avec ceci dan details page et tout avec le dropdpwne et les options je veux ajoutre ce filetre svp tu coemdns analyse etd is moi ? ",
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 255
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 256
+            },
+            "text": "J'aimerais avoir un nouveau nouveau filtre par inspector tu comepdns regarde dnas inspectiondeail.jsx comemtn il focntionne avec ceci dan details page et tout avec le dropdpwne et les options je veux ajoutre ce filetre svp tu coemdns analyse etd is moi ? ",
+            "kind": "text"
+          }
+        ]
+      },
+      "variableData": {
+        "variables": [
+          {
+            "value": "Repository name: PortalWebApp\nOwner: LRG-Media\nCurrent branch: main\nDefault branch: main",
+            "name": "LRG-Media/PortalWebApp",
+            "modelDescription": "Information about the current repository. You can use this information when you need to calculate diffs or compare changes with the default branch",
+            "id": "LRG-Media/PortalWebApp",
+            "kind": "workspace"
+          },
+          {
+            "id": "vscode.instructions.file.root__file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "name": "prompt:copilot-instructions.md",
+            "value": {
+              "$mid": 1,
+              "external": "file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+              "path": "/c:/Projects/PortalWebApp/.github/copilot-instructions.md",
+              "scheme": "file"
+            },
+            "kind": "promptFile",
+            "modelDescription": "Prompt instructions file",
+            "isRoot": true,
+            "automaticallyAdded": true
+          }
+        ]
+      }
+    },
+    {
+      "requestId": "request_2e968cb2-a060-4538-a362-627a22249803",
+      "timestamp": 1784745738058,
+      "agent": {
+        "extensionId": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "extensionVersion": "0.57.0",
+        "publisherDisplayName": "GitHub",
+        "extensionPublisherId": "GitHub",
+        "extensionDisplayName": "GitHub Copilot",
+        "id": "github.copilot.editsAgent",
+        "description": "Edit files in your workspace in agent mode",
+        "when": "config.chat.agent.enabled",
+        "metadata": {
+          "themeIcon": {
+            "id": "tools"
+          },
+          "hasFollowups": false,
+          "supportIssueReporting": false
+        },
+        "name": "agent",
+        "fullName": "GitHub Copilot",
+        "isDefault": true,
+        "locations": [
+          "panel"
+        ],
+        "modes": [
+          "agent"
+        ],
+        "slashCommands": [
+          {
+            "name": "compact",
+            "description": "Free up context by compacting the conversation history. Optionally include extra instructions for compaction."
+          },
+          {
+            "name": "explain",
+            "description": "Explain how the code in your active editor works"
+          },
+          {
+            "name": "tests",
+            "description": "Generate unit tests for the selected code",
+            "disambiguation": [
+              {
+                "category": "create_tests",
+                "description": "The user wants to generate unit tests.",
+                "examples": [
+                  "Generate tests for my selection using pytest."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "fix",
+            "description": "Propose a fix for the problems in the selected code",
+            "sampleRequest": "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+          },
+          {
+            "name": "new",
+            "description": "Scaffold code for a new file or project in a workspace",
+            "sampleRequest": "Create a RESTful API server using typescript",
+            "isSticky": true,
+            "disambiguation": [
+              {
+                "category": "create_new_workspace_or_extension",
+                "description": "The user wants to create a complete Visual Studio Code workspace from scratch, such as a new application or a Visual Studio Code extension. Use this category only if the question relates to generating or creating new workspaces in Visual Studio Code. Do not use this category for updating existing code or generating sample code snippets",
+                "examples": [
+                  "Scaffold a Node server.",
+                  "Create a sample project which uses the fileSystemProvider API.",
+                  "react application"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "newNotebook",
+            "description": "Create a new Jupyter Notebook",
+            "sampleRequest": "How do I create a notebook to load data from a csv file?",
+            "disambiguation": [
+              {
+                "category": "create_jupyter_notebook",
+                "description": "The user wants to create a new Jupyter notebook in Visual Studio Code.",
+                "examples": [
+                  "Create a notebook to analyze this CSV file."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "setupTests",
+            "description": "Set up tests in your project (Experimental)",
+            "sampleRequest": "add playwright tests to my project",
+            "when": "config.github.copilot.chat.setupTests.enabled",
+            "disambiguation": [
+              {
+                "category": "set_up_tests",
+                "description": "The user wants to configure project test setup, framework, or test runner. The user does not want to fix their existing tests.",
+                "examples": [
+                  "Set up tests for this project."
+                ]
+              }
+            ]
+          }
+        ],
+        "disambiguation": []
+      },
+      "modelId": "customendpoint/MiMo/mimo-v2.5",
+      "responseId": "response_51602e10-203b-4353-b1b6-0b3894766e5a",
+      "modelState": {
+        "value": 0
+      },
+      "contentReferences": [
+        {
+          "kind": "reference",
+          "reference": {
+            "$mid": 1,
+            "fsPath": "c:\\Projects\\PortalWebApp\\.github\\copilot-instructions.md",
+            "_sep": 1,
+            "external": "file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "path": "/c:/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "scheme": "file"
+          }
+        }
+      ],
+      "codeCitations": [],
+      "timeSpentWaiting": 1784745738058,
+      "modeInfo": {
+        "kind": "agent",
+        "isBuiltin": true,
+        "telemetryModeId": "agent",
+        "telemetryModeName": "agent",
+        "permissionLevel": "default"
+      },
+      "editedFileEvents": [
+        {
+          "uri": {
+            "$mid": 1,
+            "fsPath": "c:\\Projects\\PortalWebApp\\client\\src\\features\\comuse\\inspections\\useInspections.js",
+            "_sep": 1,
+            "external": "file:///c%3A/Projects/PortalWebApp/client/src/features/comuse/inspections/useInspections.js",
+            "path": "/c:/Projects/PortalWebApp/client/src/features/comuse/inspections/useInspections.js",
+            "scheme": "file"
+          },
+          "eventKind": 1
+        },
+        {
+          "uri": {
+            "$mid": 1,
+            "fsPath": "c:\\Projects\\PortalWebApp\\client\\src\\shared\\components\\templates\\GenericFeaturePage\\GenericFeaturePage.jsx",
+            "_sep": 1,
+            "external": "file:///c%3A/Projects/PortalWebApp/client/src/shared/components/templates/GenericFeaturePage/GenericFeaturePage.jsx",
+            "path": "/c:/Projects/PortalWebApp/client/src/shared/components/templates/GenericFeaturePage/GenericFeaturePage.jsx",
+            "scheme": "file"
+          },
+          "eventKind": 1
+        }
+      ],
+      "response": [],
+      "message": {
+        "text": "ca doit etre le inspector id pur le filtrev svp ",
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 48
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 49
+            },
+            "text": "ca doit etre le inspector id pur le filtrev svp ",
+            "kind": "text"
+          }
+        ]
+      },
+      "variableData": {
+        "variables": [
+          {
+            "value": "Repository name: PortalWebApp\nOwner: LRG-Media\nCurrent branch: main\nDefault branch: main",
+            "name": "LRG-Media/PortalWebApp",
+            "modelDescription": "Information about the current repository. You can use this information when you need to calculate diffs or compare changes with the default branch",
+            "id": "LRG-Media/PortalWebApp",
+            "kind": "workspace"
+          },
+          {
+            "id": "vscode.instructions.file.root__file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "name": "prompt:copilot-instructions.md",
+            "value": {
+              "$mid": 1,
+              "external": "file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+              "path": "/c:/Projects/PortalWebApp/.github/copilot-instructions.md",
+              "scheme": "file"
+            },
+            "kind": "promptFile",
+            "modelDescription": "Prompt instructions file",
+            "isRoot": true,
+            "automaticallyAdded": true
+          }
+        ]
+      }
+    },
+    {
+      "requestId": "request_2e968cb2-a060-4538-a362-627a22249803",
+      "timestamp": 1784745738058,
+      "agent": {
+        "extensionId": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "extensionVersion": "0.57.0",
+        "publisherDisplayName": "GitHub",
+        "extensionPublisherId": "GitHub",
+        "extensionDisplayName": "GitHub Copilot",
+        "id": "github.copilot.editsAgent",
+        "description": "Edit files in your workspace in agent mode",
+        "when": "config.chat.agent.enabled",
+        "metadata": {
+          "themeIcon": {
+            "id": "tools"
+          },
+          "hasFollowups": false,
+          "supportIssueReporting": false
+        },
+        "name": "agent",
+        "fullName": "GitHub Copilot",
+        "isDefault": true,
+        "locations": [
+          "panel"
+        ],
+        "modes": [
+          "agent"
+        ],
+        "slashCommands": [
+          {
+            "name": "compact",
+            "description": "Free up context by compacting the conversation history. Optionally include extra instructions for compaction."
+          },
+          {
+            "name": "explain",
+            "description": "Explain how the code in your active editor works"
+          },
+          {
+            "name": "tests",
+            "description": "Generate unit tests for the selected code",
+            "disambiguation": [
+              {
+                "category": "create_tests",
+                "description": "The user wants to generate unit tests.",
+                "examples": [
+                  "Generate tests for my selection using pytest."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "fix",
+            "description": "Propose a fix for the problems in the selected code",
+            "sampleRequest": "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+          },
+          {
+            "name": "new",
+            "description": "Scaffold code for a new file or project in a workspace",
+            "sampleRequest": "Create a RESTful API server using typescript",
+            "isSticky": true,
+            "disambiguation": [
+              {
+                "category": "create_new_workspace_or_extension",
+                "description": "The user wants to create a complete Visual Studio Code workspace from scratch, such as a new application or a Visual Studio Code extension. Use this category only if the question relates to generating or creating new workspaces in Visual Studio Code. Do not use this category for updating existing code or generating sample code snippets",
+                "examples": [
+                  "Scaffold a Node server.",
+                  "Create a sample project which uses the fileSystemProvider API.",
+                  "react application"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "newNotebook",
+            "description": "Create a new Jupyter Notebook",
+            "sampleRequest": "How do I create a notebook to load data from a csv file?",
+            "disambiguation": [
+              {
+                "category": "create_jupyter_notebook",
+                "description": "The user wants to create a new Jupyter notebook in Visual Studio Code.",
+                "examples": [
+                  "Create a notebook to analyze this CSV file."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "setupTests",
+            "description": "Set up tests in your project (Experimental)",
+            "sampleRequest": "add playwright tests to my project",
+            "when": "config.github.copilot.chat.setupTests.enabled",
+            "disambiguation": [
+              {
+                "category": "set_up_tests",
+                "description": "The user wants to configure project test setup, framework, or test runner. The user does not want to fix their existing tests.",
+                "examples": [
+                  "Set up tests for this project."
+                ]
+              }
+            ]
+          }
+        ],
+        "disambiguation": []
+      },
+      "modelId": "customendpoint/MiMo/mimo-v2.5",
+      "responseId": "response_51602e10-203b-4353-b1b6-0b3894766e5a",
+      "modelState": {
+        "value": 0
+      },
+      "contentReferences": [
+        {
+          "kind": "reference",
+          "reference": {
+            "$mid": 1,
+            "fsPath": "c:\\Projects\\PortalWebApp\\.github\\copilot-instructions.md",
+            "_sep": 1,
+            "external": "file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "path": "/c:/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "scheme": "file"
+          }
+        }
+      ],
+      "codeCitations": [],
+      "timeSpentWaiting": 1784745738058,
+      "modeInfo": {
+        "kind": "agent",
+        "isBuiltin": true,
+        "telemetryModeId": "agent",
+        "telemetryModeName": "agent",
+        "permissionLevel": "default"
+      },
+      "editedFileEvents": [
+        {
+          "uri": {
+            "$mid": 1,
+            "fsPath": "c:\\Projects\\PortalWebApp\\client\\src\\features\\comuse\\inspections\\useInspections.js",
+            "_sep": 1,
+            "external": "file:///c%3A/Projects/PortalWebApp/client/src/features/comuse/inspections/useInspections.js",
+            "path": "/c:/Projects/PortalWebApp/client/src/features/comuse/inspections/useInspections.js",
+            "scheme": "file"
+          },
+          "eventKind": 1
+        },
+        {
+          "uri": {
+            "$mid": 1,
+            "fsPath": "c:\\Projects\\PortalWebApp\\client\\src\\shared\\components\\templates\\GenericFeaturePage\\GenericFeaturePage.jsx",
+            "_sep": 1,
+            "external": "file:///c%3A/Projects/PortalWebApp/client/src/shared/components/templates/GenericFeaturePage/GenericFeaturePage.jsx",
+            "path": "/c:/Projects/PortalWebApp/client/src/shared/components/templates/GenericFeaturePage/GenericFeaturePage.jsx",
+            "scheme": "file"
+          },
+          "eventKind": 1
+        }
+      ],
+      "response": [],
+      "message": {
+        "text": "ca doit etre le inspector id pur le filtrev svp ",
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 48
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 49
+            },
+            "text": "ca doit etre le inspector id pur le filtrev svp ",
+            "kind": "text"
+          }
+        ]
+      },
+      "variableData": {
+        "variables": [
+          {
+            "value": "Repository name: PortalWebApp\nOwner: LRG-Media\nCurrent branch: main\nDefault branch: main",
+            "name": "LRG-Media/PortalWebApp",
+            "modelDescription": "Information about the current repository. You can use this information when you need to calculate diffs or compare changes with the default branch",
+            "id": "LRG-Media/PortalWebApp",
+            "kind": "workspace"
+          },
+          {
+            "id": "vscode.instructions.file.root__file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "name": "prompt:copilot-instructions.md",
+            "value": {
+              "$mid": 1,
+              "external": "file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+              "path": "/c:/Projects/PortalWebApp/.github/copilot-instructions.md",
+              "scheme": "file"
+            },
+            "kind": "promptFile",
+            "modelDescription": "Prompt instructions file",
+            "isRoot": true,
+            "automaticallyAdded": true
+          }
+        ]
+      }
+    },
+    {
+      "requestId": "request_fdf22003-c993-4a2e-956e-a1b9b1d0cd24",
+      "timestamp": 1784745875459,
+      "agent": {
+        "extensionId": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "extensionVersion": "0.57.0",
+        "publisherDisplayName": "GitHub",
+        "extensionPublisherId": "GitHub",
+        "extensionDisplayName": "GitHub Copilot",
+        "id": "github.copilot.editsAgent",
+        "description": "Edit files in your workspace in agent mode",
+        "when": "config.chat.agent.enabled",
+        "metadata": {
+          "themeIcon": {
+            "id": "tools"
+          },
+          "hasFollowups": false,
+          "supportIssueReporting": false
+        },
+        "name": "agent",
+        "fullName": "GitHub Copilot",
+        "isDefault": true,
+        "locations": [
+          "panel"
+        ],
+        "modes": [
+          "agent"
+        ],
+        "slashCommands": [
+          {
+            "name": "compact",
+            "description": "Free up context by compacting the conversation history. Optionally include extra instructions for compaction."
+          },
+          {
+            "name": "explain",
+            "description": "Explain how the code in your active editor works"
+          },
+          {
+            "name": "tests",
+            "description": "Generate unit tests for the selected code",
+            "disambiguation": [
+              {
+                "category": "create_tests",
+                "description": "The user wants to generate unit tests.",
+                "examples": [
+                  "Generate tests for my selection using pytest."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "fix",
+            "description": "Propose a fix for the problems in the selected code",
+            "sampleRequest": "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+          },
+          {
+            "name": "new",
+            "description": "Scaffold code for a new file or project in a workspace",
+            "sampleRequest": "Create a RESTful API server using typescript",
+            "isSticky": true,
+            "disambiguation": [
+              {
+                "category": "create_new_workspace_or_extension",
+                "description": "The user wants to create a complete Visual Studio Code workspace from scratch, such as a new application or a Visual Studio Code extension. Use this category only if the question relates to generating or creating new workspaces in Visual Studio Code. Do not use this category for updating existing code or generating sample code snippets",
+                "examples": [
+                  "Scaffold a Node server.",
+                  "Create a sample project which uses the fileSystemProvider API.",
+                  "react application"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "newNotebook",
+            "description": "Create a new Jupyter Notebook",
+            "sampleRequest": "How do I create a notebook to load data from a csv file?",
+            "disambiguation": [
+              {
+                "category": "create_jupyter_notebook",
+                "description": "The user wants to create a new Jupyter notebook in Visual Studio Code.",
+                "examples": [
+                  "Create a notebook to analyze this CSV file."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "setupTests",
+            "description": "Set up tests in your project (Experimental)",
+            "sampleRequest": "add playwright tests to my project",
+            "when": "config.github.copilot.chat.setupTests.enabled",
+            "disambiguation": [
+              {
+                "category": "set_up_tests",
+                "description": "The user wants to configure project test setup, framework, or test runner. The user does not want to fix their existing tests.",
+                "examples": [
+                  "Set up tests for this project."
+                ]
+              }
+            ]
+          }
+        ],
+        "disambiguation": []
+      },
+      "modelId": "customendpoint/MiMo/mimo-v2.5",
+      "responseId": "response_c0871ed3-22b1-41c3-98f8-2d75ab62077e",
+      "modelState": {
+        "value": 0
+      },
+      "contentReferences": [
+        {
+          "kind": "reference",
+          "reference": {
+            "$mid": 1,
+            "fsPath": "c:\\Projects\\PortalWebApp\\.github\\copilot-instructions.md",
+            "_sep": 1,
+            "external": "file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "path": "/c:/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "scheme": "file"
+          }
+        }
+      ],
+      "codeCitations": [],
+      "timeSpentWaiting": 1784745875459,
+      "modeInfo": {
+        "kind": "agent",
+        "isBuiltin": true,
+        "telemetryModeId": "agent",
+        "telemetryModeName": "agent",
+        "permissionLevel": "default"
+      },
+      "editedFileEvents": [
+        {
+          "uri": {
+            "$mid": 1,
+            "fsPath": "c:\\Projects\\PortalWebApp\\client\\src\\features\\comuse\\inspections\\useInspections.js",
+            "_sep": 1,
+            "external": "file:///c%3A/Projects/PortalWebApp/client/src/features/comuse/inspections/useInspections.js",
+            "path": "/c:/Projects/PortalWebApp/client/src/features/comuse/inspections/useInspections.js",
+            "scheme": "file"
+          },
+          "eventKind": 1
+        }
+      ],
+      "response": [],
+      "message": {
+        "text": "le url sync doit etre inspector_id svp pas inspector= ",
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 54
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 55
+            },
+            "text": "le url sync doit etre inspector_id svp pas inspector= ",
+            "kind": "text"
+          }
+        ]
+      },
+      "variableData": {
+        "variables": [
+          {
+            "value": "Repository name: PortalWebApp\nOwner: LRG-Media\nCurrent branch: main\nDefault branch: main",
+            "name": "LRG-Media/PortalWebApp",
+            "modelDescription": "Information about the current repository. You can use this information when you need to calculate diffs or compare changes with the default branch",
+            "id": "LRG-Media/PortalWebApp",
+            "kind": "workspace"
+          },
+          {
+            "id": "vscode.instructions.file.root__file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "name": "prompt:copilot-instructions.md",
+            "value": {
+              "$mid": 1,
+              "external": "file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+              "path": "/c:/Projects/PortalWebApp/.github/copilot-instructions.md",
+              "scheme": "file"
+            },
+            "kind": "promptFile",
+            "modelDescription": "Prompt instructions file",
+            "isRoot": true,
+            "automaticallyAdded": true
+          }
+        ]
+      }
+    },
+    {
+      "requestId": "request_fdf22003-c993-4a2e-956e-a1b9b1d0cd24",
+      "timestamp": 1784745875459,
+      "agent": {
+        "extensionId": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "extensionVersion": "0.57.0",
+        "publisherDisplayName": "GitHub",
+        "extensionPublisherId": "GitHub",
+        "extensionDisplayName": "GitHub Copilot",
+        "id": "github.copilot.editsAgent",
+        "description": "Edit files in your workspace in agent mode",
+        "when": "config.chat.agent.enabled",
+        "metadata": {
+          "themeIcon": {
+            "id": "tools"
+          },
+          "hasFollowups": false,
+          "supportIssueReporting": false
+        },
+        "name": "agent",
+        "fullName": "GitHub Copilot",
+        "isDefault": true,
+        "locations": [
+          "panel"
+        ],
+        "modes": [
+          "agent"
+        ],
+        "slashCommands": [
+          {
+            "name": "compact",
+            "description": "Free up context by compacting the conversation history. Optionally include extra instructions for compaction."
+          },
+          {
+            "name": "explain",
+            "description": "Explain how the code in your active editor works"
+          },
+          {
+            "name": "tests",
+            "description": "Generate unit tests for the selected code",
+            "disambiguation": [
+              {
+                "category": "create_tests",
+                "description": "The user wants to generate unit tests.",
+                "examples": [
+                  "Generate tests for my selection using pytest."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "fix",
+            "description": "Propose a fix for the problems in the selected code",
+            "sampleRequest": "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+          },
+          {
+            "name": "new",
+            "description": "Scaffold code for a new file or project in a workspace",
+            "sampleRequest": "Create a RESTful API server using typescript",
+            "isSticky": true,
+            "disambiguation": [
+              {
+                "category": "create_new_workspace_or_extension",
+                "description": "The user wants to create a complete Visual Studio Code workspace from scratch, such as a new application or a Visual Studio Code extension. Use this category only if the question relates to generating or creating new workspaces in Visual Studio Code. Do not use this category for updating existing code or generating sample code snippets",
+                "examples": [
+                  "Scaffold a Node server.",
+                  "Create a sample project which uses the fileSystemProvider API.",
+                  "react application"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "newNotebook",
+            "description": "Create a new Jupyter Notebook",
+            "sampleRequest": "How do I create a notebook to load data from a csv file?",
+            "disambiguation": [
+              {
+                "category": "create_jupyter_notebook",
+                "description": "The user wants to create a new Jupyter notebook in Visual Studio Code.",
+                "examples": [
+                  "Create a notebook to analyze this CSV file."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "setupTests",
+            "description": "Set up tests in your project (Experimental)",
+            "sampleRequest": "add playwright tests to my project",
+            "when": "config.github.copilot.chat.setupTests.enabled",
+            "disambiguation": [
+              {
+                "category": "set_up_tests",
+                "description": "The user wants to configure project test setup, framework, or test runner. The user does not want to fix their existing tests.",
+                "examples": [
+                  "Set up tests for this project."
+                ]
+              }
+            ]
+          }
+        ],
+        "disambiguation": []
+      },
+      "modelId": "customendpoint/MiMo/mimo-v2.5",
+      "responseId": "response_c0871ed3-22b1-41c3-98f8-2d75ab62077e",
+      "modelState": {
+        "value": 0
+      },
+      "contentReferences": [
+        {
+          "kind": "reference",
+          "reference": {
+            "$mid": 1,
+            "fsPath": "c:\\Projects\\PortalWebApp\\.github\\copilot-instructions.md",
+            "_sep": 1,
+            "external": "file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "path": "/c:/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "scheme": "file"
+          }
+        }
+      ],
+      "codeCitations": [],
+      "timeSpentWaiting": 1784745875459,
+      "modeInfo": {
+        "kind": "agent",
+        "isBuiltin": true,
+        "telemetryModeId": "agent",
+        "telemetryModeName": "agent",
+        "permissionLevel": "default"
+      },
+      "editedFileEvents": [
+        {
+          "uri": {
+            "$mid": 1,
+            "fsPath": "c:\\Projects\\PortalWebApp\\client\\src\\features\\comuse\\inspections\\useInspections.js",
+            "_sep": 1,
+            "external": "file:///c%3A/Projects/PortalWebApp/client/src/features/comuse/inspections/useInspections.js",
+            "path": "/c:/Projects/PortalWebApp/client/src/features/comuse/inspections/useInspections.js",
+            "scheme": "file"
+          },
+          "eventKind": 1
+        }
+      ],
+      "response": [],
+      "message": {
+        "text": "le url sync doit etre inspector_id svp pas inspector= ",
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 54
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 55
+            },
+            "text": "le url sync doit etre inspector_id svp pas inspector= ",
+            "kind": "text"
+          }
+        ]
+      },
+      "variableData": {
+        "variables": [
+          {
+            "value": "Repository name: PortalWebApp\nOwner: LRG-Media\nCurrent branch: main\nDefault branch: main",
+            "name": "LRG-Media/PortalWebApp",
+            "modelDescription": "Information about the current repository. You can use this information when you need to calculate diffs or compare changes with the default branch",
+            "id": "LRG-Media/PortalWebApp",
+            "kind": "workspace"
+          },
+          {
+            "id": "vscode.instructions.file.root__file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "name": "prompt:copilot-instructions.md",
+            "value": {
+              "$mid": 1,
+              "external": "file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+              "path": "/c:/Projects/PortalWebApp/.github/copilot-instructions.md",
+              "scheme": "file"
+            },
+            "kind": "promptFile",
+            "modelDescription": "Prompt instructions file",
+            "isRoot": true,
+            "automaticallyAdded": true
+          }
+        ]
+      }
+    },
+    {
+      "requestId": "request_1f495885-8326-42d1-b9d2-e74195fa90fc",
+      "timestamp": 1784745923163,
+      "agent": {
+        "extensionId": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "extensionVersion": "0.57.0",
+        "publisherDisplayName": "GitHub",
+        "extensionPublisherId": "GitHub",
+        "extensionDisplayName": "GitHub Copilot",
+        "id": "github.copilot.editsAgent",
+        "description": "Edit files in your workspace in agent mode",
+        "when": "config.chat.agent.enabled",
+        "metadata": {
+          "themeIcon": {
+            "id": "tools"
+          },
+          "hasFollowups": false,
+          "supportIssueReporting": false
+        },
+        "name": "agent",
+        "fullName": "GitHub Copilot",
+        "isDefault": true,
+        "locations": [
+          "panel"
+        ],
+        "modes": [
+          "agent"
+        ],
+        "slashCommands": [
+          {
+            "name": "compact",
+            "description": "Free up context by compacting the conversation history. Optionally include extra instructions for compaction."
+          },
+          {
+            "name": "explain",
+            "description": "Explain how the code in your active editor works"
+          },
+          {
+            "name": "tests",
+            "description": "Generate unit tests for the selected code",
+            "disambiguation": [
+              {
+                "category": "create_tests",
+                "description": "The user wants to generate unit tests.",
+                "examples": [
+                  "Generate tests for my selection using pytest."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "fix",
+            "description": "Propose a fix for the problems in the selected code",
+            "sampleRequest": "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+          },
+          {
+            "name": "new",
+            "description": "Scaffold code for a new file or project in a workspace",
+            "sampleRequest": "Create a RESTful API server using typescript",
+            "isSticky": true,
+            "disambiguation": [
+              {
+                "category": "create_new_workspace_or_extension",
+                "description": "The user wants to create a complete Visual Studio Code workspace from scratch, such as a new application or a Visual Studio Code extension. Use this category only if the question relates to generating or creating new workspaces in Visual Studio Code. Do not use this category for updating existing code or generating sample code snippets",
+                "examples": [
+                  "Scaffold a Node server.",
+                  "Create a sample project which uses the fileSystemProvider API.",
+                  "react application"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "newNotebook",
+            "description": "Create a new Jupyter Notebook",
+            "sampleRequest": "How do I create a notebook to load data from a csv file?",
+            "disambiguation": [
+              {
+                "category": "create_jupyter_notebook",
+                "description": "The user wants to create a new Jupyter notebook in Visual Studio Code.",
+                "examples": [
+                  "Create a notebook to analyze this CSV file."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "setupTests",
+            "description": "Set up tests in your project (Experimental)",
+            "sampleRequest": "add playwright tests to my project",
+            "when": "config.github.copilot.chat.setupTests.enabled",
+            "disambiguation": [
+              {
+                "category": "set_up_tests",
+                "description": "The user wants to configure project test setup, framework, or test runner. The user does not want to fix their existing tests.",
+                "examples": [
+                  "Set up tests for this project."
+                ]
+              }
+            ]
+          }
+        ],
+        "disambiguation": []
+      },
+      "modelId": "customendpoint/MiMo/mimo-v2.5",
+      "responseId": "response_6df731a7-8e3d-42e1-ad8a-36fb15ce7218",
+      "modelState": {
+        "value": 0
+      },
+      "contentReferences": [
+        {
+          "kind": "reference",
+          "reference": {
+            "$mid": 1,
+            "fsPath": "c:\\Projects\\PortalWebApp\\.github\\copilot-instructions.md",
+            "_sep": 1,
+            "external": "file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "path": "/c:/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "scheme": "file"
+          }
+        }
+      ],
+      "codeCitations": [],
+      "timeSpentWaiting": 1784745923163,
+      "modeInfo": {
+        "kind": "agent",
+        "isBuiltin": true,
+        "telemetryModeId": "agent",
+        "telemetryModeName": "agent",
+        "permissionLevel": "default"
+      },
+      "editedFileEvents": [
+        {
+          "uri": {
+            "$mid": 1,
+            "fsPath": "c:\\Projects\\PortalWebApp\\client\\src\\features\\comuse\\inspections\\useInspections.js",
+            "_sep": 1,
+            "external": "file:///c%3A/Projects/PortalWebApp/client/src/features/comuse/inspections/useInspections.js",
+            "path": "/c:/Projects/PortalWebApp/client/src/features/comuse/inspections/useInspections.js",
+            "scheme": "file"
+          },
+          "eventKind": 1
+        }
+      ],
+      "response": [],
+      "message": {
+        "text": "ici da doit etre  le id ici : \r\n\r\nhttp://localhost:5173/inspections?inspector_id=Beno%C3%AEt+Pigeon\r\n\r\npas le nom de l'inspecyteur ",
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 131
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 5,
+              "endColumn": 29
+            },
+            "text": "ici da doit etre  le id ici : \r\n\r\nhttp://localhost:5173/inspections?inspector_id=Beno%C3%AEt+Pigeon\r\n\r\npas le nom de l'inspecyteur ",
+            "kind": "text"
+          }
+        ]
+      },
+      "variableData": {
+        "variables": [
+          {
+            "value": "Repository name: PortalWebApp\nOwner: LRG-Media\nCurrent branch: main\nDefault branch: main",
+            "name": "LRG-Media/PortalWebApp",
+            "modelDescription": "Information about the current repository. You can use this information when you need to calculate diffs or compare changes with the default branch",
+            "id": "LRG-Media/PortalWebApp",
+            "kind": "workspace"
+          },
+          {
+            "id": "vscode.instructions.file.root__file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "name": "prompt:copilot-instructions.md",
+            "value": {
+              "$mid": 1,
+              "external": "file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+              "path": "/c:/Projects/PortalWebApp/.github/copilot-instructions.md",
+              "scheme": "file"
+            },
+            "kind": "promptFile",
+            "modelDescription": "Prompt instructions file",
+            "isRoot": true,
+            "automaticallyAdded": true
+          }
+        ]
+      }
+    },
+    {
+      "requestId": "request_1f495885-8326-42d1-b9d2-e74195fa90fc",
+      "timestamp": 1784745923163,
+      "agent": {
+        "extensionId": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "extensionVersion": "0.57.0",
+        "publisherDisplayName": "GitHub",
+        "extensionPublisherId": "GitHub",
+        "extensionDisplayName": "GitHub Copilot",
+        "id": "github.copilot.editsAgent",
+        "description": "Edit files in your workspace in agent mode",
+        "when": "config.chat.agent.enabled",
+        "metadata": {
+          "themeIcon": {
+            "id": "tools"
+          },
+          "hasFollowups": false,
+          "supportIssueReporting": false
+        },
+        "name": "agent",
+        "fullName": "GitHub Copilot",
+        "isDefault": true,
+        "locations": [
+          "panel"
+        ],
+        "modes": [
+          "agent"
+        ],
+        "slashCommands": [
+          {
+            "name": "compact",
+            "description": "Free up context by compacting the conversation history. Optionally include extra instructions for compaction."
+          },
+          {
+            "name": "explain",
+            "description": "Explain how the code in your active editor works"
+          },
+          {
+            "name": "tests",
+            "description": "Generate unit tests for the selected code",
+            "disambiguation": [
+              {
+                "category": "create_tests",
+                "description": "The user wants to generate unit tests.",
+                "examples": [
+                  "Generate tests for my selection using pytest."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "fix",
+            "description": "Propose a fix for the problems in the selected code",
+            "sampleRequest": "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+          },
+          {
+            "name": "new",
+            "description": "Scaffold code for a new file or project in a workspace",
+            "sampleRequest": "Create a RESTful API server using typescript",
+            "isSticky": true,
+            "disambiguation": [
+              {
+                "category": "create_new_workspace_or_extension",
+                "description": "The user wants to create a complete Visual Studio Code workspace from scratch, such as a new application or a Visual Studio Code extension. Use this category only if the question relates to generating or creating new workspaces in Visual Studio Code. Do not use this category for updating existing code or generating sample code snippets",
+                "examples": [
+                  "Scaffold a Node server.",
+                  "Create a sample project which uses the fileSystemProvider API.",
+                  "react application"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "newNotebook",
+            "description": "Create a new Jupyter Notebook",
+            "sampleRequest": "How do I create a notebook to load data from a csv file?",
+            "disambiguation": [
+              {
+                "category": "create_jupyter_notebook",
+                "description": "The user wants to create a new Jupyter notebook in Visual Studio Code.",
+                "examples": [
+                  "Create a notebook to analyze this CSV file."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "setupTests",
+            "description": "Set up tests in your project (Experimental)",
+            "sampleRequest": "add playwright tests to my project",
+            "when": "config.github.copilot.chat.setupTests.enabled",
+            "disambiguation": [
+              {
+                "category": "set_up_tests",
+                "description": "The user wants to configure project test setup, framework, or test runner. The user does not want to fix their existing tests.",
+                "examples": [
+                  "Set up tests for this project."
+                ]
+              }
+            ]
+          }
+        ],
+        "disambiguation": []
+      },
+      "modelId": "customendpoint/MiMo/mimo-v2.5",
+      "responseId": "response_6df731a7-8e3d-42e1-ad8a-36fb15ce7218",
+      "modelState": {
+        "value": 0
+      },
+      "contentReferences": [
+        {
+          "kind": "reference",
+          "reference": {
+            "$mid": 1,
+            "fsPath": "c:\\Projects\\PortalWebApp\\.github\\copilot-instructions.md",
+            "_sep": 1,
+            "external": "file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "path": "/c:/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "scheme": "file"
+          }
+        }
+      ],
+      "codeCitations": [],
+      "timeSpentWaiting": 1784745923163,
+      "modeInfo": {
+        "kind": "agent",
+        "isBuiltin": true,
+        "telemetryModeId": "agent",
+        "telemetryModeName": "agent",
+        "permissionLevel": "default"
+      },
+      "editedFileEvents": [
+        {
+          "uri": {
+            "$mid": 1,
+            "fsPath": "c:\\Projects\\PortalWebApp\\client\\src\\features\\comuse\\inspections\\useInspections.js",
+            "_sep": 1,
+            "external": "file:///c%3A/Projects/PortalWebApp/client/src/features/comuse/inspections/useInspections.js",
+            "path": "/c:/Projects/PortalWebApp/client/src/features/comuse/inspections/useInspections.js",
+            "scheme": "file"
+          },
+          "eventKind": 1
+        }
+      ],
+      "response": [],
+      "message": {
+        "text": "ici da doit etre  le id ici : \r\n\r\nhttp://localhost:5173/inspections?inspector_id=Beno%C3%AEt+Pigeon\r\n\r\npas le nom de l'inspecyteur ",
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 131
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 5,
+              "endColumn": 29
+            },
+            "text": "ici da doit etre  le id ici : \r\n\r\nhttp://localhost:5173/inspections?inspector_id=Beno%C3%AEt+Pigeon\r\n\r\npas le nom de l'inspecyteur ",
+            "kind": "text"
+          }
+        ]
+      },
+      "variableData": {
+        "variables": [
+          {
+            "value": "Repository name: PortalWebApp\nOwner: LRG-Media\nCurrent branch: main\nDefault branch: main",
+            "name": "LRG-Media/PortalWebApp",
+            "modelDescription": "Information about the current repository. You can use this information when you need to calculate diffs or compare changes with the default branch",
+            "id": "LRG-Media/PortalWebApp",
+            "kind": "workspace"
+          },
+          {
+            "id": "vscode.instructions.file.root__file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "name": "prompt:copilot-instructions.md",
+            "value": {
+              "$mid": 1,
+              "external": "file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+              "path": "/c:/Projects/PortalWebApp/.github/copilot-instructions.md",
+              "scheme": "file"
+            },
+            "kind": "promptFile",
+            "modelDescription": "Prompt instructions file",
+            "isRoot": true,
+            "automaticallyAdded": true
+          }
+        ]
+      }
+    },
+    {
+      "requestId": "request_87628221-6617-48b0-a78b-2e860a9de32c",
+      "timestamp": 1784746500618,
+      "agent": {
+        "extensionId": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "extensionVersion": "0.57.0",
+        "publisherDisplayName": "GitHub",
+        "extensionPublisherId": "GitHub",
+        "extensionDisplayName": "GitHub Copilot",
+        "id": "github.copilot.editsAgent",
+        "description": "Edit files in your workspace in agent mode",
+        "when": "config.chat.agent.enabled",
+        "metadata": {
+          "themeIcon": {
+            "id": "tools"
+          },
+          "hasFollowups": false,
+          "supportIssueReporting": false
+        },
+        "name": "agent",
+        "fullName": "GitHub Copilot",
+        "isDefault": true,
+        "locations": [
+          "panel"
+        ],
+        "modes": [
+          "agent"
+        ],
+        "slashCommands": [
+          {
+            "name": "compact",
+            "description": "Free up context by compacting the conversation history. Optionally include extra instructions for compaction."
+          },
+          {
+            "name": "explain",
+            "description": "Explain how the code in your active editor works"
+          },
+          {
+            "name": "tests",
+            "description": "Generate unit tests for the selected code",
+            "disambiguation": [
+              {
+                "category": "create_tests",
+                "description": "The user wants to generate unit tests.",
+                "examples": [
+                  "Generate tests for my selection using pytest."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "fix",
+            "description": "Propose a fix for the problems in the selected code",
+            "sampleRequest": "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+          },
+          {
+            "name": "new",
+            "description": "Scaffold code for a new file or project in a workspace",
+            "sampleRequest": "Create a RESTful API server using typescript",
+            "isSticky": true,
+            "disambiguation": [
+              {
+                "category": "create_new_workspace_or_extension",
+                "description": "The user wants to create a complete Visual Studio Code workspace from scratch, such as a new application or a Visual Studio Code extension. Use this category only if the question relates to generating or creating new workspaces in Visual Studio Code. Do not use this category for updating existing code or generating sample code snippets",
+                "examples": [
+                  "Scaffold a Node server.",
+                  "Create a sample project which uses the fileSystemProvider API.",
+                  "react application"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "newNotebook",
+            "description": "Create a new Jupyter Notebook",
+            "sampleRequest": "How do I create a notebook to load data from a csv file?",
+            "disambiguation": [
+              {
+                "category": "create_jupyter_notebook",
+                "description": "The user wants to create a new Jupyter notebook in Visual Studio Code.",
+                "examples": [
+                  "Create a notebook to analyze this CSV file."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "setupTests",
+            "description": "Set up tests in your project (Experimental)",
+            "sampleRequest": "add playwright tests to my project",
+            "when": "config.github.copilot.chat.setupTests.enabled",
+            "disambiguation": [
+              {
+                "category": "set_up_tests",
+                "description": "The user wants to configure project test setup, framework, or test runner. The user does not want to fix their existing tests.",
+                "examples": [
+                  "Set up tests for this project."
+                ]
+              }
+            ]
+          }
+        ],
+        "disambiguation": []
+      },
+      "modelId": "customendpoint/MiMo/mimo-v2.5",
+      "responseId": "response_fa69fdf2-cd8d-4942-8baf-ae6d3b490bc7",
+      "modelState": {
+        "value": 0
+      },
+      "contentReferences": [
+        {
+          "kind": "reference",
+          "reference": {
+            "$mid": 1,
+            "fsPath": "c:\\Projects\\PortalWebApp\\.github\\copilot-instructions.md",
+            "_sep": 1,
+            "external": "file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "path": "/c:/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "scheme": "file"
+          }
+        },
+        {
+          "kind": "reference",
+          "reference": {
+            "$mid": 1,
+            "fsPath": "c:\\Projects\\PortalWebApp\\.github\\skills\\changelog-updater\\SKILL.md",
+            "_sep": 1,
+            "external": "file:///c%3A/Projects/PortalWebApp/.github/skills/changelog-updater/SKILL.md",
+            "path": "/c:/Projects/PortalWebApp/.github/skills/changelog-updater/SKILL.md",
+            "scheme": "file"
+          }
+        }
+      ],
+      "codeCitations": [],
+      "timeSpentWaiting": 1784746500618,
+      "modeInfo": {
+        "kind": "agent",
+        "isBuiltin": true,
+        "telemetryModeId": "agent",
+        "telemetryModeName": "agent",
+        "permissionLevel": "default"
+      },
+      "response": [],
+      "message": {
+        "text": "/changelog-updater ",
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 18
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 19
+            },
+            "name": "changelog-updater",
+            "kind": "prompt"
+          },
+          {
+            "range": {
+              "start": 18,
+              "endExclusive": 19
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 19,
+              "endLineNumber": 1,
+              "endColumn": 20
+            },
+            "text": " ",
+            "kind": "text"
+          }
+        ]
+      },
+      "variableData": {
+        "variables": [
+          {
+            "id": "vscode.prompt.file__file:///c%3A/Projects/PortalWebApp/.github/skills/changelog-updater/SKILL.md",
+            "name": "prompt:SKILL.md",
+            "value": {
+              "$mid": 1,
+              "external": "file:///c%3A/Projects/PortalWebApp/.github/skills/changelog-updater/SKILL.md",
+              "path": "/c:/Projects/PortalWebApp/.github/skills/changelog-updater/SKILL.md",
+              "scheme": "file"
+            },
+            "kind": "promptFile",
+            "modelDescription": "Prompt instructions file",
+            "isRoot": true,
+            "toolReferences": [],
+            "automaticallyAdded": true
+          },
+          {
+            "value": "Repository name: PortalWebApp\nOwner: LRG-Media\nCurrent branch: main\nDefault branch: main",
+            "name": "LRG-Media/PortalWebApp",
+            "modelDescription": "Information about the current repository. You can use this information when you need to calculate diffs or compare changes with the default branch",
+            "id": "LRG-Media/PortalWebApp",
+            "kind": "workspace"
+          },
+          {
+            "id": "vscode.instructions.file.root__file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "name": "prompt:copilot-instructions.md",
+            "value": {
+              "$mid": 1,
+              "external": "file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+              "path": "/c:/Projects/PortalWebApp/.github/copilot-instructions.md",
+              "scheme": "file"
+            },
+            "kind": "promptFile",
+            "modelDescription": "Prompt instructions file",
+            "isRoot": true,
+            "automaticallyAdded": true
+          }
+        ]
+      }
+    },
+    {
+      "requestId": "request_87628221-6617-48b0-a78b-2e860a9de32c",
+      "timestamp": 1784746500618,
+      "agent": {
+        "extensionId": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "extensionVersion": "0.57.0",
+        "publisherDisplayName": "GitHub",
+        "extensionPublisherId": "GitHub",
+        "extensionDisplayName": "GitHub Copilot",
+        "id": "github.copilot.editsAgent",
+        "description": "Edit files in your workspace in agent mode",
+        "when": "config.chat.agent.enabled",
+        "metadata": {
+          "themeIcon": {
+            "id": "tools"
+          },
+          "hasFollowups": false,
+          "supportIssueReporting": false
+        },
+        "name": "agent",
+        "fullName": "GitHub Copilot",
+        "isDefault": true,
+        "locations": [
+          "panel"
+        ],
+        "modes": [
+          "agent"
+        ],
+        "slashCommands": [
+          {
+            "name": "compact",
+            "description": "Free up context by compacting the conversation history. Optionally include extra instructions for compaction."
+          },
+          {
+            "name": "explain",
+            "description": "Explain how the code in your active editor works"
+          },
+          {
+            "name": "tests",
+            "description": "Generate unit tests for the selected code",
+            "disambiguation": [
+              {
+                "category": "create_tests",
+                "description": "The user wants to generate unit tests.",
+                "examples": [
+                  "Generate tests for my selection using pytest."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "fix",
+            "description": "Propose a fix for the problems in the selected code",
+            "sampleRequest": "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+          },
+          {
+            "name": "new",
+            "description": "Scaffold code for a new file or project in a workspace",
+            "sampleRequest": "Create a RESTful API server using typescript",
+            "isSticky": true,
+            "disambiguation": [
+              {
+                "category": "create_new_workspace_or_extension",
+                "description": "The user wants to create a complete Visual Studio Code workspace from scratch, such as a new application or a Visual Studio Code extension. Use this category only if the question relates to generating or creating new workspaces in Visual Studio Code. Do not use this category for updating existing code or generating sample code snippets",
+                "examples": [
+                  "Scaffold a Node server.",
+                  "Create a sample project which uses the fileSystemProvider API.",
+                  "react application"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "newNotebook",
+            "description": "Create a new Jupyter Notebook",
+            "sampleRequest": "How do I create a notebook to load data from a csv file?",
+            "disambiguation": [
+              {
+                "category": "create_jupyter_notebook",
+                "description": "The user wants to create a new Jupyter notebook in Visual Studio Code.",
+                "examples": [
+                  "Create a notebook to analyze this CSV file."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "setupTests",
+            "description": "Set up tests in your project (Experimental)",
+            "sampleRequest": "add playwright tests to my project",
+            "when": "config.github.copilot.chat.setupTests.enabled",
+            "disambiguation": [
+              {
+                "category": "set_up_tests",
+                "description": "The user wants to configure project test setup, framework, or test runner. The user does not want to fix their existing tests.",
+                "examples": [
+                  "Set up tests for this project."
+                ]
+              }
+            ]
+          }
+        ],
+        "disambiguation": []
+      },
+      "modelId": "customendpoint/MiMo/mimo-v2.5",
+      "responseId": "response_fa69fdf2-cd8d-4942-8baf-ae6d3b490bc7",
+      "modelState": {
+        "value": 0
+      },
+      "contentReferences": [
+        {
+          "kind": "reference",
+          "reference": {
+            "$mid": 1,
+            "fsPath": "c:\\Projects\\PortalWebApp\\.github\\copilot-instructions.md",
+            "_sep": 1,
+            "external": "file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "path": "/c:/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "scheme": "file"
+          }
+        },
+        {
+          "kind": "reference",
+          "reference": {
+            "$mid": 1,
+            "fsPath": "c:\\Projects\\PortalWebApp\\.github\\skills\\changelog-updater\\SKILL.md",
+            "_sep": 1,
+            "external": "file:///c%3A/Projects/PortalWebApp/.github/skills/changelog-updater/SKILL.md",
+            "path": "/c:/Projects/PortalWebApp/.github/skills/changelog-updater/SKILL.md",
+            "scheme": "file"
+          }
+        }
+      ],
+      "codeCitations": [],
+      "timeSpentWaiting": 1784746500618,
+      "modeInfo": {
+        "kind": "agent",
+        "isBuiltin": true,
+        "telemetryModeId": "agent",
+        "telemetryModeName": "agent",
+        "permissionLevel": "default"
+      },
+      "response": [],
+      "message": {
+        "text": "/changelog-updater ",
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 18
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 19
+            },
+            "name": "changelog-updater",
+            "kind": "prompt"
+          },
+          {
+            "range": {
+              "start": 18,
+              "endExclusive": 19
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 19,
+              "endLineNumber": 1,
+              "endColumn": 20
+            },
+            "text": " ",
+            "kind": "text"
+          }
+        ]
+      },
+      "variableData": {
+        "variables": [
+          {
+            "id": "vscode.prompt.file__file:///c%3A/Projects/PortalWebApp/.github/skills/changelog-updater/SKILL.md",
+            "name": "prompt:SKILL.md",
+            "value": {
+              "$mid": 1,
+              "external": "file:///c%3A/Projects/PortalWebApp/.github/skills/changelog-updater/SKILL.md",
+              "path": "/c:/Projects/PortalWebApp/.github/skills/changelog-updater/SKILL.md",
+              "scheme": "file"
+            },
+            "kind": "promptFile",
+            "modelDescription": "Prompt instructions file",
+            "isRoot": true,
+            "toolReferences": [],
+            "automaticallyAdded": true
+          },
+          {
+            "value": "Repository name: PortalWebApp\nOwner: LRG-Media\nCurrent branch: main\nDefault branch: main",
+            "name": "LRG-Media/PortalWebApp",
+            "modelDescription": "Information about the current repository. You can use this information when you need to calculate diffs or compare changes with the default branch",
+            "id": "LRG-Media/PortalWebApp",
+            "kind": "workspace"
+          },
+          {
+            "id": "vscode.instructions.file.root__file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "name": "prompt:copilot-instructions.md",
+            "value": {
+              "$mid": 1,
+              "external": "file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+              "path": "/c:/Projects/PortalWebApp/.github/copilot-instructions.md",
+              "scheme": "file"
+            },
+            "kind": "promptFile",
+            "modelDescription": "Prompt instructions file",
+            "isRoot": true,
+            "automaticallyAdded": true
+          }
+        ]
+      }
+    }
+  ],
+  "pendingRequests": [],
+  "inputState": {
+    "attachments": [],
+    "mode": {
+      "id": "agent",
+      "kind": "agent"
+    },
+    "selectedModel": {
+      "identifier": "customendpoint/MiMo/mimo-v2.5",
+      "metadata": {
+        "extension": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "id": "mimo-v2.5",
+        "vendor": "customendpoint",
+        "name": "MiMo V2.5",
+        "family": "mimo-v2.5",
+        "tooltip": "MiMo V2.5 is contributed via the CustomEndpoint provider.",
+        "version": "1.0.0",
+        "isBYOK": true,
+        "maxInputTokens": 500000,
+        "maxOutputTokens": 15000,
+        "isDefaultForLocation": {},
+        "isUserSelectable": true,
+        "capabilities": {
+          "vision": true,
+          "toolCalling": true,
+          "agentMode": true
+        },
+        "detail": "MiMo"
+      }
+    },
+    "inputText": "",
+    "selections": [
+      {
+        "startLineNumber": 1,
+        "startColumn": 1,
+        "endLineNumber": 1,
+        "endColumn": 1,
+        "selectionStartLineNumber": 1,
+        "selectionStartColumn": 1,
+        "positionLineNumber": 1,
+        "positionColumn": 1
+      }
+    ],
+    "permissionLevel": "default",
+    "contrib": {
+      "chatDynamicVariableModel": []
+    }
+  },
+  "customTitle": "Add filter to table",
+  "archived": true
+}

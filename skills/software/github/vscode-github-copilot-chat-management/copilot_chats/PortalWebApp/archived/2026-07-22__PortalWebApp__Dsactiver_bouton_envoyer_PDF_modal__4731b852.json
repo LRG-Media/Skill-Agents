@@ -1,0 +1,1626 @@
+{
+  "version": 3,
+  "creationDate": 1784737068013,
+  "customTitle": "Désactiver bouton envoyer PDF modal",
+  "initialLocation": "panel",
+  "responderUsername": "GitHub Copilot",
+  "sessionId": "4731b852-1e8b-43e6-be90-1b1cb7e24bd9",
+  "hasPendingEdits": false,
+  "requests": [
+    {
+      "requestId": "request_7a0207ce-9834-4ca0-8192-3265c211025a",
+      "timestamp": 1784737075473,
+      "agent": {
+        "extensionId": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "extensionVersion": "0.57.0",
+        "publisherDisplayName": "GitHub",
+        "extensionPublisherId": "GitHub",
+        "extensionDisplayName": "GitHub Copilot",
+        "id": "github.copilot.editsAgent",
+        "description": "Edit files in your workspace in agent mode",
+        "when": "config.chat.agent.enabled",
+        "metadata": {
+          "themeIcon": {
+            "id": "tools"
+          },
+          "hasFollowups": false,
+          "supportIssueReporting": false
+        },
+        "name": "agent",
+        "fullName": "GitHub Copilot",
+        "isDefault": true,
+        "locations": [
+          "panel"
+        ],
+        "modes": [
+          "agent"
+        ],
+        "slashCommands": [
+          {
+            "name": "compact",
+            "description": "Free up context by compacting the conversation history. Optionally include extra instructions for compaction."
+          },
+          {
+            "name": "explain",
+            "description": "Explain how the code in your active editor works"
+          },
+          {
+            "name": "tests",
+            "description": "Generate unit tests for the selected code",
+            "disambiguation": [
+              {
+                "category": "create_tests",
+                "description": "The user wants to generate unit tests.",
+                "examples": [
+                  "Generate tests for my selection using pytest."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "fix",
+            "description": "Propose a fix for the problems in the selected code",
+            "sampleRequest": "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+          },
+          {
+            "name": "new",
+            "description": "Scaffold code for a new file or project in a workspace",
+            "sampleRequest": "Create a RESTful API server using typescript",
+            "isSticky": true,
+            "disambiguation": [
+              {
+                "category": "create_new_workspace_or_extension",
+                "description": "The user wants to create a complete Visual Studio Code workspace from scratch, such as a new application or a Visual Studio Code extension. Use this category only if the question relates to generating or creating new workspaces in Visual Studio Code. Do not use this category for updating existing code or generating sample code snippets",
+                "examples": [
+                  "Scaffold a Node server.",
+                  "Create a sample project which uses the fileSystemProvider API.",
+                  "react application"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "newNotebook",
+            "description": "Create a new Jupyter Notebook",
+            "sampleRequest": "How do I create a notebook to load data from a csv file?",
+            "disambiguation": [
+              {
+                "category": "create_jupyter_notebook",
+                "description": "The user wants to create a new Jupyter notebook in Visual Studio Code.",
+                "examples": [
+                  "Create a notebook to analyze this CSV file."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "setupTests",
+            "description": "Set up tests in your project (Experimental)",
+            "sampleRequest": "add playwright tests to my project",
+            "when": "config.github.copilot.chat.setupTests.enabled",
+            "disambiguation": [
+              {
+                "category": "set_up_tests",
+                "description": "The user wants to configure project test setup, framework, or test runner. The user does not want to fix their existing tests.",
+                "examples": [
+                  "Set up tests for this project."
+                ]
+              }
+            ]
+          }
+        ],
+        "disambiguation": []
+      },
+      "modelId": "customendpoint/MiMo/mimo-v2.5",
+      "responseId": "response_76f05011-bbd7-4d3a-9b68-ecb2904fb01a",
+      "modelState": {
+        "value": 0
+      },
+      "contentReferences": [
+        {
+          "kind": "reference",
+          "reference": {
+            "$mid": 1,
+            "fsPath": "c:\\Projects\\PortalWebApp\\.github\\copilot-instructions.md",
+            "_sep": 1,
+            "external": "file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "path": "/c:/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "scheme": "file"
+          }
+        }
+      ],
+      "codeCitations": [],
+      "timeSpentWaiting": 1784737075473,
+      "modeInfo": {
+        "kind": "agent",
+        "isBuiltin": true,
+        "telemetryModeId": "agent",
+        "telemetryModeName": "agent",
+        "permissionLevel": "default"
+      },
+      "response": [
+        {
+          "kind": "thinking",
+          "value": "The user wants to modify a PDF viewer modal to:\n1. Disable/hide the \"Send\" button\n2. Add a comment above the button\n\nI need to find the PDF viewer component in the client code. Let me search for it.",
+          "id": "",
+          "reasoningDurationMs": 1437
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "",
+          "metadata": {
+            "vscode_reasoning_done": true
+          }
+        }
+      ],
+      "message": {
+        "text": "Je veux que dans le pdfviewer le modal je veux que turetire le bouton envoyer ou send deésactove le pîur le momemnnt chahcer le svp et ajoute un commentaire aussesus svp ? trouve le dans le client donne moi le plna ",
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 215
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 216
+            },
+            "text": "Je veux que dans le pdfviewer le modal je veux que turetire le bouton envoyer ou send deésactove le pîur le momemnnt chahcer le svp et ajoute un commentaire aussesus svp ? trouve le dans le client donne moi le plna ",
+            "kind": "text"
+          }
+        ]
+      },
+      "variableData": {
+        "variables": [
+          {
+            "value": "Repository name: PortalWebApp\nOwner: LRG-Media\nCurrent branch: main\nDefault branch: main",
+            "name": "LRG-Media/PortalWebApp",
+            "modelDescription": "Information about the current repository. You can use this information when you need to calculate diffs or compare changes with the default branch",
+            "id": "LRG-Media/PortalWebApp",
+            "kind": "workspace"
+          },
+          {
+            "id": "vscode.instructions.file.root__file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "name": "prompt:copilot-instructions.md",
+            "value": {
+              "$mid": 1,
+              "external": "file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+              "path": "/c:/Projects/PortalWebApp/.github/copilot-instructions.md",
+              "scheme": "file"
+            },
+            "kind": "promptFile",
+            "modelDescription": "Prompt instructions file",
+            "isRoot": true,
+            "automaticallyAdded": true
+          }
+        ]
+      }
+    },
+    {
+      "requestId": "request_6ce6eadb-c4c0-45c3-9367-306ddaf9ede3",
+      "timestamp": 1784737160296,
+      "agent": {
+        "extensionId": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "extensionVersion": "0.57.0",
+        "publisherDisplayName": "GitHub",
+        "extensionPublisherId": "GitHub",
+        "extensionDisplayName": "GitHub Copilot",
+        "id": "github.copilot.editsAgent",
+        "description": "Edit files in your workspace in agent mode",
+        "when": "config.chat.agent.enabled",
+        "metadata": {
+          "themeIcon": {
+            "id": "tools"
+          },
+          "hasFollowups": false,
+          "supportIssueReporting": false
+        },
+        "name": "agent",
+        "fullName": "GitHub Copilot",
+        "isDefault": true,
+        "locations": [
+          "panel"
+        ],
+        "modes": [
+          "agent"
+        ],
+        "slashCommands": [
+          {
+            "name": "compact",
+            "description": "Free up context by compacting the conversation history. Optionally include extra instructions for compaction."
+          },
+          {
+            "name": "explain",
+            "description": "Explain how the code in your active editor works"
+          },
+          {
+            "name": "tests",
+            "description": "Generate unit tests for the selected code",
+            "disambiguation": [
+              {
+                "category": "create_tests",
+                "description": "The user wants to generate unit tests.",
+                "examples": [
+                  "Generate tests for my selection using pytest."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "fix",
+            "description": "Propose a fix for the problems in the selected code",
+            "sampleRequest": "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+          },
+          {
+            "name": "new",
+            "description": "Scaffold code for a new file or project in a workspace",
+            "sampleRequest": "Create a RESTful API server using typescript",
+            "isSticky": true,
+            "disambiguation": [
+              {
+                "category": "create_new_workspace_or_extension",
+                "description": "The user wants to create a complete Visual Studio Code workspace from scratch, such as a new application or a Visual Studio Code extension. Use this category only if the question relates to generating or creating new workspaces in Visual Studio Code. Do not use this category for updating existing code or generating sample code snippets",
+                "examples": [
+                  "Scaffold a Node server.",
+                  "Create a sample project which uses the fileSystemProvider API.",
+                  "react application"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "newNotebook",
+            "description": "Create a new Jupyter Notebook",
+            "sampleRequest": "How do I create a notebook to load data from a csv file?",
+            "disambiguation": [
+              {
+                "category": "create_jupyter_notebook",
+                "description": "The user wants to create a new Jupyter notebook in Visual Studio Code.",
+                "examples": [
+                  "Create a notebook to analyze this CSV file."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "setupTests",
+            "description": "Set up tests in your project (Experimental)",
+            "sampleRequest": "add playwright tests to my project",
+            "when": "config.github.copilot.chat.setupTests.enabled",
+            "disambiguation": [
+              {
+                "category": "set_up_tests",
+                "description": "The user wants to configure project test setup, framework, or test runner. The user does not want to fix their existing tests.",
+                "examples": [
+                  "Set up tests for this project."
+                ]
+              }
+            ]
+          }
+        ],
+        "disambiguation": []
+      },
+      "modelId": "customendpoint/MiMo/mimo-v2.5",
+      "responseId": "response_2165ca4a-0fc5-43ca-93f8-f8ba14c8fcd4",
+      "modelState": {
+        "value": 0
+      },
+      "contentReferences": [
+        {
+          "kind": "reference",
+          "reference": {
+            "$mid": 1,
+            "fsPath": "c:\\Projects\\PortalWebApp\\.github\\copilot-instructions.md",
+            "_sep": 1,
+            "external": "file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "path": "/c:/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "scheme": "file"
+          }
+        }
+      ],
+      "codeCitations": [],
+      "timeSpentWaiting": 1784737160296,
+      "completionTokens": 125,
+      "promptTokens": 18493,
+      "outputBuffer": 8192,
+      "promptTokenDetails": [
+        {
+          "category": "System",
+          "label": "System Instructions",
+          "percentageOfPrompt": 35
+        },
+        {
+          "category": "System",
+          "label": "Tool Definitions",
+          "percentageOfPrompt": 50
+        },
+        {
+          "category": "User Context",
+          "label": "Messages",
+          "percentageOfPrompt": 11
+        },
+        {
+          "category": "User Context",
+          "label": "Files",
+          "percentageOfPrompt": 3
+        }
+      ],
+      "modeInfo": {
+        "kind": "agent",
+        "isBuiltin": true,
+        "telemetryModeId": "agent",
+        "telemetryModeName": "agent",
+        "permissionLevel": "default"
+      },
+      "response": [
+        {
+          "kind": "thinking",
+          "value": "The user wants me to apply the changes to the PdfViewerModal.jsx file. I need to:\n\n1. Disable the \"Envoyer/Send\" button (keep it visible but disabled)\n2. Add a comment above itLet me first read the exact lines to get the precise oldString.",
+          "id": "1784737164806",
+          "reasoningDurationMs": 2012
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "",
+          "metadata": {
+            "vscode_reasoning_done": true
+          }
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "",
+          "metadata": {
+            "toolId": "call_f939c99d89e442429759eb06"
+          }
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "",
+          "metadata": {
+            "vscodeReasoningDone": true,
+            "stopReason": "other"
+          }
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Reading [](file:///c%3A/Projects/PortalWebApp/client/src/shared/components/organisms/PdfViewerModal.jsx#680-680), lines 680 to 700",
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false,
+            "uris": {
+              "file:///c%3A/Projects/PortalWebApp/client/src/shared/components/organisms/PdfViewerModal.jsx#680-680": {
+                "$mid": 1,
+                "path": "/c:/Projects/PortalWebApp/client/src/shared/components/organisms/PdfViewerModal.jsx",
+                "scheme": "file",
+                "fragment": "680-680"
+              }
+            }
+          },
+          "pastTenseMessage": {
+            "value": "Read [](file:///c%3A/Projects/PortalWebApp/client/src/shared/components/organisms/PdfViewerModal.jsx#680-680), lines 680 to 700",
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false,
+            "uris": {
+              "file:///c%3A/Projects/PortalWebApp/client/src/shared/components/organisms/PdfViewerModal.jsx#680-680": {
+                "$mid": 1,
+                "path": "/c:/Projects/PortalWebApp/client/src/shared/components/organisms/PdfViewerModal.jsx",
+                "scheme": "file",
+                "fragment": "680-680"
+              }
+            }
+          },
+          "isConfirmed": {
+            "type": 1
+          },
+          "isComplete": true,
+          "source": {
+            "type": "internal",
+            "label": "Built-In"
+          },
+          "toolCallId": "call_f939c99d89e442429759eb06",
+          "toolId": "copilot_readFile"
+        }
+      ],
+      "message": {
+        "text": "aplique le svp ",
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 15
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 16
+            },
+            "text": "aplique le svp ",
+            "kind": "text"
+          }
+        ]
+      },
+      "variableData": {
+        "variables": [
+          {
+            "value": "Repository name: PortalWebApp\nOwner: LRG-Media\nCurrent branch: main\nDefault branch: main",
+            "name": "LRG-Media/PortalWebApp",
+            "modelDescription": "Information about the current repository. You can use this information when you need to calculate diffs or compare changes with the default branch",
+            "id": "LRG-Media/PortalWebApp",
+            "kind": "workspace"
+          },
+          {
+            "id": "vscode.instructions.file.root__file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "name": "prompt:copilot-instructions.md",
+            "value": {
+              "$mid": 1,
+              "external": "file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+              "path": "/c:/Projects/PortalWebApp/.github/copilot-instructions.md",
+              "scheme": "file"
+            },
+            "kind": "promptFile",
+            "modelDescription": "Prompt instructions file",
+            "isRoot": true,
+            "automaticallyAdded": true
+          }
+        ]
+      }
+    },
+    {
+      "requestId": "request_6ce6eadb-c4c0-45c3-9367-306ddaf9ede3",
+      "timestamp": 1784737160296,
+      "agent": {
+        "extensionId": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "extensionVersion": "0.57.0",
+        "publisherDisplayName": "GitHub",
+        "extensionPublisherId": "GitHub",
+        "extensionDisplayName": "GitHub Copilot",
+        "id": "github.copilot.editsAgent",
+        "description": "Edit files in your workspace in agent mode",
+        "when": "config.chat.agent.enabled",
+        "metadata": {
+          "themeIcon": {
+            "id": "tools"
+          },
+          "hasFollowups": false,
+          "supportIssueReporting": false
+        },
+        "name": "agent",
+        "fullName": "GitHub Copilot",
+        "isDefault": true,
+        "locations": [
+          "panel"
+        ],
+        "modes": [
+          "agent"
+        ],
+        "slashCommands": [
+          {
+            "name": "compact",
+            "description": "Free up context by compacting the conversation history. Optionally include extra instructions for compaction."
+          },
+          {
+            "name": "explain",
+            "description": "Explain how the code in your active editor works"
+          },
+          {
+            "name": "tests",
+            "description": "Generate unit tests for the selected code",
+            "disambiguation": [
+              {
+                "category": "create_tests",
+                "description": "The user wants to generate unit tests.",
+                "examples": [
+                  "Generate tests for my selection using pytest."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "fix",
+            "description": "Propose a fix for the problems in the selected code",
+            "sampleRequest": "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+          },
+          {
+            "name": "new",
+            "description": "Scaffold code for a new file or project in a workspace",
+            "sampleRequest": "Create a RESTful API server using typescript",
+            "isSticky": true,
+            "disambiguation": [
+              {
+                "category": "create_new_workspace_or_extension",
+                "description": "The user wants to create a complete Visual Studio Code workspace from scratch, such as a new application or a Visual Studio Code extension. Use this category only if the question relates to generating or creating new workspaces in Visual Studio Code. Do not use this category for updating existing code or generating sample code snippets",
+                "examples": [
+                  "Scaffold a Node server.",
+                  "Create a sample project which uses the fileSystemProvider API.",
+                  "react application"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "newNotebook",
+            "description": "Create a new Jupyter Notebook",
+            "sampleRequest": "How do I create a notebook to load data from a csv file?",
+            "disambiguation": [
+              {
+                "category": "create_jupyter_notebook",
+                "description": "The user wants to create a new Jupyter notebook in Visual Studio Code.",
+                "examples": [
+                  "Create a notebook to analyze this CSV file."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "setupTests",
+            "description": "Set up tests in your project (Experimental)",
+            "sampleRequest": "add playwright tests to my project",
+            "when": "config.github.copilot.chat.setupTests.enabled",
+            "disambiguation": [
+              {
+                "category": "set_up_tests",
+                "description": "The user wants to configure project test setup, framework, or test runner. The user does not want to fix their existing tests.",
+                "examples": [
+                  "Set up tests for this project."
+                ]
+              }
+            ]
+          }
+        ],
+        "disambiguation": []
+      },
+      "modelId": "customendpoint/MiMo/mimo-v2.5",
+      "responseId": "response_2165ca4a-0fc5-43ca-93f8-f8ba14c8fcd4",
+      "modelState": {
+        "value": 0
+      },
+      "contentReferences": [
+        {
+          "kind": "reference",
+          "reference": {
+            "$mid": 1,
+            "fsPath": "c:\\Projects\\PortalWebApp\\.github\\copilot-instructions.md",
+            "_sep": 1,
+            "external": "file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "path": "/c:/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "scheme": "file"
+          }
+        }
+      ],
+      "codeCitations": [],
+      "timeSpentWaiting": 1784737160296,
+      "completionTokens": 125,
+      "promptTokens": 18493,
+      "outputBuffer": 8192,
+      "promptTokenDetails": [
+        {
+          "category": "System",
+          "label": "System Instructions",
+          "percentageOfPrompt": 35
+        },
+        {
+          "category": "System",
+          "label": "Tool Definitions",
+          "percentageOfPrompt": 50
+        },
+        {
+          "category": "User Context",
+          "label": "Messages",
+          "percentageOfPrompt": 11
+        },
+        {
+          "category": "User Context",
+          "label": "Files",
+          "percentageOfPrompt": 3
+        }
+      ],
+      "modeInfo": {
+        "kind": "agent",
+        "isBuiltin": true,
+        "telemetryModeId": "agent",
+        "telemetryModeName": "agent",
+        "permissionLevel": "default"
+      },
+      "response": [
+        {
+          "kind": "thinking",
+          "value": "The user wants me to apply the changes to the PdfViewerModal.jsx file. I need to:\n\n1. Disable the \"Envoyer/Send\" button (keep it visible but disabled)\n2. Add a comment above itLet me first read the exact lines to get the precise oldString.",
+          "id": "1784737164806",
+          "reasoningDurationMs": 2012
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "",
+          "metadata": {
+            "vscode_reasoning_done": true
+          }
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "",
+          "metadata": {
+            "toolId": "call_f939c99d89e442429759eb06"
+          }
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "",
+          "metadata": {
+            "vscodeReasoningDone": true,
+            "stopReason": "other"
+          }
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Reading [](file:///c%3A/Projects/PortalWebApp/client/src/shared/components/organisms/PdfViewerModal.jsx#680-680), lines 680 to 700",
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false,
+            "uris": {
+              "file:///c%3A/Projects/PortalWebApp/client/src/shared/components/organisms/PdfViewerModal.jsx#680-680": {
+                "$mid": 1,
+                "path": "/c:/Projects/PortalWebApp/client/src/shared/components/organisms/PdfViewerModal.jsx",
+                "scheme": "file",
+                "fragment": "680-680"
+              }
+            }
+          },
+          "pastTenseMessage": {
+            "value": "Read [](file:///c%3A/Projects/PortalWebApp/client/src/shared/components/organisms/PdfViewerModal.jsx#680-680), lines 680 to 700",
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false,
+            "uris": {
+              "file:///c%3A/Projects/PortalWebApp/client/src/shared/components/organisms/PdfViewerModal.jsx#680-680": {
+                "$mid": 1,
+                "path": "/c:/Projects/PortalWebApp/client/src/shared/components/organisms/PdfViewerModal.jsx",
+                "scheme": "file",
+                "fragment": "680-680"
+              }
+            }
+          },
+          "isConfirmed": {
+            "type": 1
+          },
+          "isComplete": true,
+          "source": {
+            "type": "internal",
+            "label": "Built-In"
+          },
+          "toolCallId": "call_f939c99d89e442429759eb06",
+          "toolId": "copilot_readFile"
+        }
+      ],
+      "message": {
+        "text": "aplique le svp ",
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 15
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 16
+            },
+            "text": "aplique le svp ",
+            "kind": "text"
+          }
+        ]
+      },
+      "variableData": {
+        "variables": [
+          {
+            "value": "Repository name: PortalWebApp\nOwner: LRG-Media\nCurrent branch: main\nDefault branch: main",
+            "name": "LRG-Media/PortalWebApp",
+            "modelDescription": "Information about the current repository. You can use this information when you need to calculate diffs or compare changes with the default branch",
+            "id": "LRG-Media/PortalWebApp",
+            "kind": "workspace"
+          },
+          {
+            "id": "vscode.instructions.file.root__file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "name": "prompt:copilot-instructions.md",
+            "value": {
+              "$mid": 1,
+              "external": "file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+              "path": "/c:/Projects/PortalWebApp/.github/copilot-instructions.md",
+              "scheme": "file"
+            },
+            "kind": "promptFile",
+            "modelDescription": "Prompt instructions file",
+            "isRoot": true,
+            "automaticallyAdded": true
+          }
+        ]
+      }
+    },
+    {
+      "requestId": "request_9f060c7d-c04c-42b6-9c72-07f3fd6f89eb",
+      "timestamp": 1784743353588,
+      "agent": {
+        "extensionId": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "extensionVersion": "0.57.0",
+        "publisherDisplayName": "GitHub",
+        "extensionPublisherId": "GitHub",
+        "extensionDisplayName": "GitHub Copilot",
+        "id": "github.copilot.editsAgent",
+        "description": "Edit files in your workspace in agent mode",
+        "when": "config.chat.agent.enabled",
+        "metadata": {
+          "themeIcon": {
+            "id": "tools"
+          },
+          "hasFollowups": false,
+          "supportIssueReporting": false
+        },
+        "name": "agent",
+        "fullName": "GitHub Copilot",
+        "isDefault": true,
+        "locations": [
+          "panel"
+        ],
+        "modes": [
+          "agent"
+        ],
+        "slashCommands": [
+          {
+            "name": "compact",
+            "description": "Free up context by compacting the conversation history. Optionally include extra instructions for compaction."
+          },
+          {
+            "name": "explain",
+            "description": "Explain how the code in your active editor works"
+          },
+          {
+            "name": "tests",
+            "description": "Generate unit tests for the selected code",
+            "disambiguation": [
+              {
+                "category": "create_tests",
+                "description": "The user wants to generate unit tests.",
+                "examples": [
+                  "Generate tests for my selection using pytest."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "fix",
+            "description": "Propose a fix for the problems in the selected code",
+            "sampleRequest": "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+          },
+          {
+            "name": "new",
+            "description": "Scaffold code for a new file or project in a workspace",
+            "sampleRequest": "Create a RESTful API server using typescript",
+            "isSticky": true,
+            "disambiguation": [
+              {
+                "category": "create_new_workspace_or_extension",
+                "description": "The user wants to create a complete Visual Studio Code workspace from scratch, such as a new application or a Visual Studio Code extension. Use this category only if the question relates to generating or creating new workspaces in Visual Studio Code. Do not use this category for updating existing code or generating sample code snippets",
+                "examples": [
+                  "Scaffold a Node server.",
+                  "Create a sample project which uses the fileSystemProvider API.",
+                  "react application"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "newNotebook",
+            "description": "Create a new Jupyter Notebook",
+            "sampleRequest": "How do I create a notebook to load data from a csv file?",
+            "disambiguation": [
+              {
+                "category": "create_jupyter_notebook",
+                "description": "The user wants to create a new Jupyter notebook in Visual Studio Code.",
+                "examples": [
+                  "Create a notebook to analyze this CSV file."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "setupTests",
+            "description": "Set up tests in your project (Experimental)",
+            "sampleRequest": "add playwright tests to my project",
+            "when": "config.github.copilot.chat.setupTests.enabled",
+            "disambiguation": [
+              {
+                "category": "set_up_tests",
+                "description": "The user wants to configure project test setup, framework, or test runner. The user does not want to fix their existing tests.",
+                "examples": [
+                  "Set up tests for this project."
+                ]
+              }
+            ]
+          }
+        ],
+        "disambiguation": []
+      },
+      "modelId": "customendpoint/MiMo/mimo-v2.5",
+      "responseId": "response_60d2f029-7416-4f77-8e4d-2d79b3b7eecf",
+      "modelState": {
+        "value": 0
+      },
+      "contentReferences": [
+        {
+          "kind": "reference",
+          "reference": {
+            "$mid": 1,
+            "fsPath": "c:\\Projects\\PortalWebApp\\.github\\copilot-instructions.md",
+            "_sep": 1,
+            "external": "file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "path": "/c:/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "scheme": "file"
+          }
+        },
+        {
+          "kind": "reference",
+          "reference": {
+            "$mid": 1,
+            "fsPath": "c:\\Projects\\PortalWebApp\\.github\\skills\\changelog-updater\\SKILL.md",
+            "_sep": 1,
+            "external": "file:///c%3A/Projects/PortalWebApp/.github/skills/changelog-updater/SKILL.md",
+            "path": "/c:/Projects/PortalWebApp/.github/skills/changelog-updater/SKILL.md",
+            "scheme": "file"
+          }
+        }
+      ],
+      "codeCitations": [],
+      "timeSpentWaiting": 1784743353588,
+      "completionTokens": 274,
+      "promptTokens": 22759,
+      "outputBuffer": 8192,
+      "promptTokenDetails": [
+        {
+          "category": "System",
+          "label": "System Instructions",
+          "percentageOfPrompt": 31
+        },
+        {
+          "category": "System",
+          "label": "Tool Definitions",
+          "percentageOfPrompt": 42
+        },
+        {
+          "category": "User Context",
+          "label": "Messages",
+          "percentageOfPrompt": 23
+        },
+        {
+          "category": "User Context",
+          "label": "Files",
+          "percentageOfPrompt": 4
+        }
+      ],
+      "modeInfo": {
+        "kind": "agent",
+        "isBuiltin": true,
+        "telemetryModeId": "agent",
+        "telemetryModeName": "agent",
+        "permissionLevel": "default"
+      },
+      "response": [
+        {
+          "kind": "thinking",
+          "value": "The user wants me to update the CHANGELOG.md based on the work done in this session. Let me read the CHANGELOG.md first to see the current state.",
+          "id": "",
+          "reasoningDurationMs": 303
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "",
+          "metadata": {
+            "vscode_reasoning_done": true
+          }
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "",
+          "metadata": {
+            "toolId": "call_2433bd94ea7242be83299ddc"
+          }
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "",
+          "metadata": {
+            "vscodeReasoningDone": true,
+            "stopReason": "other"
+          }
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Reading [](file:///c%3A/Projects/PortalWebApp/CHANGELOG.md#1-1), lines 1 to 50",
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false,
+            "uris": {
+              "file:///c%3A/Projects/PortalWebApp/CHANGELOG.md#1-1": {
+                "$mid": 1,
+                "path": "/c:/Projects/PortalWebApp/CHANGELOG.md",
+                "scheme": "file",
+                "fragment": "1-1"
+              }
+            }
+          },
+          "pastTenseMessage": {
+            "value": "Read [](file:///c%3A/Projects/PortalWebApp/CHANGELOG.md#1-1), lines 1 to 50",
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false,
+            "uris": {
+              "file:///c%3A/Projects/PortalWebApp/CHANGELOG.md#1-1": {
+                "$mid": 1,
+                "path": "/c:/Projects/PortalWebApp/CHANGELOG.md",
+                "scheme": "file",
+                "fragment": "1-1"
+              }
+            }
+          },
+          "isConfirmed": {
+            "type": 1
+          },
+          "isComplete": true,
+          "source": {
+            "type": "internal",
+            "label": "Built-In"
+          },
+          "toolCallId": "call_2433bd94ea7242be83299ddc",
+          "toolId": "copilot_readFile"
+        },
+        {
+          "kind": "thinking",
+          "value": "I can see that there's already a section for today (2026-07-22). I need to add the change about the PdfViewerModal send button being disabled. Since there's already a section for today, I should add my changes to the existing sections.\n\nThe change I made was:\n- **Bouton \"Envoyer\" désactivé temporairement** dans `PdfViewerModal.jsx` — le bouton est rendu `disabled` avec un style grisé, un commentaire FIXME ajouté, le handler `onClick` et l'icône retirés.\n\nThis falls under \"Changed\" since it's a change to existing functionality.",
+          "id": "",
+          "reasoningDurationMs": 2243
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "",
+          "metadata": {
+            "vscode_reasoning_done": true
+          }
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "",
+          "metadata": {
+            "toolId": "call_65c63305e38c4ef184faffc3"
+          }
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "",
+          "metadata": {
+            "vscodeReasoningDone": true,
+            "stopReason": "other"
+          }
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Reading [](file:///c%3A/Projects/PortalWebApp/CHANGELOG.md#50-50), lines 50 to 70",
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false,
+            "uris": {
+              "file:///c%3A/Projects/PortalWebApp/CHANGELOG.md#50-50": {
+                "$mid": 1,
+                "path": "/c:/Projects/PortalWebApp/CHANGELOG.md",
+                "scheme": "file",
+                "fragment": "50-50"
+              }
+            }
+          },
+          "pastTenseMessage": {
+            "value": "Read [](file:///c%3A/Projects/PortalWebApp/CHANGELOG.md#50-50), lines 50 to 70",
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false,
+            "uris": {
+              "file:///c%3A/Projects/PortalWebApp/CHANGELOG.md#50-50": {
+                "$mid": 1,
+                "path": "/c:/Projects/PortalWebApp/CHANGELOG.md",
+                "scheme": "file",
+                "fragment": "50-50"
+              }
+            }
+          },
+          "isConfirmed": {
+            "type": 1
+          },
+          "isComplete": true,
+          "source": {
+            "type": "internal",
+            "label": "Built-In"
+          },
+          "toolCallId": "call_65c63305e38c4ef184faffc3",
+          "toolId": "copilot_readFile"
+        },
+        {
+          "kind": "thinking",
+          "value": "The user wants me to update the CHANGELOG.md based on the session work. I already read the file and there's already an entry for today (2026-07-22). I need to add the change about disabling the Send button in PdfViewerModal. Since the entry already exists, I should add to the existing \"Changed\" section.",
+          "id": "",
+          "reasoningDurationMs": 1709
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "",
+          "metadata": {
+            "vscode_reasoning_done": true
+          }
+        }
+      ],
+      "message": {
+        "text": "/changelog-updater ",
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 18
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 19
+            },
+            "name": "changelog-updater",
+            "kind": "prompt"
+          },
+          {
+            "range": {
+              "start": 18,
+              "endExclusive": 19
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 19,
+              "endLineNumber": 1,
+              "endColumn": 20
+            },
+            "text": " ",
+            "kind": "text"
+          }
+        ]
+      },
+      "variableData": {
+        "variables": [
+          {
+            "id": "vscode.prompt.file__file:///c%3A/Projects/PortalWebApp/.github/skills/changelog-updater/SKILL.md",
+            "name": "prompt:SKILL.md",
+            "value": {
+              "$mid": 1,
+              "fsPath": "c:\\Projects\\PortalWebApp\\.github\\skills\\changelog-updater\\SKILL.md",
+              "_sep": 1,
+              "external": "file:///c%3A/Projects/PortalWebApp/.github/skills/changelog-updater/SKILL.md",
+              "path": "/c:/Projects/PortalWebApp/.github/skills/changelog-updater/SKILL.md",
+              "scheme": "file"
+            },
+            "kind": "promptFile",
+            "modelDescription": "Prompt instructions file",
+            "isRoot": true,
+            "toolReferences": [],
+            "automaticallyAdded": true
+          },
+          {
+            "value": "Repository name: PortalWebApp\nOwner: LRG-Media\nCurrent branch: main\nDefault branch: main",
+            "name": "LRG-Media/PortalWebApp",
+            "modelDescription": "Information about the current repository. You can use this information when you need to calculate diffs or compare changes with the default branch",
+            "id": "LRG-Media/PortalWebApp",
+            "kind": "workspace"
+          },
+          {
+            "id": "vscode.instructions.file.root__file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "name": "prompt:copilot-instructions.md",
+            "value": {
+              "$mid": 1,
+              "external": "file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+              "path": "/c:/Projects/PortalWebApp/.github/copilot-instructions.md",
+              "scheme": "file"
+            },
+            "kind": "promptFile",
+            "modelDescription": "Prompt instructions file",
+            "isRoot": true,
+            "automaticallyAdded": true
+          }
+        ]
+      }
+    },
+    {
+      "requestId": "request_9f060c7d-c04c-42b6-9c72-07f3fd6f89eb",
+      "timestamp": 1784743353588,
+      "agent": {
+        "extensionId": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "extensionVersion": "0.57.0",
+        "publisherDisplayName": "GitHub",
+        "extensionPublisherId": "GitHub",
+        "extensionDisplayName": "GitHub Copilot",
+        "id": "github.copilot.editsAgent",
+        "description": "Edit files in your workspace in agent mode",
+        "when": "config.chat.agent.enabled",
+        "metadata": {
+          "themeIcon": {
+            "id": "tools"
+          },
+          "hasFollowups": false,
+          "supportIssueReporting": false
+        },
+        "name": "agent",
+        "fullName": "GitHub Copilot",
+        "isDefault": true,
+        "locations": [
+          "panel"
+        ],
+        "modes": [
+          "agent"
+        ],
+        "slashCommands": [
+          {
+            "name": "compact",
+            "description": "Free up context by compacting the conversation history. Optionally include extra instructions for compaction."
+          },
+          {
+            "name": "explain",
+            "description": "Explain how the code in your active editor works"
+          },
+          {
+            "name": "tests",
+            "description": "Generate unit tests for the selected code",
+            "disambiguation": [
+              {
+                "category": "create_tests",
+                "description": "The user wants to generate unit tests.",
+                "examples": [
+                  "Generate tests for my selection using pytest."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "fix",
+            "description": "Propose a fix for the problems in the selected code",
+            "sampleRequest": "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+          },
+          {
+            "name": "new",
+            "description": "Scaffold code for a new file or project in a workspace",
+            "sampleRequest": "Create a RESTful API server using typescript",
+            "isSticky": true,
+            "disambiguation": [
+              {
+                "category": "create_new_workspace_or_extension",
+                "description": "The user wants to create a complete Visual Studio Code workspace from scratch, such as a new application or a Visual Studio Code extension. Use this category only if the question relates to generating or creating new workspaces in Visual Studio Code. Do not use this category for updating existing code or generating sample code snippets",
+                "examples": [
+                  "Scaffold a Node server.",
+                  "Create a sample project which uses the fileSystemProvider API.",
+                  "react application"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "newNotebook",
+            "description": "Create a new Jupyter Notebook",
+            "sampleRequest": "How do I create a notebook to load data from a csv file?",
+            "disambiguation": [
+              {
+                "category": "create_jupyter_notebook",
+                "description": "The user wants to create a new Jupyter notebook in Visual Studio Code.",
+                "examples": [
+                  "Create a notebook to analyze this CSV file."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "setupTests",
+            "description": "Set up tests in your project (Experimental)",
+            "sampleRequest": "add playwright tests to my project",
+            "when": "config.github.copilot.chat.setupTests.enabled",
+            "disambiguation": [
+              {
+                "category": "set_up_tests",
+                "description": "The user wants to configure project test setup, framework, or test runner. The user does not want to fix their existing tests.",
+                "examples": [
+                  "Set up tests for this project."
+                ]
+              }
+            ]
+          }
+        ],
+        "disambiguation": []
+      },
+      "modelId": "customendpoint/MiMo/mimo-v2.5",
+      "responseId": "response_60d2f029-7416-4f77-8e4d-2d79b3b7eecf",
+      "modelState": {
+        "value": 0
+      },
+      "contentReferences": [
+        {
+          "kind": "reference",
+          "reference": {
+            "$mid": 1,
+            "fsPath": "c:\\Projects\\PortalWebApp\\.github\\copilot-instructions.md",
+            "_sep": 1,
+            "external": "file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "path": "/c:/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "scheme": "file"
+          }
+        },
+        {
+          "kind": "reference",
+          "reference": {
+            "$mid": 1,
+            "fsPath": "c:\\Projects\\PortalWebApp\\.github\\skills\\changelog-updater\\SKILL.md",
+            "_sep": 1,
+            "external": "file:///c%3A/Projects/PortalWebApp/.github/skills/changelog-updater/SKILL.md",
+            "path": "/c:/Projects/PortalWebApp/.github/skills/changelog-updater/SKILL.md",
+            "scheme": "file"
+          }
+        }
+      ],
+      "codeCitations": [],
+      "timeSpentWaiting": 1784743353588,
+      "completionTokens": 274,
+      "promptTokens": 22759,
+      "outputBuffer": 8192,
+      "promptTokenDetails": [
+        {
+          "category": "System",
+          "label": "System Instructions",
+          "percentageOfPrompt": 31
+        },
+        {
+          "category": "System",
+          "label": "Tool Definitions",
+          "percentageOfPrompt": 42
+        },
+        {
+          "category": "User Context",
+          "label": "Messages",
+          "percentageOfPrompt": 23
+        },
+        {
+          "category": "User Context",
+          "label": "Files",
+          "percentageOfPrompt": 4
+        }
+      ],
+      "modeInfo": {
+        "kind": "agent",
+        "isBuiltin": true,
+        "telemetryModeId": "agent",
+        "telemetryModeName": "agent",
+        "permissionLevel": "default"
+      },
+      "response": [
+        {
+          "kind": "thinking",
+          "value": "The user wants me to update the CHANGELOG.md based on the work done in this session. Let me read the CHANGELOG.md first to see the current state.",
+          "id": "",
+          "reasoningDurationMs": 303
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "",
+          "metadata": {
+            "vscode_reasoning_done": true
+          }
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "",
+          "metadata": {
+            "toolId": "call_2433bd94ea7242be83299ddc"
+          }
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "",
+          "metadata": {
+            "vscodeReasoningDone": true,
+            "stopReason": "other"
+          }
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Reading [](file:///c%3A/Projects/PortalWebApp/CHANGELOG.md#1-1), lines 1 to 50",
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false,
+            "uris": {
+              "file:///c%3A/Projects/PortalWebApp/CHANGELOG.md#1-1": {
+                "$mid": 1,
+                "path": "/c:/Projects/PortalWebApp/CHANGELOG.md",
+                "scheme": "file",
+                "fragment": "1-1"
+              }
+            }
+          },
+          "pastTenseMessage": {
+            "value": "Read [](file:///c%3A/Projects/PortalWebApp/CHANGELOG.md#1-1), lines 1 to 50",
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false,
+            "uris": {
+              "file:///c%3A/Projects/PortalWebApp/CHANGELOG.md#1-1": {
+                "$mid": 1,
+                "path": "/c:/Projects/PortalWebApp/CHANGELOG.md",
+                "scheme": "file",
+                "fragment": "1-1"
+              }
+            }
+          },
+          "isConfirmed": {
+            "type": 1
+          },
+          "isComplete": true,
+          "source": {
+            "type": "internal",
+            "label": "Built-In"
+          },
+          "toolCallId": "call_2433bd94ea7242be83299ddc",
+          "toolId": "copilot_readFile"
+        },
+        {
+          "kind": "thinking",
+          "value": "I can see that there's already a section for today (2026-07-22). I need to add the change about the PdfViewerModal send button being disabled. Since there's already a section for today, I should add my changes to the existing sections.\n\nThe change I made was:\n- **Bouton \"Envoyer\" désactivé temporairement** dans `PdfViewerModal.jsx` — le bouton est rendu `disabled` avec un style grisé, un commentaire FIXME ajouté, le handler `onClick` et l'icône retirés.\n\nThis falls under \"Changed\" since it's a change to existing functionality.",
+          "id": "",
+          "reasoningDurationMs": 2243
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "",
+          "metadata": {
+            "vscode_reasoning_done": true
+          }
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "",
+          "metadata": {
+            "toolId": "call_65c63305e38c4ef184faffc3"
+          }
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "",
+          "metadata": {
+            "vscodeReasoningDone": true,
+            "stopReason": "other"
+          }
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Reading [](file:///c%3A/Projects/PortalWebApp/CHANGELOG.md#50-50), lines 50 to 70",
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false,
+            "uris": {
+              "file:///c%3A/Projects/PortalWebApp/CHANGELOG.md#50-50": {
+                "$mid": 1,
+                "path": "/c:/Projects/PortalWebApp/CHANGELOG.md",
+                "scheme": "file",
+                "fragment": "50-50"
+              }
+            }
+          },
+          "pastTenseMessage": {
+            "value": "Read [](file:///c%3A/Projects/PortalWebApp/CHANGELOG.md#50-50), lines 50 to 70",
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false,
+            "uris": {
+              "file:///c%3A/Projects/PortalWebApp/CHANGELOG.md#50-50": {
+                "$mid": 1,
+                "path": "/c:/Projects/PortalWebApp/CHANGELOG.md",
+                "scheme": "file",
+                "fragment": "50-50"
+              }
+            }
+          },
+          "isConfirmed": {
+            "type": 1
+          },
+          "isComplete": true,
+          "source": {
+            "type": "internal",
+            "label": "Built-In"
+          },
+          "toolCallId": "call_65c63305e38c4ef184faffc3",
+          "toolId": "copilot_readFile"
+        },
+        {
+          "kind": "thinking",
+          "value": "The user wants me to update the CHANGELOG.md based on the session work. I already read the file and there's already an entry for today (2026-07-22). I need to add the change about disabling the Send button in PdfViewerModal. Since the entry already exists, I should add to the existing \"Changed\" section.",
+          "id": "",
+          "reasoningDurationMs": 1709
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "",
+          "metadata": {
+            "vscode_reasoning_done": true
+          }
+        }
+      ],
+      "message": {
+        "text": "/changelog-updater ",
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 18
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 19
+            },
+            "name": "changelog-updater",
+            "kind": "prompt"
+          },
+          {
+            "range": {
+              "start": 18,
+              "endExclusive": 19
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 19,
+              "endLineNumber": 1,
+              "endColumn": 20
+            },
+            "text": " ",
+            "kind": "text"
+          }
+        ]
+      },
+      "variableData": {
+        "variables": [
+          {
+            "id": "vscode.prompt.file__file:///c%3A/Projects/PortalWebApp/.github/skills/changelog-updater/SKILL.md",
+            "name": "prompt:SKILL.md",
+            "value": {
+              "$mid": 1,
+              "fsPath": "c:\\Projects\\PortalWebApp\\.github\\skills\\changelog-updater\\SKILL.md",
+              "_sep": 1,
+              "external": "file:///c%3A/Projects/PortalWebApp/.github/skills/changelog-updater/SKILL.md",
+              "path": "/c:/Projects/PortalWebApp/.github/skills/changelog-updater/SKILL.md",
+              "scheme": "file"
+            },
+            "kind": "promptFile",
+            "modelDescription": "Prompt instructions file",
+            "isRoot": true,
+            "toolReferences": [],
+            "automaticallyAdded": true
+          },
+          {
+            "value": "Repository name: PortalWebApp\nOwner: LRG-Media\nCurrent branch: main\nDefault branch: main",
+            "name": "LRG-Media/PortalWebApp",
+            "modelDescription": "Information about the current repository. You can use this information when you need to calculate diffs or compare changes with the default branch",
+            "id": "LRG-Media/PortalWebApp",
+            "kind": "workspace"
+          },
+          {
+            "id": "vscode.instructions.file.root__file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "name": "prompt:copilot-instructions.md",
+            "value": {
+              "$mid": 1,
+              "external": "file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+              "path": "/c:/Projects/PortalWebApp/.github/copilot-instructions.md",
+              "scheme": "file"
+            },
+            "kind": "promptFile",
+            "modelDescription": "Prompt instructions file",
+            "isRoot": true,
+            "automaticallyAdded": true
+          }
+        ]
+      }
+    }
+  ],
+  "pendingRequests": [],
+  "inputState": {
+    "attachments": [],
+    "mode": {
+      "id": "agent",
+      "kind": "agent"
+    },
+    "selectedModel": {
+      "identifier": "customendpoint/MiMo/mimo-v2.5",
+      "metadata": {
+        "extension": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "id": "mimo-v2.5",
+        "vendor": "customendpoint",
+        "name": "MiMo V2.5",
+        "family": "mimo-v2.5",
+        "tooltip": "MiMo V2.5 is contributed via the CustomEndpoint provider.",
+        "version": "1.0.0",
+        "isBYOK": true,
+        "maxInputTokens": 500000,
+        "maxOutputTokens": 15000,
+        "isDefaultForLocation": {},
+        "isUserSelectable": true,
+        "capabilities": {
+          "vision": true,
+          "toolCalling": true,
+          "agentMode": true
+        },
+        "detail": "MiMo"
+      }
+    },
+    "inputText": "",
+    "selections": [
+      {
+        "startLineNumber": 1,
+        "startColumn": 1,
+        "endLineNumber": 1,
+        "endColumn": 1,
+        "selectionStartLineNumber": 1,
+        "selectionStartColumn": 1,
+        "positionLineNumber": 1,
+        "positionColumn": 1
+      }
+    ],
+    "permissionLevel": "default",
+    "contrib": {
+      "chatDynamicVariableModel": []
+    }
+  },
+  "archived": true
+}

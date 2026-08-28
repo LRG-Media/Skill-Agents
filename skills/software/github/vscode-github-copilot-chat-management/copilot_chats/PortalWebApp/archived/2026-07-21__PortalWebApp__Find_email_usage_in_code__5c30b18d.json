@@ -1,0 +1,2817 @@
+{
+  "version": 3,
+  "creationDate": 1784640232725,
+  "initialLocation": "panel",
+  "responderUsername": "GitHub Copilot",
+  "sessionId": "5c30b18d-a124-4190-b230-31af29559e0f",
+  "hasPendingEdits": false,
+  "requests": [
+    {
+      "requestId": "request_30b682bd-8262-4477-8c2a-a12931d620de",
+      "timestamp": 1784640242416,
+      "agent": {
+        "extensionId": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "extensionVersion": "0.57.0",
+        "publisherDisplayName": "GitHub",
+        "extensionPublisherId": "GitHub",
+        "extensionDisplayName": "GitHub Copilot",
+        "id": "github.copilot.editsAgent",
+        "description": "Edit files in your workspace in agent mode",
+        "when": "config.chat.agent.enabled",
+        "metadata": {
+          "themeIcon": {
+            "id": "tools"
+          },
+          "hasFollowups": false,
+          "supportIssueReporting": false
+        },
+        "name": "agent",
+        "fullName": "GitHub Copilot",
+        "isDefault": true,
+        "locations": [
+          "panel"
+        ],
+        "modes": [
+          "agent"
+        ],
+        "slashCommands": [
+          {
+            "name": "compact",
+            "description": "Free up context by compacting the conversation history. Optionally include extra instructions for compaction."
+          },
+          {
+            "name": "explain",
+            "description": "Explain how the code in your active editor works"
+          },
+          {
+            "name": "tests",
+            "description": "Generate unit tests for the selected code",
+            "disambiguation": [
+              {
+                "category": "create_tests",
+                "description": "The user wants to generate unit tests.",
+                "examples": [
+                  "Generate tests for my selection using pytest."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "fix",
+            "description": "Propose a fix for the problems in the selected code",
+            "sampleRequest": "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+          },
+          {
+            "name": "new",
+            "description": "Scaffold code for a new file or project in a workspace",
+            "sampleRequest": "Create a RESTful API server using typescript",
+            "isSticky": true,
+            "disambiguation": [
+              {
+                "category": "create_new_workspace_or_extension",
+                "description": "The user wants to create a complete Visual Studio Code workspace from scratch, such as a new application or a Visual Studio Code extension. Use this category only if the question relates to generating or creating new workspaces in Visual Studio Code. Do not use this category for updating existing code or generating sample code snippets",
+                "examples": [
+                  "Scaffold a Node server.",
+                  "Create a sample project which uses the fileSystemProvider API.",
+                  "react application"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "newNotebook",
+            "description": "Create a new Jupyter Notebook",
+            "sampleRequest": "How do I create a notebook to load data from a csv file?",
+            "disambiguation": [
+              {
+                "category": "create_jupyter_notebook",
+                "description": "The user wants to create a new Jupyter notebook in Visual Studio Code.",
+                "examples": [
+                  "Create a notebook to analyze this CSV file."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "setupTests",
+            "description": "Set up tests in your project (Experimental)",
+            "sampleRequest": "add playwright tests to my project",
+            "when": "config.github.copilot.chat.setupTests.enabled",
+            "disambiguation": [
+              {
+                "category": "set_up_tests",
+                "description": "The user wants to configure project test setup, framework, or test runner. The user does not want to fix their existing tests.",
+                "examples": [
+                  "Set up tests for this project."
+                ]
+              }
+            ]
+          }
+        ],
+        "disambiguation": []
+      },
+      "modelId": "customendpoint/MiMo/mimo-v2.5",
+      "responseId": "response_caca57c2-c87a-4662-bb76-f00544dfda86",
+      "modelState": {
+        "value": 0
+      },
+      "contentReferences": [
+        {
+          "kind": "reference",
+          "reference": {
+            "$mid": 1,
+            "fsPath": "c:\\Projects\\PortalWebApp\\.github\\copilot-instructions.md",
+            "_sep": 1,
+            "external": "file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "path": "/c:/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "scheme": "file"
+          }
+        }
+      ],
+      "codeCitations": [],
+      "timeSpentWaiting": 1784640242416,
+      "modeInfo": {
+        "kind": "agent",
+        "isBuiltin": true,
+        "telemetryModeId": "agent",
+        "telemetryModeName": "agent",
+        "permissionLevel": "default"
+      },
+      "response": [],
+      "message": {
+        "text": "dis moi a quel endroit le email account est utlsie svp ety si il est réellement uitlsier je veux savoir dans le code  anlayse et dis moi uitolie des sous agents pour annalsye svp ",
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 179
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 180
+            },
+            "text": "dis moi a quel endroit le email account est utlsie svp ety si il est réellement uitlsier je veux savoir dans le code  anlayse et dis moi uitolie des sous agents pour annalsye svp ",
+            "kind": "text"
+          }
+        ]
+      },
+      "variableData": {
+        "variables": [
+          {
+            "value": "Repository name: PortalWebApp\nOwner: LRG-Media\nCurrent branch: main\nDefault branch: main",
+            "name": "LRG-Media/PortalWebApp",
+            "modelDescription": "Information about the current repository. You can use this information when you need to calculate diffs or compare changes with the default branch",
+            "id": "LRG-Media/PortalWebApp",
+            "kind": "workspace"
+          },
+          {
+            "id": "vscode.instructions.file.root__file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "name": "prompt:copilot-instructions.md",
+            "value": {
+              "$mid": 1,
+              "external": "file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+              "path": "/c:/Projects/PortalWebApp/.github/copilot-instructions.md",
+              "scheme": "file"
+            },
+            "kind": "promptFile",
+            "modelDescription": "Prompt instructions file",
+            "isRoot": true,
+            "automaticallyAdded": true
+          }
+        ]
+      }
+    },
+    {
+      "requestId": "request_7f339aea-8b2a-424c-bfb6-4f27fbdb0a92",
+      "timestamp": 1784640523969,
+      "agent": {
+        "extensionId": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "extensionVersion": "0.57.0",
+        "publisherDisplayName": "GitHub",
+        "extensionPublisherId": "GitHub",
+        "extensionDisplayName": "GitHub Copilot",
+        "id": "github.copilot.editsAgent",
+        "description": "Edit files in your workspace in agent mode",
+        "when": "config.chat.agent.enabled",
+        "metadata": {
+          "themeIcon": {
+            "id": "tools"
+          },
+          "hasFollowups": false,
+          "supportIssueReporting": false
+        },
+        "name": "agent",
+        "fullName": "GitHub Copilot",
+        "isDefault": true,
+        "locations": [
+          "panel"
+        ],
+        "modes": [
+          "agent"
+        ],
+        "slashCommands": [
+          {
+            "name": "compact",
+            "description": "Free up context by compacting the conversation history. Optionally include extra instructions for compaction."
+          },
+          {
+            "name": "explain",
+            "description": "Explain how the code in your active editor works"
+          },
+          {
+            "name": "tests",
+            "description": "Generate unit tests for the selected code",
+            "disambiguation": [
+              {
+                "category": "create_tests",
+                "description": "The user wants to generate unit tests.",
+                "examples": [
+                  "Generate tests for my selection using pytest."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "fix",
+            "description": "Propose a fix for the problems in the selected code",
+            "sampleRequest": "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+          },
+          {
+            "name": "new",
+            "description": "Scaffold code for a new file or project in a workspace",
+            "sampleRequest": "Create a RESTful API server using typescript",
+            "isSticky": true,
+            "disambiguation": [
+              {
+                "category": "create_new_workspace_or_extension",
+                "description": "The user wants to create a complete Visual Studio Code workspace from scratch, such as a new application or a Visual Studio Code extension. Use this category only if the question relates to generating or creating new workspaces in Visual Studio Code. Do not use this category for updating existing code or generating sample code snippets",
+                "examples": [
+                  "Scaffold a Node server.",
+                  "Create a sample project which uses the fileSystemProvider API.",
+                  "react application"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "newNotebook",
+            "description": "Create a new Jupyter Notebook",
+            "sampleRequest": "How do I create a notebook to load data from a csv file?",
+            "disambiguation": [
+              {
+                "category": "create_jupyter_notebook",
+                "description": "The user wants to create a new Jupyter notebook in Visual Studio Code.",
+                "examples": [
+                  "Create a notebook to analyze this CSV file."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "setupTests",
+            "description": "Set up tests in your project (Experimental)",
+            "sampleRequest": "add playwright tests to my project",
+            "when": "config.github.copilot.chat.setupTests.enabled",
+            "disambiguation": [
+              {
+                "category": "set_up_tests",
+                "description": "The user wants to configure project test setup, framework, or test runner. The user does not want to fix their existing tests.",
+                "examples": [
+                  "Set up tests for this project."
+                ]
+              }
+            ]
+          }
+        ],
+        "disambiguation": []
+      },
+      "modelId": "customendpoint/MiMo/mimo-v2.5",
+      "responseId": "response_d3f31cf3-77e8-410a-a19d-887e5893f125",
+      "modelState": {
+        "value": 0
+      },
+      "contentReferences": [
+        {
+          "kind": "reference",
+          "reference": {
+            "$mid": 1,
+            "fsPath": "c:\\Projects\\PortalWebApp\\.github\\copilot-instructions.md",
+            "_sep": 1,
+            "external": "file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "path": "/c:/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "scheme": "file"
+          }
+        }
+      ],
+      "codeCitations": [],
+      "timeSpentWaiting": 1784640523969,
+      "modeInfo": {
+        "kind": "agent",
+        "isBuiltin": true,
+        "telemetryModeId": "agent",
+        "telemetryModeName": "agent",
+        "permissionLevel": "default"
+      },
+      "response": [
+        {
+          "kind": "thinking",
+          "value": "The user is asking about a specific issue where:\n1. The API route `GET /api/accounts/145` doesn't",
+          "id": ""
+        }
+      ],
+      "message": {
+        "text": "Non mais je veux dire dans ici dans cette route tu ne reourne jamais email : \r\n\r\nRequest URL\r\nhttp://localhost:3001/api/accounts/145\r\nRequest Method\r\nGET\r\nStatus Code\r\n200 OK\r\n\r\nppuruqoi il affiche dans detailstab.jsx de account analays eet dis moi ? svp ? http://localhost:5173/accounts/145\r\n\r\nca bna pas de sense il faudrtait le retirer fais un plan regarde pur protal lrgmedia svp pur ceic svp ? je pense que cMest dans le moduel_fields que tu as ceci anlayse svp ? ",
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 469
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 12,
+              "endColumn": 175
+            },
+            "text": "Non mais je veux dire dans ici dans cette route tu ne reourne jamais email : \r\n\r\nRequest URL\r\nhttp://localhost:3001/api/accounts/145\r\nRequest Method\r\nGET\r\nStatus Code\r\n200 OK\r\n\r\nppuruqoi il affiche dans detailstab.jsx de account analays eet dis moi ? svp ? http://localhost:5173/accounts/145\r\n\r\nca bna pas de sense il faudrtait le retirer fais un plan regarde pur protal lrgmedia svp pur ceic svp ? je pense que cMest dans le moduel_fields que tu as ceci anlayse svp ? ",
+            "kind": "text"
+          }
+        ]
+      },
+      "variableData": {
+        "variables": [
+          {
+            "value": "Repository name: PortalWebApp\nOwner: LRG-Media\nCurrent branch: main\nDefault branch: main",
+            "name": "LRG-Media/PortalWebApp",
+            "modelDescription": "Information about the current repository. You can use this information when you need to calculate diffs or compare changes with the default branch",
+            "id": "LRG-Media/PortalWebApp",
+            "kind": "workspace"
+          },
+          {
+            "id": "vscode.instructions.file.root__file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "name": "prompt:copilot-instructions.md",
+            "value": {
+              "$mid": 1,
+              "external": "file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+              "path": "/c:/Projects/PortalWebApp/.github/copilot-instructions.md",
+              "scheme": "file"
+            },
+            "kind": "promptFile",
+            "modelDescription": "Prompt instructions file",
+            "isRoot": true,
+            "automaticallyAdded": true
+          }
+        ]
+      }
+    },
+    {
+      "requestId": "request_7f339aea-8b2a-424c-bfb6-4f27fbdb0a92",
+      "timestamp": 1784640523969,
+      "agent": {
+        "extensionId": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "extensionVersion": "0.57.0",
+        "publisherDisplayName": "GitHub",
+        "extensionPublisherId": "GitHub",
+        "extensionDisplayName": "GitHub Copilot",
+        "id": "github.copilot.editsAgent",
+        "description": "Edit files in your workspace in agent mode",
+        "when": "config.chat.agent.enabled",
+        "metadata": {
+          "themeIcon": {
+            "id": "tools"
+          },
+          "hasFollowups": false,
+          "supportIssueReporting": false
+        },
+        "name": "agent",
+        "fullName": "GitHub Copilot",
+        "isDefault": true,
+        "locations": [
+          "panel"
+        ],
+        "modes": [
+          "agent"
+        ],
+        "slashCommands": [
+          {
+            "name": "compact",
+            "description": "Free up context by compacting the conversation history. Optionally include extra instructions for compaction."
+          },
+          {
+            "name": "explain",
+            "description": "Explain how the code in your active editor works"
+          },
+          {
+            "name": "tests",
+            "description": "Generate unit tests for the selected code",
+            "disambiguation": [
+              {
+                "category": "create_tests",
+                "description": "The user wants to generate unit tests.",
+                "examples": [
+                  "Generate tests for my selection using pytest."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "fix",
+            "description": "Propose a fix for the problems in the selected code",
+            "sampleRequest": "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+          },
+          {
+            "name": "new",
+            "description": "Scaffold code for a new file or project in a workspace",
+            "sampleRequest": "Create a RESTful API server using typescript",
+            "isSticky": true,
+            "disambiguation": [
+              {
+                "category": "create_new_workspace_or_extension",
+                "description": "The user wants to create a complete Visual Studio Code workspace from scratch, such as a new application or a Visual Studio Code extension. Use this category only if the question relates to generating or creating new workspaces in Visual Studio Code. Do not use this category for updating existing code or generating sample code snippets",
+                "examples": [
+                  "Scaffold a Node server.",
+                  "Create a sample project which uses the fileSystemProvider API.",
+                  "react application"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "newNotebook",
+            "description": "Create a new Jupyter Notebook",
+            "sampleRequest": "How do I create a notebook to load data from a csv file?",
+            "disambiguation": [
+              {
+                "category": "create_jupyter_notebook",
+                "description": "The user wants to create a new Jupyter notebook in Visual Studio Code.",
+                "examples": [
+                  "Create a notebook to analyze this CSV file."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "setupTests",
+            "description": "Set up tests in your project (Experimental)",
+            "sampleRequest": "add playwright tests to my project",
+            "when": "config.github.copilot.chat.setupTests.enabled",
+            "disambiguation": [
+              {
+                "category": "set_up_tests",
+                "description": "The user wants to configure project test setup, framework, or test runner. The user does not want to fix their existing tests.",
+                "examples": [
+                  "Set up tests for this project."
+                ]
+              }
+            ]
+          }
+        ],
+        "disambiguation": []
+      },
+      "modelId": "customendpoint/MiMo/mimo-v2.5",
+      "responseId": "response_d3f31cf3-77e8-410a-a19d-887e5893f125",
+      "modelState": {
+        "value": 0
+      },
+      "contentReferences": [
+        {
+          "kind": "reference",
+          "reference": {
+            "$mid": 1,
+            "fsPath": "c:\\Projects\\PortalWebApp\\.github\\copilot-instructions.md",
+            "_sep": 1,
+            "external": "file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "path": "/c:/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "scheme": "file"
+          }
+        }
+      ],
+      "codeCitations": [],
+      "timeSpentWaiting": 1784640523969,
+      "modeInfo": {
+        "kind": "agent",
+        "isBuiltin": true,
+        "telemetryModeId": "agent",
+        "telemetryModeName": "agent",
+        "permissionLevel": "default"
+      },
+      "response": [
+        {
+          "kind": "thinking",
+          "value": "The user is asking about a specific issue where:\n1. The API route `GET /api/accounts/145` doesn't",
+          "id": ""
+        }
+      ],
+      "message": {
+        "text": "Non mais je veux dire dans ici dans cette route tu ne reourne jamais email : \r\n\r\nRequest URL\r\nhttp://localhost:3001/api/accounts/145\r\nRequest Method\r\nGET\r\nStatus Code\r\n200 OK\r\n\r\nppuruqoi il affiche dans detailstab.jsx de account analays eet dis moi ? svp ? http://localhost:5173/accounts/145\r\n\r\nca bna pas de sense il faudrtait le retirer fais un plan regarde pur protal lrgmedia svp pur ceic svp ? je pense que cMest dans le moduel_fields que tu as ceci anlayse svp ? ",
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 469
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 12,
+              "endColumn": 175
+            },
+            "text": "Non mais je veux dire dans ici dans cette route tu ne reourne jamais email : \r\n\r\nRequest URL\r\nhttp://localhost:3001/api/accounts/145\r\nRequest Method\r\nGET\r\nStatus Code\r\n200 OK\r\n\r\nppuruqoi il affiche dans detailstab.jsx de account analays eet dis moi ? svp ? http://localhost:5173/accounts/145\r\n\r\nca bna pas de sense il faudrtait le retirer fais un plan regarde pur protal lrgmedia svp pur ceic svp ? je pense que cMest dans le moduel_fields que tu as ceci anlayse svp ? ",
+            "kind": "text"
+          }
+        ]
+      },
+      "variableData": {
+        "variables": [
+          {
+            "value": "Repository name: PortalWebApp\nOwner: LRG-Media\nCurrent branch: main\nDefault branch: main",
+            "name": "LRG-Media/PortalWebApp",
+            "modelDescription": "Information about the current repository. You can use this information when you need to calculate diffs or compare changes with the default branch",
+            "id": "LRG-Media/PortalWebApp",
+            "kind": "workspace"
+          },
+          {
+            "id": "vscode.instructions.file.root__file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "name": "prompt:copilot-instructions.md",
+            "value": {
+              "$mid": 1,
+              "external": "file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+              "path": "/c:/Projects/PortalWebApp/.github/copilot-instructions.md",
+              "scheme": "file"
+            },
+            "kind": "promptFile",
+            "modelDescription": "Prompt instructions file",
+            "isRoot": true,
+            "automaticallyAdded": true
+          }
+        ]
+      }
+    },
+    {
+      "requestId": "request_f5f0f365-fd25-40e7-872e-a775bf7e829c",
+      "timestamp": 1784640668473,
+      "agent": {
+        "extensionId": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "extensionVersion": "0.57.0",
+        "publisherDisplayName": "GitHub",
+        "extensionPublisherId": "GitHub",
+        "extensionDisplayName": "GitHub Copilot",
+        "id": "github.copilot.editsAgent",
+        "description": "Edit files in your workspace in agent mode",
+        "when": "config.chat.agent.enabled",
+        "metadata": {
+          "themeIcon": {
+            "id": "tools"
+          },
+          "hasFollowups": false,
+          "supportIssueReporting": false
+        },
+        "name": "agent",
+        "fullName": "GitHub Copilot",
+        "isDefault": true,
+        "locations": [
+          "panel"
+        ],
+        "modes": [
+          "agent"
+        ],
+        "slashCommands": [
+          {
+            "name": "compact",
+            "description": "Free up context by compacting the conversation history. Optionally include extra instructions for compaction."
+          },
+          {
+            "name": "explain",
+            "description": "Explain how the code in your active editor works"
+          },
+          {
+            "name": "tests",
+            "description": "Generate unit tests for the selected code",
+            "disambiguation": [
+              {
+                "category": "create_tests",
+                "description": "The user wants to generate unit tests.",
+                "examples": [
+                  "Generate tests for my selection using pytest."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "fix",
+            "description": "Propose a fix for the problems in the selected code",
+            "sampleRequest": "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+          },
+          {
+            "name": "new",
+            "description": "Scaffold code for a new file or project in a workspace",
+            "sampleRequest": "Create a RESTful API server using typescript",
+            "isSticky": true,
+            "disambiguation": [
+              {
+                "category": "create_new_workspace_or_extension",
+                "description": "The user wants to create a complete Visual Studio Code workspace from scratch, such as a new application or a Visual Studio Code extension. Use this category only if the question relates to generating or creating new workspaces in Visual Studio Code. Do not use this category for updating existing code or generating sample code snippets",
+                "examples": [
+                  "Scaffold a Node server.",
+                  "Create a sample project which uses the fileSystemProvider API.",
+                  "react application"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "newNotebook",
+            "description": "Create a new Jupyter Notebook",
+            "sampleRequest": "How do I create a notebook to load data from a csv file?",
+            "disambiguation": [
+              {
+                "category": "create_jupyter_notebook",
+                "description": "The user wants to create a new Jupyter notebook in Visual Studio Code.",
+                "examples": [
+                  "Create a notebook to analyze this CSV file."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "setupTests",
+            "description": "Set up tests in your project (Experimental)",
+            "sampleRequest": "add playwright tests to my project",
+            "when": "config.github.copilot.chat.setupTests.enabled",
+            "disambiguation": [
+              {
+                "category": "set_up_tests",
+                "description": "The user wants to configure project test setup, framework, or test runner. The user does not want to fix their existing tests.",
+                "examples": [
+                  "Set up tests for this project."
+                ]
+              }
+            ]
+          }
+        ],
+        "disambiguation": []
+      },
+      "modelId": "customendpoint/MiMo/mimo-v2.5",
+      "responseId": "response_ff13dcea-a969-45c4-9e77-a1c2049b4e2c",
+      "modelState": {
+        "value": 0
+      },
+      "contentReferences": [
+        {
+          "kind": "reference",
+          "reference": {
+            "$mid": 1,
+            "fsPath": "c:\\Projects\\PortalWebApp\\.github\\copilot-instructions.md",
+            "_sep": 1,
+            "external": "file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "path": "/c:/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "scheme": "file"
+          }
+        }
+      ],
+      "codeCitations": [],
+      "timeSpentWaiting": 1784640668473,
+      "completionTokens": 137,
+      "promptTokens": 18526,
+      "outputBuffer": 8192,
+      "promptTokenDetails": [
+        {
+          "category": "System",
+          "label": "System Instructions",
+          "percentageOfPrompt": 34
+        },
+        {
+          "category": "System",
+          "label": "Tool Definitions",
+          "percentageOfPrompt": 47
+        },
+        {
+          "category": "User Context",
+          "label": "Messages",
+          "percentageOfPrompt": 17
+        },
+        {
+          "category": "User Context",
+          "label": "Files",
+          "percentageOfPrompt": 2
+        }
+      ],
+      "modeInfo": {
+        "kind": "agent",
+        "isBuiltin": true,
+        "telemetryModeId": "agent",
+        "telemetryModeName": "agent",
+        "permissionLevel": "default"
+      },
+      "response": [
+        {
+          "kind": "thinking",
+          "value": "The user wants me to connect to the PostgreSQL database for the LRG Media portal. Let me first check the database configuration to find the connection details.",
+          "id": "",
+          "reasoningDurationMs": 846
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "",
+          "metadata": {
+            "vscode_reasoning_done": true
+          }
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "",
+          "metadata": {
+            "toolId": "call_2e8b4beb5c86498190d08cd2"
+          }
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "",
+          "metadata": {
+            "vscodeReasoningDone": true,
+            "stopReason": "other"
+          }
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Reading [](file:///c%3A/Projects/PortalWebApp/portal-configs/lrgmedia.json#1-1), lines 1 to 50",
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false,
+            "uris": {
+              "file:///c%3A/Projects/PortalWebApp/portal-configs/lrgmedia.json#1-1": {
+                "$mid": 1,
+                "path": "/c:/Projects/PortalWebApp/portal-configs/lrgmedia.json",
+                "scheme": "file",
+                "fragment": "1-1"
+              }
+            }
+          },
+          "pastTenseMessage": {
+            "value": "Read [](file:///c%3A/Projects/PortalWebApp/portal-configs/lrgmedia.json#1-1), lines 1 to 50",
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false,
+            "uris": {
+              "file:///c%3A/Projects/PortalWebApp/portal-configs/lrgmedia.json#1-1": {
+                "$mid": 1,
+                "path": "/c:/Projects/PortalWebApp/portal-configs/lrgmedia.json",
+                "scheme": "file",
+                "fragment": "1-1"
+              }
+            }
+          },
+          "isConfirmed": {
+            "type": 1
+          },
+          "isComplete": true,
+          "source": {
+            "type": "internal",
+            "label": "Built-In"
+          },
+          "toolCallId": "call_2e8b4beb5c86498190d08cd2",
+          "toolId": "copilot_readFile"
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Reading [](file:///c%3A/Projects/PortalWebApp/server/config/database.js)",
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false,
+            "uris": {
+              "file:///c%3A/Projects/PortalWebApp/server/config/database.js": {
+                "$mid": 1,
+                "path": "/c:/Projects/PortalWebApp/server/config/database.js",
+                "scheme": "file"
+              }
+            }
+          },
+          "pastTenseMessage": {
+            "value": "Read [](file:///c%3A/Projects/PortalWebApp/server/config/database.js)",
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false,
+            "uris": {
+              "file:///c%3A/Projects/PortalWebApp/server/config/database.js": {
+                "$mid": 1,
+                "path": "/c:/Projects/PortalWebApp/server/config/database.js",
+                "scheme": "file"
+              }
+            }
+          },
+          "isConfirmed": {
+            "type": 1
+          },
+          "isComplete": true,
+          "source": {
+            "type": "internal",
+            "label": "Built-In"
+          },
+          "toolCallId": "call_9850c3a369b24656af134710",
+          "toolId": "copilot_readFile"
+        }
+      ],
+      "message": {
+        "text": "conencte toi avec psql dans la bdd de lrgmedi aportal pur voir svp ",
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 67
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 68
+            },
+            "text": "conencte toi avec psql dans la bdd de lrgmedi aportal pur voir svp ",
+            "kind": "text"
+          }
+        ]
+      },
+      "variableData": {
+        "variables": [
+          {
+            "value": "Repository name: PortalWebApp\nOwner: LRG-Media\nCurrent branch: main\nDefault branch: main",
+            "name": "LRG-Media/PortalWebApp",
+            "modelDescription": "Information about the current repository. You can use this information when you need to calculate diffs or compare changes with the default branch",
+            "id": "LRG-Media/PortalWebApp",
+            "kind": "workspace"
+          },
+          {
+            "id": "vscode.instructions.file.root__file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "name": "prompt:copilot-instructions.md",
+            "value": {
+              "$mid": 1,
+              "external": "file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+              "path": "/c:/Projects/PortalWebApp/.github/copilot-instructions.md",
+              "scheme": "file"
+            },
+            "kind": "promptFile",
+            "modelDescription": "Prompt instructions file",
+            "isRoot": true,
+            "automaticallyAdded": true
+          }
+        ]
+      }
+    },
+    {
+      "requestId": "request_f5f0f365-fd25-40e7-872e-a775bf7e829c",
+      "timestamp": 1784640668473,
+      "agent": {
+        "extensionId": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "extensionVersion": "0.57.0",
+        "publisherDisplayName": "GitHub",
+        "extensionPublisherId": "GitHub",
+        "extensionDisplayName": "GitHub Copilot",
+        "id": "github.copilot.editsAgent",
+        "description": "Edit files in your workspace in agent mode",
+        "when": "config.chat.agent.enabled",
+        "metadata": {
+          "themeIcon": {
+            "id": "tools"
+          },
+          "hasFollowups": false,
+          "supportIssueReporting": false
+        },
+        "name": "agent",
+        "fullName": "GitHub Copilot",
+        "isDefault": true,
+        "locations": [
+          "panel"
+        ],
+        "modes": [
+          "agent"
+        ],
+        "slashCommands": [
+          {
+            "name": "compact",
+            "description": "Free up context by compacting the conversation history. Optionally include extra instructions for compaction."
+          },
+          {
+            "name": "explain",
+            "description": "Explain how the code in your active editor works"
+          },
+          {
+            "name": "tests",
+            "description": "Generate unit tests for the selected code",
+            "disambiguation": [
+              {
+                "category": "create_tests",
+                "description": "The user wants to generate unit tests.",
+                "examples": [
+                  "Generate tests for my selection using pytest."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "fix",
+            "description": "Propose a fix for the problems in the selected code",
+            "sampleRequest": "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+          },
+          {
+            "name": "new",
+            "description": "Scaffold code for a new file or project in a workspace",
+            "sampleRequest": "Create a RESTful API server using typescript",
+            "isSticky": true,
+            "disambiguation": [
+              {
+                "category": "create_new_workspace_or_extension",
+                "description": "The user wants to create a complete Visual Studio Code workspace from scratch, such as a new application or a Visual Studio Code extension. Use this category only if the question relates to generating or creating new workspaces in Visual Studio Code. Do not use this category for updating existing code or generating sample code snippets",
+                "examples": [
+                  "Scaffold a Node server.",
+                  "Create a sample project which uses the fileSystemProvider API.",
+                  "react application"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "newNotebook",
+            "description": "Create a new Jupyter Notebook",
+            "sampleRequest": "How do I create a notebook to load data from a csv file?",
+            "disambiguation": [
+              {
+                "category": "create_jupyter_notebook",
+                "description": "The user wants to create a new Jupyter notebook in Visual Studio Code.",
+                "examples": [
+                  "Create a notebook to analyze this CSV file."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "setupTests",
+            "description": "Set up tests in your project (Experimental)",
+            "sampleRequest": "add playwright tests to my project",
+            "when": "config.github.copilot.chat.setupTests.enabled",
+            "disambiguation": [
+              {
+                "category": "set_up_tests",
+                "description": "The user wants to configure project test setup, framework, or test runner. The user does not want to fix their existing tests.",
+                "examples": [
+                  "Set up tests for this project."
+                ]
+              }
+            ]
+          }
+        ],
+        "disambiguation": []
+      },
+      "modelId": "customendpoint/MiMo/mimo-v2.5",
+      "responseId": "response_ff13dcea-a969-45c4-9e77-a1c2049b4e2c",
+      "modelState": {
+        "value": 0
+      },
+      "contentReferences": [
+        {
+          "kind": "reference",
+          "reference": {
+            "$mid": 1,
+            "fsPath": "c:\\Projects\\PortalWebApp\\.github\\copilot-instructions.md",
+            "_sep": 1,
+            "external": "file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "path": "/c:/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "scheme": "file"
+          }
+        }
+      ],
+      "codeCitations": [],
+      "timeSpentWaiting": 1784640668473,
+      "completionTokens": 137,
+      "promptTokens": 18526,
+      "outputBuffer": 8192,
+      "promptTokenDetails": [
+        {
+          "category": "System",
+          "label": "System Instructions",
+          "percentageOfPrompt": 34
+        },
+        {
+          "category": "System",
+          "label": "Tool Definitions",
+          "percentageOfPrompt": 47
+        },
+        {
+          "category": "User Context",
+          "label": "Messages",
+          "percentageOfPrompt": 17
+        },
+        {
+          "category": "User Context",
+          "label": "Files",
+          "percentageOfPrompt": 2
+        }
+      ],
+      "modeInfo": {
+        "kind": "agent",
+        "isBuiltin": true,
+        "telemetryModeId": "agent",
+        "telemetryModeName": "agent",
+        "permissionLevel": "default"
+      },
+      "response": [
+        {
+          "kind": "thinking",
+          "value": "The user wants me to connect to the PostgreSQL database for the LRG Media portal. Let me first check the database configuration to find the connection details.",
+          "id": "",
+          "reasoningDurationMs": 846
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "",
+          "metadata": {
+            "vscode_reasoning_done": true
+          }
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "",
+          "metadata": {
+            "toolId": "call_2e8b4beb5c86498190d08cd2"
+          }
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "",
+          "metadata": {
+            "vscodeReasoningDone": true,
+            "stopReason": "other"
+          }
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Reading [](file:///c%3A/Projects/PortalWebApp/portal-configs/lrgmedia.json#1-1), lines 1 to 50",
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false,
+            "uris": {
+              "file:///c%3A/Projects/PortalWebApp/portal-configs/lrgmedia.json#1-1": {
+                "$mid": 1,
+                "path": "/c:/Projects/PortalWebApp/portal-configs/lrgmedia.json",
+                "scheme": "file",
+                "fragment": "1-1"
+              }
+            }
+          },
+          "pastTenseMessage": {
+            "value": "Read [](file:///c%3A/Projects/PortalWebApp/portal-configs/lrgmedia.json#1-1), lines 1 to 50",
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false,
+            "uris": {
+              "file:///c%3A/Projects/PortalWebApp/portal-configs/lrgmedia.json#1-1": {
+                "$mid": 1,
+                "path": "/c:/Projects/PortalWebApp/portal-configs/lrgmedia.json",
+                "scheme": "file",
+                "fragment": "1-1"
+              }
+            }
+          },
+          "isConfirmed": {
+            "type": 1
+          },
+          "isComplete": true,
+          "source": {
+            "type": "internal",
+            "label": "Built-In"
+          },
+          "toolCallId": "call_2e8b4beb5c86498190d08cd2",
+          "toolId": "copilot_readFile"
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Reading [](file:///c%3A/Projects/PortalWebApp/server/config/database.js)",
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false,
+            "uris": {
+              "file:///c%3A/Projects/PortalWebApp/server/config/database.js": {
+                "$mid": 1,
+                "path": "/c:/Projects/PortalWebApp/server/config/database.js",
+                "scheme": "file"
+              }
+            }
+          },
+          "pastTenseMessage": {
+            "value": "Read [](file:///c%3A/Projects/PortalWebApp/server/config/database.js)",
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false,
+            "uris": {
+              "file:///c%3A/Projects/PortalWebApp/server/config/database.js": {
+                "$mid": 1,
+                "path": "/c:/Projects/PortalWebApp/server/config/database.js",
+                "scheme": "file"
+              }
+            }
+          },
+          "isConfirmed": {
+            "type": 1
+          },
+          "isComplete": true,
+          "source": {
+            "type": "internal",
+            "label": "Built-In"
+          },
+          "toolCallId": "call_9850c3a369b24656af134710",
+          "toolId": "copilot_readFile"
+        }
+      ],
+      "message": {
+        "text": "conencte toi avec psql dans la bdd de lrgmedi aportal pur voir svp ",
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 67
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 68
+            },
+            "text": "conencte toi avec psql dans la bdd de lrgmedi aportal pur voir svp ",
+            "kind": "text"
+          }
+        ]
+      },
+      "variableData": {
+        "variables": [
+          {
+            "value": "Repository name: PortalWebApp\nOwner: LRG-Media\nCurrent branch: main\nDefault branch: main",
+            "name": "LRG-Media/PortalWebApp",
+            "modelDescription": "Information about the current repository. You can use this information when you need to calculate diffs or compare changes with the default branch",
+            "id": "LRG-Media/PortalWebApp",
+            "kind": "workspace"
+          },
+          {
+            "id": "vscode.instructions.file.root__file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "name": "prompt:copilot-instructions.md",
+            "value": {
+              "$mid": 1,
+              "external": "file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+              "path": "/c:/Projects/PortalWebApp/.github/copilot-instructions.md",
+              "scheme": "file"
+            },
+            "kind": "promptFile",
+            "modelDescription": "Prompt instructions file",
+            "isRoot": true,
+            "automaticallyAdded": true
+          }
+        ]
+      }
+    },
+    {
+      "requestId": "request_87d7df35-fbd8-4c38-9ef3-1064640296d0",
+      "timestamp": 1784640718356,
+      "agent": {
+        "extensionId": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "extensionVersion": "0.57.0",
+        "publisherDisplayName": "GitHub",
+        "extensionPublisherId": "GitHub",
+        "extensionDisplayName": "GitHub Copilot",
+        "id": "github.copilot.editsAgent",
+        "description": "Edit files in your workspace in agent mode",
+        "when": "config.chat.agent.enabled",
+        "metadata": {
+          "themeIcon": {
+            "id": "tools"
+          },
+          "hasFollowups": false,
+          "supportIssueReporting": false
+        },
+        "name": "agent",
+        "fullName": "GitHub Copilot",
+        "isDefault": true,
+        "locations": [
+          "panel"
+        ],
+        "modes": [
+          "agent"
+        ],
+        "slashCommands": [
+          {
+            "name": "compact",
+            "description": "Free up context by compacting the conversation history. Optionally include extra instructions for compaction."
+          },
+          {
+            "name": "explain",
+            "description": "Explain how the code in your active editor works"
+          },
+          {
+            "name": "tests",
+            "description": "Generate unit tests for the selected code",
+            "disambiguation": [
+              {
+                "category": "create_tests",
+                "description": "The user wants to generate unit tests.",
+                "examples": [
+                  "Generate tests for my selection using pytest."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "fix",
+            "description": "Propose a fix for the problems in the selected code",
+            "sampleRequest": "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+          },
+          {
+            "name": "new",
+            "description": "Scaffold code for a new file or project in a workspace",
+            "sampleRequest": "Create a RESTful API server using typescript",
+            "isSticky": true,
+            "disambiguation": [
+              {
+                "category": "create_new_workspace_or_extension",
+                "description": "The user wants to create a complete Visual Studio Code workspace from scratch, such as a new application or a Visual Studio Code extension. Use this category only if the question relates to generating or creating new workspaces in Visual Studio Code. Do not use this category for updating existing code or generating sample code snippets",
+                "examples": [
+                  "Scaffold a Node server.",
+                  "Create a sample project which uses the fileSystemProvider API.",
+                  "react application"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "newNotebook",
+            "description": "Create a new Jupyter Notebook",
+            "sampleRequest": "How do I create a notebook to load data from a csv file?",
+            "disambiguation": [
+              {
+                "category": "create_jupyter_notebook",
+                "description": "The user wants to create a new Jupyter notebook in Visual Studio Code.",
+                "examples": [
+                  "Create a notebook to analyze this CSV file."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "setupTests",
+            "description": "Set up tests in your project (Experimental)",
+            "sampleRequest": "add playwright tests to my project",
+            "when": "config.github.copilot.chat.setupTests.enabled",
+            "disambiguation": [
+              {
+                "category": "set_up_tests",
+                "description": "The user wants to configure project test setup, framework, or test runner. The user does not want to fix their existing tests.",
+                "examples": [
+                  "Set up tests for this project."
+                ]
+              }
+            ]
+          }
+        ],
+        "disambiguation": []
+      },
+      "modelId": "customendpoint/MiMo/mimo-v2.5",
+      "responseId": "response_85374f26-1c0d-414b-97b0-46831eb9d579",
+      "modelState": {
+        "value": 0
+      },
+      "contentReferences": [
+        {
+          "kind": "reference",
+          "reference": {
+            "$mid": 1,
+            "fsPath": "c:\\Projects\\PortalWebApp\\.github\\copilot-instructions.md",
+            "_sep": 1,
+            "external": "file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "path": "/c:/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "scheme": "file"
+          }
+        }
+      ],
+      "codeCitations": [],
+      "timeSpentWaiting": 1784640718356,
+      "completionTokens": 512,
+      "promptTokens": 24596,
+      "outputBuffer": 8192,
+      "promptTokenDetails": [
+        {
+          "category": "System",
+          "label": "System Instructions",
+          "percentageOfPrompt": 31
+        },
+        {
+          "category": "System",
+          "label": "Tool Definitions",
+          "percentageOfPrompt": 42
+        },
+        {
+          "category": "User Context",
+          "label": "Messages",
+          "percentageOfPrompt": 24
+        },
+        {
+          "category": "User Context",
+          "label": "Files",
+          "percentageOfPrompt": 3
+        },
+        {
+          "category": "User Context",
+          "label": "Tool Results",
+          "percentageOfPrompt": 1
+        }
+      ],
+      "modeInfo": {
+        "kind": "agent",
+        "isBuiltin": true,
+        "telemetryModeId": "agent",
+        "telemetryModeName": "agent",
+        "permissionLevel": "autoApprove"
+      },
+      "response": [
+        {
+          "kind": "thinking",
+          "value": "The user wants me to look at the schema in the customization directory. Let me search for it.",
+          "id": "1784640723286",
+          "reasoningDurationMs": 320
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "",
+          "metadata": {
+            "vscode_reasoning_done": true
+          }
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "",
+          "metadata": {
+            "toolId": "call_22a4a2321d8d4babb4bfc9ab"
+          }
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "",
+          "metadata": {
+            "vscodeReasoningDone": true,
+            "stopReason": "other"
+          }
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Searching for files matching `**/customization/**`",
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false,
+            "uris": {}
+          },
+          "pastTenseMessage": {
+            "value": "Searched for files matching `**/customization/**`, no matches",
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false,
+            "uris": {}
+          },
+          "isConfirmed": {
+            "type": 1
+          },
+          "isComplete": true,
+          "source": {
+            "type": "internal",
+            "label": "Built-In"
+          },
+          "resultDetails": [],
+          "toolCallId": "call_22a4a2321d8d4babb4bfc9ab",
+          "toolId": "copilot_findFiles"
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Searching for text `customization`",
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false,
+            "uris": {}
+          },
+          "pastTenseMessage": {
+            "value": "Searched for text `customization`, 21 results",
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false,
+            "uris": {}
+          },
+          "isConfirmed": {
+            "type": 1
+          },
+          "isComplete": true,
+          "source": {
+            "type": "internal",
+            "label": "Built-In"
+          },
+          "toolCallId": "call_a6a128282c8648ffa12ef6b8",
+          "toolId": "copilot_findTextInFiles"
+        },
+        {
+          "kind": "thinking",
+          "value": "The user is asking about schemas in customization. From the grep results, I can see there's a `customization` schema in the database. Let me look at the relevant files to understand the schema structure.\n\nThe user mentioned \"schemas\" and \"customization\" - they're likely referring to the database schema `customization` which contains custom fields and settings. Let me check the local-db-query skill and the relevant schema files.",
+          "id": "1784640727391",
+          "reasoningDurationMs": 1826
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "",
+          "metadata": {
+            "vscode_reasoning_done": true
+          }
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "",
+          "metadata": {
+            "toolId": "call_01925b4b5a38479eb246a69d"
+          }
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "",
+          "metadata": {
+            "vscodeReasoningDone": true,
+            "stopReason": "other"
+          }
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Reading skill [local-db-query](file:///c%3A/Projects/PortalWebApp/.github/skills/local-db-query/SKILL.md?vscodeLinkType%3Dskill#1-1), lines 1 to 100",
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false,
+            "uris": {
+              "file:///c%3A/Projects/PortalWebApp/.github/skills/local-db-query/SKILL.md?vscodeLinkType%3Dskill#1-1": {
+                "$mid": 1,
+                "path": "/c:/Projects/PortalWebApp/.github/skills/local-db-query/SKILL.md",
+                "scheme": "file",
+                "query": "vscodeLinkType=skill",
+                "fragment": "1-1"
+              }
+            }
+          },
+          "pastTenseMessage": {
+            "value": "Read skill [local-db-query](file:///c%3A/Projects/PortalWebApp/.github/skills/local-db-query/SKILL.md?vscodeLinkType%3Dskill#1-1), lines 1 to 100",
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false,
+            "uris": {
+              "file:///c%3A/Projects/PortalWebApp/.github/skills/local-db-query/SKILL.md?vscodeLinkType%3Dskill#1-1": {
+                "$mid": 1,
+                "path": "/c:/Projects/PortalWebApp/.github/skills/local-db-query/SKILL.md",
+                "scheme": "file",
+                "query": "vscodeLinkType=skill",
+                "fragment": "1-1"
+              }
+            }
+          },
+          "isConfirmed": {
+            "type": 1
+          },
+          "isComplete": true,
+          "source": {
+            "type": "internal",
+            "label": "Built-In"
+          },
+          "toolCallId": "call_01925b4b5a38479eb246a69d",
+          "toolId": "copilot_readFile"
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Reading [](file:///c%3A/Projects/PortalWebApp/server/features/system/custom-fields/models/CustomFieldsSchema.js)",
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false,
+            "uris": {
+              "file:///c%3A/Projects/PortalWebApp/server/features/system/custom-fields/models/CustomFieldsSchema.js": {
+                "$mid": 1,
+                "path": "/c:/Projects/PortalWebApp/server/features/system/custom-fields/models/CustomFieldsSchema.js",
+                "scheme": "file"
+              }
+            }
+          },
+          "pastTenseMessage": {
+            "value": "Read [](file:///c%3A/Projects/PortalWebApp/server/features/system/custom-fields/models/CustomFieldsSchema.js)",
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false,
+            "uris": {
+              "file:///c%3A/Projects/PortalWebApp/server/features/system/custom-fields/models/CustomFieldsSchema.js": {
+                "$mid": 1,
+                "path": "/c:/Projects/PortalWebApp/server/features/system/custom-fields/models/CustomFieldsSchema.js",
+                "scheme": "file"
+              }
+            }
+          },
+          "isConfirmed": {
+            "type": 1
+          },
+          "isComplete": true,
+          "source": {
+            "type": "internal",
+            "label": "Built-In"
+          },
+          "toolCallId": "call_00bb71162918496bafb24983",
+          "toolId": "copilot_readFile"
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Reading [](file:///c%3A/Projects/PortalWebApp/server/features/system/settings/models/SettingsSchema.js#100-100), lines 100 to 150",
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false,
+            "uris": {
+              "file:///c%3A/Projects/PortalWebApp/server/features/system/settings/models/SettingsSchema.js#100-100": {
+                "$mid": 1,
+                "path": "/c:/Projects/PortalWebApp/server/features/system/settings/models/SettingsSchema.js",
+                "scheme": "file",
+                "fragment": "100-100"
+              }
+            }
+          },
+          "pastTenseMessage": {
+            "value": "Read [](file:///c%3A/Projects/PortalWebApp/server/features/system/settings/models/SettingsSchema.js#100-100), lines 100 to 150",
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false,
+            "uris": {
+              "file:///c%3A/Projects/PortalWebApp/server/features/system/settings/models/SettingsSchema.js#100-100": {
+                "$mid": 1,
+                "path": "/c:/Projects/PortalWebApp/server/features/system/settings/models/SettingsSchema.js",
+                "scheme": "file",
+                "fragment": "100-100"
+              }
+            }
+          },
+          "isConfirmed": {
+            "type": 1
+          },
+          "isComplete": true,
+          "source": {
+            "type": "internal",
+            "label": "Built-In"
+          },
+          "toolCallId": "call_1d2d8dd354894ad496b3f675",
+          "toolId": "copilot_readFile"
+        },
+        {
+          "kind": "thinking",
+          "value": "The user is asking about the schemas in the customization schema. Let me check what tables exist in the customization schema for the LRG Media portal.",
+          "id": "1784640735754",
+          "reasoningDurationMs": 625
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "",
+          "metadata": {
+            "vscode_reasoning_done": true
+          }
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "",
+          "metadata": {
+            "toolId": "call_843caee1ca5b4c82acb87d29"
+          }
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "",
+          "metadata": {
+            "vscodeReasoningDone": true,
+            "stopReason": "other"
+          }
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Running ` PGPASSWORD=TI5PIJKYH2G4 winpty psql.exe -h 34.47.5.151 -U admin -d portal\\_lr...`",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "isConfirmed": {
+            "type": 1
+          },
+          "isComplete": true,
+          "source": {
+            "type": "internal",
+            "label": "Built-In"
+          },
+          "toolSpecificData": {
+            "kind": "terminal",
+            "terminalToolSessionId": "a1e15a4f-d4f7-4d39-b5a3-822ecf7ee5ee",
+            "terminalCommandId": "tool-25421961-fda7-47fe-bb77-0c0ecc3bbcad",
+            "commandLine": {
+              "original": "PGPASSWORD=TI5PIJKYH2G4 winpty psql.exe -h 34.47.5.151 -U admin -d portal_lrgmedia -c \"SELECT table_schema, table_name FROM information_schema.tables WHERE table_schema = 'customization' ORDER BY table_name;\" 2>&1",
+              "toolEdited": " PGPASSWORD=TI5PIJKYH2G4 winpty psql.exe -h 34.47.5.151 -U admin -d portal_lrgmedia -c \"SELECT table_schema, table_name FROM information_schema.tables WHERE table_schema = 'customization' ORDER BY table_name;\" 2>&1",
+              "forDisplay": " PGPASSWORD=TI5PIJKYH2G4 winpty psql.exe -h 34.47.5.151 -U admin -d portal_lrgmedia -c \"SELECT table_schema, table_name FROM information_schema.tables WHERE table_schema = 'customization' ORDER BY table_name;\" 2>&1",
+              "isSandboxWrapped": false
+            },
+            "cwd": {
+              "$mid": 1,
+              "path": "/C:/Projects/PortalWebApp",
+              "scheme": "file"
+            },
+            "language": "pwsh",
+            "isBackground": false,
+            "requestUnsandboxedExecution": false,
+            "requestAllowNetwork": false,
+            "confirmation": {
+              "commandLine": "PGPASSWORD=TI5PIJKYH2G4 winpty psql.exe -h 34.47.5.151 -U admin -d portal_lrgmedia -c \"SELECT table_schema, table_name FROM information_schema.tables WHERE table_schema = 'customization' ORDER BY table_name;\" 2>&1"
+            },
+            "terminalCommandState": {
+              "exitCode": 0,
+              "timestamp": 1784640738926,
+              "duration": 283
+            },
+            "terminalCommandUri": {
+              "$mid": 1,
+              "path": "/250ab752c3d39d0e54d6abb72701aa68/23",
+              "scheme": "vscode-terminal",
+              "query": "command=tool-25421961-fda7-47fe-bb77-0c0ecc3bbcad"
+            },
+            "terminalCommandOutput": {
+              "text": " table_schema  |     table_name\r\n---------------+---------------------\r\n customization | custom_field_values\r\n customization | module_fields\r\n(2 rows)\u001b[?1004h",
+              "lineCount": 7
+            },
+            "terminalTheme": {
+              "background": "#191a1b",
+              "foreground": "#cccccc"
+            }
+          },
+          "toolCallId": "call_843caee1ca5b4c82acb87d29",
+          "toolId": "run_in_terminal"
+        },
+        {
+          "kind": "thinking",
+          "value": "The user is asking about the schemas in the customization directory. Let me check what tables exist in the customization schema for the LRG Media portal.",
+          "id": "1784640741061",
+          "reasoningDurationMs": 382
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "",
+          "metadata": {
+            "vscode_reasoning_done": true
+          }
+        }
+      ],
+      "message": {
+        "text": "regatde les schema que tu as dednas dans customization ",
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 55
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 56
+            },
+            "text": "regatde les schema que tu as dednas dans customization ",
+            "kind": "text"
+          }
+        ]
+      },
+      "variableData": {
+        "variables": [
+          {
+            "value": "Repository name: PortalWebApp\nOwner: LRG-Media\nCurrent branch: main\nDefault branch: main",
+            "name": "LRG-Media/PortalWebApp",
+            "modelDescription": "Information about the current repository. You can use this information when you need to calculate diffs or compare changes with the default branch",
+            "id": "LRG-Media/PortalWebApp",
+            "kind": "workspace"
+          },
+          {
+            "id": "vscode.instructions.file.root__file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "name": "prompt:copilot-instructions.md",
+            "value": {
+              "$mid": 1,
+              "external": "file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+              "path": "/c:/Projects/PortalWebApp/.github/copilot-instructions.md",
+              "scheme": "file"
+            },
+            "kind": "promptFile",
+            "modelDescription": "Prompt instructions file",
+            "isRoot": true,
+            "automaticallyAdded": true
+          }
+        ]
+      }
+    },
+    {
+      "requestId": "request_87d7df35-fbd8-4c38-9ef3-1064640296d0",
+      "timestamp": 1784640718356,
+      "agent": {
+        "extensionId": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "extensionVersion": "0.57.0",
+        "publisherDisplayName": "GitHub",
+        "extensionPublisherId": "GitHub",
+        "extensionDisplayName": "GitHub Copilot",
+        "id": "github.copilot.editsAgent",
+        "description": "Edit files in your workspace in agent mode",
+        "when": "config.chat.agent.enabled",
+        "metadata": {
+          "themeIcon": {
+            "id": "tools"
+          },
+          "hasFollowups": false,
+          "supportIssueReporting": false
+        },
+        "name": "agent",
+        "fullName": "GitHub Copilot",
+        "isDefault": true,
+        "locations": [
+          "panel"
+        ],
+        "modes": [
+          "agent"
+        ],
+        "slashCommands": [
+          {
+            "name": "compact",
+            "description": "Free up context by compacting the conversation history. Optionally include extra instructions for compaction."
+          },
+          {
+            "name": "explain",
+            "description": "Explain how the code in your active editor works"
+          },
+          {
+            "name": "tests",
+            "description": "Generate unit tests for the selected code",
+            "disambiguation": [
+              {
+                "category": "create_tests",
+                "description": "The user wants to generate unit tests.",
+                "examples": [
+                  "Generate tests for my selection using pytest."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "fix",
+            "description": "Propose a fix for the problems in the selected code",
+            "sampleRequest": "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+          },
+          {
+            "name": "new",
+            "description": "Scaffold code for a new file or project in a workspace",
+            "sampleRequest": "Create a RESTful API server using typescript",
+            "isSticky": true,
+            "disambiguation": [
+              {
+                "category": "create_new_workspace_or_extension",
+                "description": "The user wants to create a complete Visual Studio Code workspace from scratch, such as a new application or a Visual Studio Code extension. Use this category only if the question relates to generating or creating new workspaces in Visual Studio Code. Do not use this category for updating existing code or generating sample code snippets",
+                "examples": [
+                  "Scaffold a Node server.",
+                  "Create a sample project which uses the fileSystemProvider API.",
+                  "react application"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "newNotebook",
+            "description": "Create a new Jupyter Notebook",
+            "sampleRequest": "How do I create a notebook to load data from a csv file?",
+            "disambiguation": [
+              {
+                "category": "create_jupyter_notebook",
+                "description": "The user wants to create a new Jupyter notebook in Visual Studio Code.",
+                "examples": [
+                  "Create a notebook to analyze this CSV file."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "setupTests",
+            "description": "Set up tests in your project (Experimental)",
+            "sampleRequest": "add playwright tests to my project",
+            "when": "config.github.copilot.chat.setupTests.enabled",
+            "disambiguation": [
+              {
+                "category": "set_up_tests",
+                "description": "The user wants to configure project test setup, framework, or test runner. The user does not want to fix their existing tests.",
+                "examples": [
+                  "Set up tests for this project."
+                ]
+              }
+            ]
+          }
+        ],
+        "disambiguation": []
+      },
+      "modelId": "customendpoint/MiMo/mimo-v2.5",
+      "responseId": "response_85374f26-1c0d-414b-97b0-46831eb9d579",
+      "modelState": {
+        "value": 0
+      },
+      "contentReferences": [
+        {
+          "kind": "reference",
+          "reference": {
+            "$mid": 1,
+            "fsPath": "c:\\Projects\\PortalWebApp\\.github\\copilot-instructions.md",
+            "_sep": 1,
+            "external": "file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "path": "/c:/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "scheme": "file"
+          }
+        }
+      ],
+      "codeCitations": [],
+      "timeSpentWaiting": 1784640718356,
+      "completionTokens": 512,
+      "promptTokens": 24596,
+      "outputBuffer": 8192,
+      "promptTokenDetails": [
+        {
+          "category": "System",
+          "label": "System Instructions",
+          "percentageOfPrompt": 31
+        },
+        {
+          "category": "System",
+          "label": "Tool Definitions",
+          "percentageOfPrompt": 42
+        },
+        {
+          "category": "User Context",
+          "label": "Messages",
+          "percentageOfPrompt": 24
+        },
+        {
+          "category": "User Context",
+          "label": "Files",
+          "percentageOfPrompt": 3
+        },
+        {
+          "category": "User Context",
+          "label": "Tool Results",
+          "percentageOfPrompt": 1
+        }
+      ],
+      "modeInfo": {
+        "kind": "agent",
+        "isBuiltin": true,
+        "telemetryModeId": "agent",
+        "telemetryModeName": "agent",
+        "permissionLevel": "autoApprove"
+      },
+      "response": [
+        {
+          "kind": "thinking",
+          "value": "The user wants me to look at the schema in the customization directory. Let me search for it.",
+          "id": "1784640723286",
+          "reasoningDurationMs": 320
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "",
+          "metadata": {
+            "vscode_reasoning_done": true
+          }
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "",
+          "metadata": {
+            "toolId": "call_22a4a2321d8d4babb4bfc9ab"
+          }
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "",
+          "metadata": {
+            "vscodeReasoningDone": true,
+            "stopReason": "other"
+          }
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Searching for files matching `**/customization/**`",
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false,
+            "uris": {}
+          },
+          "pastTenseMessage": {
+            "value": "Searched for files matching `**/customization/**`, no matches",
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false,
+            "uris": {}
+          },
+          "isConfirmed": {
+            "type": 1
+          },
+          "isComplete": true,
+          "source": {
+            "type": "internal",
+            "label": "Built-In"
+          },
+          "resultDetails": [],
+          "toolCallId": "call_22a4a2321d8d4babb4bfc9ab",
+          "toolId": "copilot_findFiles"
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Searching for text `customization`",
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false,
+            "uris": {}
+          },
+          "pastTenseMessage": {
+            "value": "Searched for text `customization`, 21 results",
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false,
+            "uris": {}
+          },
+          "isConfirmed": {
+            "type": 1
+          },
+          "isComplete": true,
+          "source": {
+            "type": "internal",
+            "label": "Built-In"
+          },
+          "toolCallId": "call_a6a128282c8648ffa12ef6b8",
+          "toolId": "copilot_findTextInFiles"
+        },
+        {
+          "kind": "thinking",
+          "value": "The user is asking about schemas in customization. From the grep results, I can see there's a `customization` schema in the database. Let me look at the relevant files to understand the schema structure.\n\nThe user mentioned \"schemas\" and \"customization\" - they're likely referring to the database schema `customization` which contains custom fields and settings. Let me check the local-db-query skill and the relevant schema files.",
+          "id": "1784640727391",
+          "reasoningDurationMs": 1826
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "",
+          "metadata": {
+            "vscode_reasoning_done": true
+          }
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "",
+          "metadata": {
+            "toolId": "call_01925b4b5a38479eb246a69d"
+          }
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "",
+          "metadata": {
+            "vscodeReasoningDone": true,
+            "stopReason": "other"
+          }
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Reading skill [local-db-query](file:///c%3A/Projects/PortalWebApp/.github/skills/local-db-query/SKILL.md?vscodeLinkType%3Dskill#1-1), lines 1 to 100",
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false,
+            "uris": {
+              "file:///c%3A/Projects/PortalWebApp/.github/skills/local-db-query/SKILL.md?vscodeLinkType%3Dskill#1-1": {
+                "$mid": 1,
+                "path": "/c:/Projects/PortalWebApp/.github/skills/local-db-query/SKILL.md",
+                "scheme": "file",
+                "query": "vscodeLinkType=skill",
+                "fragment": "1-1"
+              }
+            }
+          },
+          "pastTenseMessage": {
+            "value": "Read skill [local-db-query](file:///c%3A/Projects/PortalWebApp/.github/skills/local-db-query/SKILL.md?vscodeLinkType%3Dskill#1-1), lines 1 to 100",
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false,
+            "uris": {
+              "file:///c%3A/Projects/PortalWebApp/.github/skills/local-db-query/SKILL.md?vscodeLinkType%3Dskill#1-1": {
+                "$mid": 1,
+                "path": "/c:/Projects/PortalWebApp/.github/skills/local-db-query/SKILL.md",
+                "scheme": "file",
+                "query": "vscodeLinkType=skill",
+                "fragment": "1-1"
+              }
+            }
+          },
+          "isConfirmed": {
+            "type": 1
+          },
+          "isComplete": true,
+          "source": {
+            "type": "internal",
+            "label": "Built-In"
+          },
+          "toolCallId": "call_01925b4b5a38479eb246a69d",
+          "toolId": "copilot_readFile"
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Reading [](file:///c%3A/Projects/PortalWebApp/server/features/system/custom-fields/models/CustomFieldsSchema.js)",
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false,
+            "uris": {
+              "file:///c%3A/Projects/PortalWebApp/server/features/system/custom-fields/models/CustomFieldsSchema.js": {
+                "$mid": 1,
+                "path": "/c:/Projects/PortalWebApp/server/features/system/custom-fields/models/CustomFieldsSchema.js",
+                "scheme": "file"
+              }
+            }
+          },
+          "pastTenseMessage": {
+            "value": "Read [](file:///c%3A/Projects/PortalWebApp/server/features/system/custom-fields/models/CustomFieldsSchema.js)",
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false,
+            "uris": {
+              "file:///c%3A/Projects/PortalWebApp/server/features/system/custom-fields/models/CustomFieldsSchema.js": {
+                "$mid": 1,
+                "path": "/c:/Projects/PortalWebApp/server/features/system/custom-fields/models/CustomFieldsSchema.js",
+                "scheme": "file"
+              }
+            }
+          },
+          "isConfirmed": {
+            "type": 1
+          },
+          "isComplete": true,
+          "source": {
+            "type": "internal",
+            "label": "Built-In"
+          },
+          "toolCallId": "call_00bb71162918496bafb24983",
+          "toolId": "copilot_readFile"
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Reading [](file:///c%3A/Projects/PortalWebApp/server/features/system/settings/models/SettingsSchema.js#100-100), lines 100 to 150",
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false,
+            "uris": {
+              "file:///c%3A/Projects/PortalWebApp/server/features/system/settings/models/SettingsSchema.js#100-100": {
+                "$mid": 1,
+                "path": "/c:/Projects/PortalWebApp/server/features/system/settings/models/SettingsSchema.js",
+                "scheme": "file",
+                "fragment": "100-100"
+              }
+            }
+          },
+          "pastTenseMessage": {
+            "value": "Read [](file:///c%3A/Projects/PortalWebApp/server/features/system/settings/models/SettingsSchema.js#100-100), lines 100 to 150",
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false,
+            "uris": {
+              "file:///c%3A/Projects/PortalWebApp/server/features/system/settings/models/SettingsSchema.js#100-100": {
+                "$mid": 1,
+                "path": "/c:/Projects/PortalWebApp/server/features/system/settings/models/SettingsSchema.js",
+                "scheme": "file",
+                "fragment": "100-100"
+              }
+            }
+          },
+          "isConfirmed": {
+            "type": 1
+          },
+          "isComplete": true,
+          "source": {
+            "type": "internal",
+            "label": "Built-In"
+          },
+          "toolCallId": "call_1d2d8dd354894ad496b3f675",
+          "toolId": "copilot_readFile"
+        },
+        {
+          "kind": "thinking",
+          "value": "The user is asking about the schemas in the customization schema. Let me check what tables exist in the customization schema for the LRG Media portal.",
+          "id": "1784640735754",
+          "reasoningDurationMs": 625
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "",
+          "metadata": {
+            "vscode_reasoning_done": true
+          }
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "",
+          "metadata": {
+            "toolId": "call_843caee1ca5b4c82acb87d29"
+          }
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "",
+          "metadata": {
+            "vscodeReasoningDone": true,
+            "stopReason": "other"
+          }
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Running ` PGPASSWORD=TI5PIJKYH2G4 winpty psql.exe -h 34.47.5.151 -U admin -d portal\\_lr...`",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "isConfirmed": {
+            "type": 1
+          },
+          "isComplete": true,
+          "source": {
+            "type": "internal",
+            "label": "Built-In"
+          },
+          "toolSpecificData": {
+            "kind": "terminal",
+            "terminalToolSessionId": "a1e15a4f-d4f7-4d39-b5a3-822ecf7ee5ee",
+            "terminalCommandId": "tool-25421961-fda7-47fe-bb77-0c0ecc3bbcad",
+            "commandLine": {
+              "original": "PGPASSWORD=TI5PIJKYH2G4 winpty psql.exe -h 34.47.5.151 -U admin -d portal_lrgmedia -c \"SELECT table_schema, table_name FROM information_schema.tables WHERE table_schema = 'customization' ORDER BY table_name;\" 2>&1",
+              "toolEdited": " PGPASSWORD=TI5PIJKYH2G4 winpty psql.exe -h 34.47.5.151 -U admin -d portal_lrgmedia -c \"SELECT table_schema, table_name FROM information_schema.tables WHERE table_schema = 'customization' ORDER BY table_name;\" 2>&1",
+              "forDisplay": " PGPASSWORD=TI5PIJKYH2G4 winpty psql.exe -h 34.47.5.151 -U admin -d portal_lrgmedia -c \"SELECT table_schema, table_name FROM information_schema.tables WHERE table_schema = 'customization' ORDER BY table_name;\" 2>&1",
+              "isSandboxWrapped": false
+            },
+            "cwd": {
+              "$mid": 1,
+              "path": "/C:/Projects/PortalWebApp",
+              "scheme": "file"
+            },
+            "language": "pwsh",
+            "isBackground": false,
+            "requestUnsandboxedExecution": false,
+            "requestAllowNetwork": false,
+            "confirmation": {
+              "commandLine": "PGPASSWORD=TI5PIJKYH2G4 winpty psql.exe -h 34.47.5.151 -U admin -d portal_lrgmedia -c \"SELECT table_schema, table_name FROM information_schema.tables WHERE table_schema = 'customization' ORDER BY table_name;\" 2>&1"
+            },
+            "terminalCommandState": {
+              "exitCode": 0,
+              "timestamp": 1784640738926,
+              "duration": 283
+            },
+            "terminalCommandUri": {
+              "$mid": 1,
+              "path": "/250ab752c3d39d0e54d6abb72701aa68/23",
+              "scheme": "vscode-terminal",
+              "query": "command=tool-25421961-fda7-47fe-bb77-0c0ecc3bbcad"
+            },
+            "terminalCommandOutput": {
+              "text": " table_schema  |     table_name\r\n---------------+---------------------\r\n customization | custom_field_values\r\n customization | module_fields\r\n(2 rows)\u001b[?1004h",
+              "lineCount": 7
+            },
+            "terminalTheme": {
+              "background": "#191a1b",
+              "foreground": "#cccccc"
+            }
+          },
+          "toolCallId": "call_843caee1ca5b4c82acb87d29",
+          "toolId": "run_in_terminal"
+        },
+        {
+          "kind": "thinking",
+          "value": "The user is asking about the schemas in the customization directory. Let me check what tables exist in the customization schema for the LRG Media portal.",
+          "id": "1784640741061",
+          "reasoningDurationMs": 382
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "",
+          "metadata": {
+            "vscode_reasoning_done": true
+          }
+        }
+      ],
+      "message": {
+        "text": "regatde les schema que tu as dednas dans customization ",
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 55
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 56
+            },
+            "text": "regatde les schema que tu as dednas dans customization ",
+            "kind": "text"
+          }
+        ]
+      },
+      "variableData": {
+        "variables": [
+          {
+            "value": "Repository name: PortalWebApp\nOwner: LRG-Media\nCurrent branch: main\nDefault branch: main",
+            "name": "LRG-Media/PortalWebApp",
+            "modelDescription": "Information about the current repository. You can use this information when you need to calculate diffs or compare changes with the default branch",
+            "id": "LRG-Media/PortalWebApp",
+            "kind": "workspace"
+          },
+          {
+            "id": "vscode.instructions.file.root__file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "name": "prompt:copilot-instructions.md",
+            "value": {
+              "$mid": 1,
+              "external": "file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+              "path": "/c:/Projects/PortalWebApp/.github/copilot-instructions.md",
+              "scheme": "file"
+            },
+            "kind": "promptFile",
+            "modelDescription": "Prompt instructions file",
+            "isRoot": true,
+            "automaticallyAdded": true
+          }
+        ]
+      }
+    },
+    {
+      "requestId": "request_a49b3647-2028-4e34-8e5d-e182235838ab",
+      "timestamp": 1784641110672,
+      "agent": {
+        "extensionId": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "extensionVersion": "0.57.0",
+        "publisherDisplayName": "GitHub",
+        "extensionPublisherId": "GitHub",
+        "extensionDisplayName": "GitHub Copilot",
+        "id": "github.copilot.editsAgent",
+        "description": "Edit files in your workspace in agent mode",
+        "when": "config.chat.agent.enabled",
+        "metadata": {
+          "themeIcon": {
+            "id": "tools"
+          },
+          "hasFollowups": false,
+          "supportIssueReporting": false
+        },
+        "name": "agent",
+        "fullName": "GitHub Copilot",
+        "isDefault": true,
+        "locations": [
+          "panel"
+        ],
+        "modes": [
+          "agent"
+        ],
+        "slashCommands": [
+          {
+            "name": "compact",
+            "description": "Free up context by compacting the conversation history. Optionally include extra instructions for compaction."
+          },
+          {
+            "name": "explain",
+            "description": "Explain how the code in your active editor works"
+          },
+          {
+            "name": "tests",
+            "description": "Generate unit tests for the selected code",
+            "disambiguation": [
+              {
+                "category": "create_tests",
+                "description": "The user wants to generate unit tests.",
+                "examples": [
+                  "Generate tests for my selection using pytest."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "fix",
+            "description": "Propose a fix for the problems in the selected code",
+            "sampleRequest": "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+          },
+          {
+            "name": "new",
+            "description": "Scaffold code for a new file or project in a workspace",
+            "sampleRequest": "Create a RESTful API server using typescript",
+            "isSticky": true,
+            "disambiguation": [
+              {
+                "category": "create_new_workspace_or_extension",
+                "description": "The user wants to create a complete Visual Studio Code workspace from scratch, such as a new application or a Visual Studio Code extension. Use this category only if the question relates to generating or creating new workspaces in Visual Studio Code. Do not use this category for updating existing code or generating sample code snippets",
+                "examples": [
+                  "Scaffold a Node server.",
+                  "Create a sample project which uses the fileSystemProvider API.",
+                  "react application"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "newNotebook",
+            "description": "Create a new Jupyter Notebook",
+            "sampleRequest": "How do I create a notebook to load data from a csv file?",
+            "disambiguation": [
+              {
+                "category": "create_jupyter_notebook",
+                "description": "The user wants to create a new Jupyter notebook in Visual Studio Code.",
+                "examples": [
+                  "Create a notebook to analyze this CSV file."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "setupTests",
+            "description": "Set up tests in your project (Experimental)",
+            "sampleRequest": "add playwright tests to my project",
+            "when": "config.github.copilot.chat.setupTests.enabled",
+            "disambiguation": [
+              {
+                "category": "set_up_tests",
+                "description": "The user wants to configure project test setup, framework, or test runner. The user does not want to fix their existing tests.",
+                "examples": [
+                  "Set up tests for this project."
+                ]
+              }
+            ]
+          }
+        ],
+        "disambiguation": []
+      },
+      "modelId": "customendpoint/MiMo/mimo-v2.5",
+      "responseId": "response_2cb1596b-fd01-474f-92d0-992fe4f4b96e",
+      "modelState": {
+        "value": 0
+      },
+      "contentReferences": [
+        {
+          "kind": "reference",
+          "reference": {
+            "$mid": 1,
+            "fsPath": "c:\\Projects\\PortalWebApp\\.github\\copilot-instructions.md",
+            "_sep": 1,
+            "external": "file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "path": "/c:/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "scheme": "file"
+          }
+        },
+        {
+          "kind": "reference",
+          "reference": {
+            "$mid": 1,
+            "fsPath": "c:\\Projects\\PortalWebApp\\.github\\skills\\changelog-updater\\SKILL.md",
+            "_sep": 1,
+            "external": "file:///c%3A/Projects/PortalWebApp/.github/skills/changelog-updater/SKILL.md",
+            "path": "/c:/Projects/PortalWebApp/.github/skills/changelog-updater/SKILL.md",
+            "scheme": "file"
+          }
+        }
+      ],
+      "codeCitations": [],
+      "timeSpentWaiting": 1784641110672,
+      "modeInfo": {
+        "kind": "agent",
+        "isBuiltin": true,
+        "telemetryModeId": "agent",
+        "telemetryModeName": "agent",
+        "permissionLevel": "autoApprove"
+      },
+      "response": [
+        {
+          "kind": "thinking",
+          "value": "The user wants me to update the CHANGELOG.md based on the changes made in this session. Let me recall what was done:\n\n1. Analyzed `emailAccount` / `EmailAccountStatus` usage across the codebase (Q&A, no code changes)\n2. Deleted `module_fields` email entry for accounts in 3 databases:\n   - `portal_lrgmedia` (id=7)\n   - `portal_comuse`",
+          "id": ""
+        }
+      ],
+      "message": {
+        "text": "/changelog-updater ",
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 18
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 19
+            },
+            "name": "changelog-updater",
+            "kind": "prompt"
+          },
+          {
+            "range": {
+              "start": 18,
+              "endExclusive": 19
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 19,
+              "endLineNumber": 1,
+              "endColumn": 20
+            },
+            "text": " ",
+            "kind": "text"
+          }
+        ]
+      },
+      "variableData": {
+        "variables": [
+          {
+            "id": "vscode.prompt.file__file:///c%3A/Projects/PortalWebApp/.github/skills/changelog-updater/SKILL.md",
+            "name": "prompt:SKILL.md",
+            "value": {
+              "$mid": 1,
+              "external": "file:///c%3A/Projects/PortalWebApp/.github/skills/changelog-updater/SKILL.md",
+              "path": "/c:/Projects/PortalWebApp/.github/skills/changelog-updater/SKILL.md",
+              "scheme": "file"
+            },
+            "kind": "promptFile",
+            "modelDescription": "Prompt instructions file",
+            "isRoot": true,
+            "toolReferences": [],
+            "automaticallyAdded": true
+          },
+          {
+            "value": "Repository name: PortalWebApp\nOwner: LRG-Media\nCurrent branch: main\nDefault branch: main",
+            "name": "LRG-Media/PortalWebApp",
+            "modelDescription": "Information about the current repository. You can use this information when you need to calculate diffs or compare changes with the default branch",
+            "id": "LRG-Media/PortalWebApp",
+            "kind": "workspace"
+          },
+          {
+            "id": "vscode.instructions.file.root__file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "name": "prompt:copilot-instructions.md",
+            "value": {
+              "$mid": 1,
+              "external": "file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+              "path": "/c:/Projects/PortalWebApp/.github/copilot-instructions.md",
+              "scheme": "file"
+            },
+            "kind": "promptFile",
+            "modelDescription": "Prompt instructions file",
+            "isRoot": true,
+            "automaticallyAdded": true
+          }
+        ]
+      }
+    },
+    {
+      "requestId": "request_a49b3647-2028-4e34-8e5d-e182235838ab",
+      "timestamp": 1784641110672,
+      "agent": {
+        "extensionId": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "extensionVersion": "0.57.0",
+        "publisherDisplayName": "GitHub",
+        "extensionPublisherId": "GitHub",
+        "extensionDisplayName": "GitHub Copilot",
+        "id": "github.copilot.editsAgent",
+        "description": "Edit files in your workspace in agent mode",
+        "when": "config.chat.agent.enabled",
+        "metadata": {
+          "themeIcon": {
+            "id": "tools"
+          },
+          "hasFollowups": false,
+          "supportIssueReporting": false
+        },
+        "name": "agent",
+        "fullName": "GitHub Copilot",
+        "isDefault": true,
+        "locations": [
+          "panel"
+        ],
+        "modes": [
+          "agent"
+        ],
+        "slashCommands": [
+          {
+            "name": "compact",
+            "description": "Free up context by compacting the conversation history. Optionally include extra instructions for compaction."
+          },
+          {
+            "name": "explain",
+            "description": "Explain how the code in your active editor works"
+          },
+          {
+            "name": "tests",
+            "description": "Generate unit tests for the selected code",
+            "disambiguation": [
+              {
+                "category": "create_tests",
+                "description": "The user wants to generate unit tests.",
+                "examples": [
+                  "Generate tests for my selection using pytest."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "fix",
+            "description": "Propose a fix for the problems in the selected code",
+            "sampleRequest": "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+          },
+          {
+            "name": "new",
+            "description": "Scaffold code for a new file or project in a workspace",
+            "sampleRequest": "Create a RESTful API server using typescript",
+            "isSticky": true,
+            "disambiguation": [
+              {
+                "category": "create_new_workspace_or_extension",
+                "description": "The user wants to create a complete Visual Studio Code workspace from scratch, such as a new application or a Visual Studio Code extension. Use this category only if the question relates to generating or creating new workspaces in Visual Studio Code. Do not use this category for updating existing code or generating sample code snippets",
+                "examples": [
+                  "Scaffold a Node server.",
+                  "Create a sample project which uses the fileSystemProvider API.",
+                  "react application"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "newNotebook",
+            "description": "Create a new Jupyter Notebook",
+            "sampleRequest": "How do I create a notebook to load data from a csv file?",
+            "disambiguation": [
+              {
+                "category": "create_jupyter_notebook",
+                "description": "The user wants to create a new Jupyter notebook in Visual Studio Code.",
+                "examples": [
+                  "Create a notebook to analyze this CSV file."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "setupTests",
+            "description": "Set up tests in your project (Experimental)",
+            "sampleRequest": "add playwright tests to my project",
+            "when": "config.github.copilot.chat.setupTests.enabled",
+            "disambiguation": [
+              {
+                "category": "set_up_tests",
+                "description": "The user wants to configure project test setup, framework, or test runner. The user does not want to fix their existing tests.",
+                "examples": [
+                  "Set up tests for this project."
+                ]
+              }
+            ]
+          }
+        ],
+        "disambiguation": []
+      },
+      "modelId": "customendpoint/MiMo/mimo-v2.5",
+      "responseId": "response_2cb1596b-fd01-474f-92d0-992fe4f4b96e",
+      "modelState": {
+        "value": 0
+      },
+      "contentReferences": [
+        {
+          "kind": "reference",
+          "reference": {
+            "$mid": 1,
+            "fsPath": "c:\\Projects\\PortalWebApp\\.github\\copilot-instructions.md",
+            "_sep": 1,
+            "external": "file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "path": "/c:/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "scheme": "file"
+          }
+        },
+        {
+          "kind": "reference",
+          "reference": {
+            "$mid": 1,
+            "fsPath": "c:\\Projects\\PortalWebApp\\.github\\skills\\changelog-updater\\SKILL.md",
+            "_sep": 1,
+            "external": "file:///c%3A/Projects/PortalWebApp/.github/skills/changelog-updater/SKILL.md",
+            "path": "/c:/Projects/PortalWebApp/.github/skills/changelog-updater/SKILL.md",
+            "scheme": "file"
+          }
+        }
+      ],
+      "codeCitations": [],
+      "timeSpentWaiting": 1784641110672,
+      "modeInfo": {
+        "kind": "agent",
+        "isBuiltin": true,
+        "telemetryModeId": "agent",
+        "telemetryModeName": "agent",
+        "permissionLevel": "autoApprove"
+      },
+      "response": [
+        {
+          "kind": "thinking",
+          "value": "The user wants me to update the CHANGELOG.md based on the changes made in this session. Let me recall what was done:\n\n1. Analyzed `emailAccount` / `EmailAccountStatus` usage across the codebase (Q&A, no code changes)\n2. Deleted `module_fields` email entry for accounts in 3 databases:\n   - `portal_lrgmedia` (id=7)\n   - `portal_comuse`",
+          "id": ""
+        }
+      ],
+      "message": {
+        "text": "/changelog-updater ",
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 18
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 19
+            },
+            "name": "changelog-updater",
+            "kind": "prompt"
+          },
+          {
+            "range": {
+              "start": 18,
+              "endExclusive": 19
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 19,
+              "endLineNumber": 1,
+              "endColumn": 20
+            },
+            "text": " ",
+            "kind": "text"
+          }
+        ]
+      },
+      "variableData": {
+        "variables": [
+          {
+            "id": "vscode.prompt.file__file:///c%3A/Projects/PortalWebApp/.github/skills/changelog-updater/SKILL.md",
+            "name": "prompt:SKILL.md",
+            "value": {
+              "$mid": 1,
+              "external": "file:///c%3A/Projects/PortalWebApp/.github/skills/changelog-updater/SKILL.md",
+              "path": "/c:/Projects/PortalWebApp/.github/skills/changelog-updater/SKILL.md",
+              "scheme": "file"
+            },
+            "kind": "promptFile",
+            "modelDescription": "Prompt instructions file",
+            "isRoot": true,
+            "toolReferences": [],
+            "automaticallyAdded": true
+          },
+          {
+            "value": "Repository name: PortalWebApp\nOwner: LRG-Media\nCurrent branch: main\nDefault branch: main",
+            "name": "LRG-Media/PortalWebApp",
+            "modelDescription": "Information about the current repository. You can use this information when you need to calculate diffs or compare changes with the default branch",
+            "id": "LRG-Media/PortalWebApp",
+            "kind": "workspace"
+          },
+          {
+            "id": "vscode.instructions.file.root__file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+            "name": "prompt:copilot-instructions.md",
+            "value": {
+              "$mid": 1,
+              "external": "file:///c%3A/Projects/PortalWebApp/.github/copilot-instructions.md",
+              "path": "/c:/Projects/PortalWebApp/.github/copilot-instructions.md",
+              "scheme": "file"
+            },
+            "kind": "promptFile",
+            "modelDescription": "Prompt instructions file",
+            "isRoot": true,
+            "automaticallyAdded": true
+          }
+        ]
+      }
+    }
+  ],
+  "pendingRequests": [],
+  "inputState": {
+    "attachments": [],
+    "mode": {
+      "id": "agent",
+      "kind": "agent"
+    },
+    "selectedModel": {
+      "identifier": "customendpoint/MiMo/mimo-v2.5",
+      "metadata": {
+        "extension": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "id": "mimo-v2.5",
+        "vendor": "customendpoint",
+        "name": "MiMo V2.5",
+        "family": "mimo-v2.5",
+        "tooltip": "MiMo V2.5 is contributed via the CustomEndpoint provider.",
+        "version": "1.0.0",
+        "isBYOK": true,
+        "maxInputTokens": 500000,
+        "maxOutputTokens": 15000,
+        "isDefaultForLocation": {},
+        "isUserSelectable": true,
+        "capabilities": {
+          "vision": true,
+          "toolCalling": true,
+          "agentMode": true
+        },
+        "detail": "MiMo"
+      }
+    },
+    "inputText": "",
+    "selections": [
+      {
+        "startLineNumber": 1,
+        "startColumn": 1,
+        "endLineNumber": 1,
+        "endColumn": 1,
+        "selectionStartLineNumber": 1,
+        "selectionStartColumn": 1,
+        "positionLineNumber": 1,
+        "positionColumn": 1
+      }
+    ],
+    "permissionLevel": "default",
+    "contrib": {
+      "chatDynamicVariableModel": []
+    }
+  },
+  "customTitle": "Find email usage in code",
+  "archived": true
+}
