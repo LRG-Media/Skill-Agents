@@ -11,22 +11,25 @@ Gestion centralisée des skills Copilot via le repo `LRG-Media/Skill-Agents`.
 
 ```bash
 # Lister les skills disponibles en ligne
-node .github/skills/software/github/install-skills.mjs --list
+node .github/skills/software/github/skill-repertory/install-skills.mjs --list
 
 # Installer (mode interactif)
-node .github/skills/software/github/install-skills.mjs
+node .github/skills/software/github/skill-repertory/install-skills.mjs
 
 # Installer toutes les catégories
-node .github/skills/software/github/install-skills.mjs --all
+node .github/skills/software/github/skill-repertory/install-skills.mjs --all
 
 # Installer une catégorie spécifique
-node .github/skills/software/github/install-skills.mjs --categories cloud,global
+node .github/skills/software/github/skill-repertory/install-skills.mjs --categories cloud,global
 
 # Mettre à jour les skills existants (compare avant d'override)
-node .github/skills/software/github/install-skills.mjs --update
+node .github/skills/software/github/skill-repertory/install-skills.mjs --update
 
 # Dry run (voir sans agir)
-node .github/skills/software/github/install-skills.mjs --dry-run
+node .github/skills/software/github/skill-repertory/install-skills.mjs --dry-run
+
+# Comparer local vs remote
+node .github/skills/software/github/skill-repertory/install-skills.mjs --compare
 ```
 
 ## Workflow de mise à jour
