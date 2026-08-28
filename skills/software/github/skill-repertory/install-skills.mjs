@@ -174,10 +174,11 @@ function getLocalSkills(skillsDir) {
 }
 
 function getContentHash(content) {
-  // Simple hash for comparison - not cryptographic
+  // Normalize line endings (CRLF → LF) before hashing
+  const normalized = content.replace(/\r\n/g, '\n');
   let hash = 0;
-  for (let i = 0; i < content.length; i++) {
-    const char = content.charCodeAt(i);
+  for (let i = 0; i < normalized.length; i++) {
+    const char = normalized.charCodeAt(i);
     hash = ((hash << 5) - hash) + char;
     hash |= 0;
   }
